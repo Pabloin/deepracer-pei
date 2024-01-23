@@ -5,7 +5,7 @@ function dr-upload-custom-files {
   echo "Uploading files to $CUSTOM_TARGET"
   
   # PEI
-  MY_CMD=aws $DR_LOCAL_PROFILE_ENDPOINT_URL s3 sync $DR_DIR/custom_files/ $CUSTOM_TARGET
+  MY_CMD="aws $DR_LOCAL_PROFILE_ENDPOINT_URL s3 sync $DR_DIR/custom_files/ $CUSTOM_TARGET"
   echo ${MY_CMD}
   #
   
