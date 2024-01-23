@@ -40,6 +40,12 @@ Run dr-update for configuration to take effect.
     dr-update
     dr-upload-custom-files
 
+(base) ubuntu@ip-172-31-26-203 ~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs/.config_DRFC_003_aws_cpu (master)$ dr-upload-custom-files
+Uploading files to s3://drfc-minio-test/custom_files/
+aws s3 sync /home/ubuntu/deepracer-pei/deepracer-for-cloud/custom_files/ s3://drfc-minio-test/custom_files/
+upload: ../../../../deepracer-for-cloud/custom_files/hyperparameters.json to s3://drfc-minio-test/custom_files/hyperparameters.json
+upload: ../../../../deepracer-for-cloud/custom_files/model_metadata.json to s3://drfc-minio-test/custom_files/model_metadata.json
+upload: ../../../../deepracer-for-cloud/custom_files/reward_function.py to s3://drfc-minio-test/custom_files/reward_function.py
 
 TENGO:
 
