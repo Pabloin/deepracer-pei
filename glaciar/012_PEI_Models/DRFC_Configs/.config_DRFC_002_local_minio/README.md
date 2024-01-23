@@ -1,6 +1,17 @@
 # deepracer-pei
 Empiezo con DOTS
 
+-------------------------
+Este es un backup - config de 
+prueba de ejecucion local con Minio ...
+
+    - Todavía no es muy exitoso....
+    - creo que lo voy a descartar y probar 
+        - EC2 pero sin GPU para abaratar 
+            costos de pruebas como hacia antes ... 
+            
+-------------------------
+
 Por ejecutar:
 
     init.sh -c local -a cpu
