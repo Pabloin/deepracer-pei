@@ -6,6 +6,8 @@ echo "En DRFC"
 # Funcion que tome del Config y PISE ... 
 
 
+alias HC="cd ~/deepracer-pei/deepracer-for-cloud"
+
 export PATH_DOTS_SCRIPTS=~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs
 
 
