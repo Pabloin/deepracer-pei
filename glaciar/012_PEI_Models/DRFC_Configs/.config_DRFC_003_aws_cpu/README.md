@@ -37,6 +37,9 @@ Configure system.env as follows:
 Run dr-update for configuration to take effect.
 
 
+    dr-update
+
+
 TENGO:
 
     DR_UPLOAD_S3_BUCKET=not-defined
