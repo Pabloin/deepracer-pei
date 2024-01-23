@@ -19,3 +19,10 @@ aws configure --profile minio
  init.sh -c local -a cpu
 
  ---------------
+
+ source bin/activate.sh.
+
+ Creating service s3_minio
+
+ (base) ubuntu@ip-172-31-26-203 ~/deepracer-pei/deepracer-for-cloud (master)$ .
+/bin/activate.sh                                                              Creating service s3_minio                                                     │
