@@ -15,7 +15,7 @@ export PATH_DOTS_SCRIPTS=~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs
 #        ├── .config_DRFC_001_original
 #        └── .config_DRFC_002_local_minio
 
-alias DRC000 = "cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_000_reset"
-alias DRC001 = "cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_original"
-alias DRC002 = "cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_002_local_minio"
-alias DRC003 = "cd ${PATH_DOTS_SCRIPTS}/..config_DRFC_003_aws_cpu"
+alias DRC000="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_000_reset"
+alias DRC001="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_original"
+alias DRC002="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_002_local_minio"
+alias DRC003="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_003_aws_cpu"

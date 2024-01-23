@@ -18,8 +18,8 @@ fi
 
 export BASH_DRFC=~/deepracer-pei/glaciar/030_Scripts_DRFC
 # if bash dots
-if [ -f "$BASH_DOTS/.bashDRFC" ]; then
+if [ -f "$BASH_DRFC/.bashDRFC" ]; then
     echo "Hola"
-    . "$BASH_DOTS/.bashDRFC"
+    . "$BASH_DRFC/.bashDRFC"
 fi
 
