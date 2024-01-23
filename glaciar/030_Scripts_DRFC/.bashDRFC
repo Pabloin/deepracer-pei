@@ -22,3 +22,12 @@ alias D001a="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_aws_orig"
 alias D001l="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_local_orig"
 alias D002="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_002_local_minio"
 alias D003="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_003_aws_cpu"
+
+
+
+function gia() {
+
+    git add .
+    git commit -m $1
+    git push
+}
