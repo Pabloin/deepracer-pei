@@ -25,5 +25,5 @@ echo "\n ---- [ run.env ] ---"
 head -25   ${MY_HOME_DRFC}/run.env 
 
 echo "\n ---- [ system.env ] ---"
-head -15   ${MY_HOME_DRFC}/system.env   
+head -25   ${MY_HOME_DRFC}/system.env   
 
