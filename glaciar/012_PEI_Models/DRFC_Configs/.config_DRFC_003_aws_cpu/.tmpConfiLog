@@ -1,0 +1,140 @@
+DR_ANALYSIS_IMAGE=cpu
+DR_AWS_APP_REGION=
+DR_CAMERA_KVS_ENABLE=True
+DR_CAMERA_MAIN_ENABLE=True
+DR_CAMERA_SUB_ENABLE=False
+DR_CAR_BODY_SHELL_TYPE=deepracer
+DR_CAR_COLOR=Red
+DR_CAR_NAME=FastCar
+DR_CLOUD=aws
+DR_CLOUD_WATCH_ENABLE=False
+DR_CLOUD_WATCH_LOG_STREAM_PREFIX=
+DR_COACH_IMAGE=5.1.1
+DR_CONFIG=/home/ubuntu/deepracer-pei/deepracer-for-cloud/run.env
+DR_DIR=/home/ubuntu/deepracer-pei/deepracer-for-cloud
+DR_DISPLAY_NAME=FastCar
+DR_DOCKER_FILE_SEP=-c
+DR_DOCKER_STYLE=swarm
+DR_ENABLE_DOMAIN_RANDOMIZATION=False
+DR_EVAL_CHECKPOINT=last
+DR_EVAL_COLLISION_PENALTY=5.0
+DR_EVAL_COMPOSE_FILE='-c /home/ubuntu/deepracer-pei/deepracer-for-cloud/docker/docker-compose-eval.yml -c /home/ubuntu/deepracer-pei/deepracer-for-cloud/docker/docker-compose-eval-swarm.yml -c /home/ubuntu/deepracer-pei/deepracer-for-cloud/docker/docker-compose-keys.yml'
+DR_EVAL_DEBUG_REWARD=False
+DR_EVAL_IS_CONTINUOUS=True
+DR_EVAL_MAX_RESETS=100
+DR_EVAL_NUMBER_OF_TRIALS=3
+DR_EVAL_OFF_TRACK_PENALTY=5.0
+DR_EVAL_OPP_CAR_BODY_SHELL_TYPE=deepracer
+DR_EVAL_OPP_CAR_NAME=FasterCar
+DR_EVAL_OPP_DISPLAY_NAME=FasterCar
+DR_EVAL_OPP_RACER_NAME=FasterCar
+DR_EVAL_OPP_S3_MODEL_PREFIX=rl-deepracer-sagemaker
+DR_EVAL_RESET_BEHIND_DIST=1.0
+DR_EVAL_REVERSE_DIRECTION=False
+DR_EVAL_SAVE_MP4=False
+DR_GUI_ENABLE=False
+DR_H2B_BOT_CAR_PENALTY=5.0
+DR_H2B_BOT_CAR_SPEED=0.2
+DR_H2B_IS_LANE_CHANGE=False
+DR_H2B_LANE_CHANGE_DISTANCE=1.0
+DR_H2B_LOWER_LANE_CHANGE_TIME=3.0
+DR_H2B_MIN_DISTANCE_BETWEEN_BOT_CARS=2.0
+DR_H2B_NUMBER_OF_BOT_CARS=3
+DR_H2B_RANDOMIZE_BOT_CAR_LOCATIONS=False
+DR_H2B_UPPER_LANE_CHANGE_TIME=5.0
+DR_HOST_X=False
+DR_KINESIS_STREAM_NAME=
+DR_LOCAL_ACCESS_KEY_ID=AKIA************4
+DR_LOCAL_PROFILE_ENDPOINT_URL=
+DR_LOCAL_S3_AUTH_MODE=profile
+DR_LOCAL_S3_BUCKET=drfc-minio-test
+DR_LOCAL_S3_CUSTOM_FILES_PREFIX=custom_files
+DR_LOCAL_S3_EVAL_PARAMS_FILE=evaluation_params.yaml
+DR_LOCAL_S3_HYPERPARAMETERS_KEY=custom_files/hyperparameters.json
+DR_LOCAL_S3_METRICS_PREFIX=rl-deepracer-sagemaker/metrics
+DR_LOCAL_S3_MODEL_METADATA_KEY=custom_files/model_metadata.json
+DR_LOCAL_S3_MODEL_PREFIX=rl-deepracer-sagemaker
+DR_LOCAL_S3_PRETRAINED=False
+DR_LOCAL_S3_PRETRAINED_CHECKPOINT=last
+DR_LOCAL_S3_PRETRAINED_PREFIX=rl-sagemaker-pretrained
+DR_LOCAL_S3_PROFILE=pabloedu-gmail-UCEMA
+DR_LOCAL_S3_REWARD_KEY=custom_files/reward_function.py
+DR_LOCAL_S3_TRAINING_PARAMS_FILE=training_params.yaml
+DR_LOCAL_SECRET_ACCESS_KEY=je2AFaCs9ghzx4fHQasSRreqBwJbtR7Xvb+MhsVg
+DR_MINIO_IMAGE=latest
+DR_OA_IS_OBSTACLE_BOT_CAR=False
+DR_OA_MIN_DISTANCE_BETWEEN_OBSTACLES=2.0
+DR_OA_NUMBER_OF_OBSTACLES=6
+DR_OA_OBJECT_POSITIONS=
+DR_OA_OBSTACLE_TYPE=box_obstacle
+DR_OA_RANDOMIZE_OBSTACLE_LOCATIONS=False
+DR_RACER_NAME=FastCar
+DR_RACE_TYPE=TIME_TRIAL
+DR_ROBOMAKER_EVAL_PORT=8180
+DR_ROBOMAKER_GUI_PORT=5900
+DR_ROBOMAKER_IMAGE=5.1.1-cpu-avx2
+DR_ROBOMAKER_MOUNT_LOGS=False
+DR_ROBOMAKER_TRAIN_PORT=8080
+DR_RUN_ID=0
+DR_SAGEMAKER_IMAGE=5.1.1-cpu
+DR_TRAIN_ALTERNATE_DRIVING_DIRECTION=False
+DR_TRAIN_BEST_MODEL_METRIC=progress
+DR_TRAIN_CHANGE_START_POSITION=True
+DR_TRAIN_COMPOSE_FILE='-c /home/ubuntu/deepracer-pei/deepracer-for-cloud/docker/docker-compose-training.yml -c /home/ubuntu/deepracer-pei/deepracer-for-cloud/docker/docker-compose-training-swarm.yml -c /home/ubuntu/deepracer-pei/deepracer-for-cloud/docker/docker-compose-keys.yml'
+DR_TRAIN_MIN_EVAL_TRIALS=5
+DR_TRAIN_MULTI_CONFIG=False
+DR_TRAIN_REVERSE_DIRECTION=False
+DR_TRAIN_ROUND_ROBIN_ADVANCE_DIST=0.05
+DR_TRAIN_START_POSITION_OFFSET=0.0
+DR_UPLOAD_PROFILE='--profile default'
+DR_UPLOAD_S3_BUCKET=dr-models-glaciar-dots-to-pabloedu-gmail/DOTS-Local
+DR_UPLOAD_S3_PREFIX=rl-deepracer-sagemaker-1
+DR_UPLOAD_S3_PROFILE=pabloedu-gmail-UCEMA
+DR_UPLOAD_S3_ROLE=to-be-defined
+DR_WEBVIEWER_PORT=8100
+DR_WORKERS=1
+DR_WORLD_NAME=reInvent2019_track
+env_var=DR_H2B_BOT_CAR_PENALTY
+l=DR_H2B_BOT_CAR_PENALTY=5.0
+    eval CUSTOM_TARGET=$(echo s3://$DR_LOCAL_S3_BUCKET/$DR_LOCAL_S3_CUSTOM_FILES_PREFIX/);
+    aws $DR_LOCAL_PROFILE_ENDPOINT_URL s3 sync $CUSTOM_TARGET $DR_DIR/custom_files/
+    dr-update-env && ${DR_DIR}/scripts/upload/download-model.sh "$@"
+    if [[ "${DR_DOCKER_STYLE,,}" == "swarm" ]]; then
+        eval ROBOMAKER_ID=$(docker ps | grep "${OPT_PREFIX}-${DR_RUN_ID}_robomaker.${OPT_REPLICA}" | cut -f1 -d\  | head -1);
+        eval ROBOMAKER_ID=$(docker ps | grep "${OPT_PREFIX}-${DR_RUN_ID}-robomaker-${OPT_REPLICA}" | cut -f1 -d\  | head -1);
+    STACK_NAME="deepracer-$DR_RUN_ID";
+    RUN_NAME=${DR_LOCAL_S3_MODEL_PREFIX};
+    dr-update-env && ${DR_DIR}/scripts/training/increment.sh "$@" && dr-update-env
+    dr-update-env && ${DR_DIR}/scripts/upload/increment.sh "$@" && dr-update-env
+    if [[ "${DR_HOST_X,,}" == "true" && -n "$DISPLAY" ]]; then
+            gnome-terminal --tab --title "DR-${DR_RUN_ID}: Robomaker #${OPT_REPLICA} - ${ROBOMAKER_CONTAINER}" -- /usr/bin/bash -c "docker logs $OPT_TIME -f ${ROBOMAKER_CONTAINER}" 2> /dev/null;
+    if [[ "${DR_HOST_X,,}" == "true" && -n "$DISPLAY" ]]; then
+            gnome-terminal --tab --title "DR-${DR_RUN_ID}: Sagemaker - ${SAGEMAKER_CONTAINER}" -- /usr/bin/bash -c "docker logs $OPT_TIME -f ${SAGEMAKER_CONTAINER}" 2> /dev/null;
+    source $DIR/bin/activate.sh $DR_CONFIG
+    $DR_DIR/scripts/evaluation/start.sh "$@"
+    ROBOMAKER_COMMAND="" bash -c "cd $DR_DIR/scripts/log-analysis && ./start.sh"
+    $DR_DIR/scripts/training/start.sh "$@"
+    $DR_DIR/scripts/viewer/start.sh "$@"
+    ROBOMAKER_COMMAND="" bash -c "cd $DR_DIR/scripts/evaluation && ./stop.sh"
+        ROBOMAKER_COMMAND="" bash -c "cd $DR_DIR/scripts/log-analysis && ./stop.sh";
+    ROBOMAKER_COMMAND="" bash -c "cd $DR_DIR/scripts/training && ./stop.sh"
+    $DR_DIR/scripts/viewer/stop.sh "$@"
+    if [[ -f "$DR_CONFIG" ]]; then
+        LINES=$(grep -v '^#' $DR_CONFIG);
+    if [[ -z "${DR_RUN_ID}" ]]; then
+        export DR_RUN_ID=0;
+    if [[ "${DR_DOCKER_STYLE,,}" == "swarm" ]]; then
+        export DR_ROBOMAKER_TRAIN_PORT=$(expr 8080 + $DR_RUN_ID);
+        export DR_ROBOMAKER_EVAL_PORT=$(expr 8180 + $DR_RUN_ID);
+        export DR_ROBOMAKER_GUI_PORT=$(expr 5900 + $DR_RUN_ID);
+        export DR_ROBOMAKER_TRAIN_PORT="8080-8089";
+        export DR_ROBOMAKER_EVAL_PORT="8080-8089";
+        export DR_ROBOMAKER_GUI_PORT="5901-5920";
+    $DR_DIR/scripts/viewer/stop.sh "$@";
+    $DR_DIR/scripts/viewer/start.sh "$@"
+    dr-update-env && ${DR_DIR}/scripts/upload/upload-car.sh "$@"
+    eval CUSTOM_TARGET=$(echo s3://$DR_LOCAL_S3_BUCKET/$DR_LOCAL_S3_CUSTOM_FILES_PREFIX/);
+    MY_CMD="aws $DR_LOCAL_PROFILE_ENDPOINT_URL s3 sync $DR_DIR/custom_files/ $CUSTOM_TARGET";
+    aws $DR_LOCAL_PROFILE_ENDPOINT_URL s3 sync $DR_DIR/custom_files/ $CUSTOM_TARGET
+    dr-update-env && ${DR_DIR}/scripts/upload/upload-model.sh "$@"
+    ${DR_DIR}/utils/start-local-browser.sh "$@"
