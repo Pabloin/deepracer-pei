@@ -38,6 +38,7 @@ Run dr-update for configuration to take effect.
 
 
     dr-update
+    dr-upload-custom-files
 
 
 TENGO:
