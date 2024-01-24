@@ -18,7 +18,7 @@ Aparecio:
     -  system.env
 
 ---------------------------------
-
+NOTA: Con esta versión 003 anduvo bastante bien en local ... 
 
 
 *************************************
