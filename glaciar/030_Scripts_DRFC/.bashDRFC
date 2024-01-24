@@ -54,3 +54,5 @@ function prof() {
         source ${PROF_AWSLNX}
     fi
 }
+
+alias hello="cat ~/hello.txt"
