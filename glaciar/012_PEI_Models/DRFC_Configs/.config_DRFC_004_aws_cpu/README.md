@@ -4,6 +4,8 @@ Empiezo con DOTS
 -------------------------
 Este es un backup - config de 
 prueba de ejecucion aws con cpu
+
+Esta prueba se ejecuta en AWS Academy ... y por eso los dir de los buckets con de AWS Academy ..
 -------------------------
 
 Por ejecutar:
