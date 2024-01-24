@@ -23,6 +23,13 @@ alias D001l="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_local_orig"
 alias D002="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_002_local_minio"
 alias D003="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_003_aws_cpu"
 
+# TODO: Se vana a agregar o FIX It!
+alias D004="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_004_aws_cpu"
+alias D005="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_005_aws_cpu"
+alias D006="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_006_aws_cpu"
+alias D007="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_007_aws_cpu"
+alias D008="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_008_aws_cpu"
+
 
 
 function gia() {
