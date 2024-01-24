@@ -16,6 +16,8 @@ if [ -f "$BASH_DOTS/.bashRegion_Virginia" ]; then
     . "$BASH_DOTS/.bashRegion_Virginia"
 fi
 
+
+# Ubuntu en .bashrc
 export BASH_DRFC=~/deepracer-pei/glaciar/030_Scripts_DRFC
 # if bash dots
 if [ -f "$BASH_DRFC/.bashDRFC" ]; then

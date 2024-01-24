@@ -38,3 +38,19 @@ function gia() {
     git commit -m $1
     git push
 }
+
+
+# REPETIDA CON DOTS (Mantener sincro iguales)
+function prof() {
+
+    PROF_UBUNTU=~/.profile
+    PROF_AWSLNX=~/.bash_profile
+
+    if [ -f ${PROF_UBUNTU} ]; then
+        source ${PROF_UBUNTU}
+    fi
+
+    if [ -f ${PROF_AWSLNX} ]; then
+        source ${PROF_AWSLNX}
+    fi
+}
