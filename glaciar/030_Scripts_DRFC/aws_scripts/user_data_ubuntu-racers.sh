@@ -98,6 +98,17 @@ chmod +x      ~/anaconda.sh
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
 
+# INSTALL
+# NVM - NPM y CDK
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install --lts 18
+npm install -g aws-cdk
+nvm  --version
+node --version
+cdk  --version
+
+
 EOM
 
 chown ubuntu  ${HOME_USER}/my_ubuntu_init.sh
