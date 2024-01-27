@@ -1,0 +1,55 @@
+Description:  Un Cloud Formation que crea un Security Group
+
+
+Parameters:
+    
+  MyLabName:
+    Description: Lab Name
+    Type: String
+    Default: Deep Racer Lab
+
+Resources:
+  
+  SecurityGroupDRFC:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: "DR-SG-DRFC"
+      GroupDescription: "Deep Racer Security Group for DRFC"
+      SecurityGroupIngress:
+        - FromPort: 80
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 80
+        - FromPort: 8080
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8080
+        - FromPort: 8888
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8888
+        - FromPort: 22
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 22
+        - FromPort: 8100
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8100
+        - FromPort: 443
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 443
+        - FromPort: 8889
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8889
+
+
+Outputs:
+ 
+  SecurityGroupDRFC:
+    Description: Security group with no ingress rule
+    Value: !Ref SecurityGroupDRFC
+  
+ 
