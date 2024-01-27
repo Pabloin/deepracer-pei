@@ -46,16 +46,25 @@ chgrp ubuntu  ${HOME_USER}/.ssh/known_hosts
 chmod 400  ${HOME_USER}/.ssh/id_rsa
 
 
-# Profile root para Git Clone
+# Profile root para Git Clone (root hace git clone)
 cp ${HOME_USER}/.ssh/id_rsa       /root/.ssh/ 
 cp ${HOME_USER}/.ssh/known_hosts  /root/.ssh/
 
 
 git clone git@github.com:Pabloin/deepracer-pei.git
 
-chown ubuntu -r  ${HOME_USER}/deepracer-pei
-chgrp ubuntu -r  ${HOME_USER}/deepracer-pei
+chown ubuntu -R  ${HOME_USER}/deepracer-pei
+chgrp ubuntu -R  ${HOME_USER}/deepracer-pei
 
+cd ${HOME_USER}/deepracer-pei
+
+git config user.name  Pabloin
+git config user.email pablo.ezequiel.inchausti@gmail.com
+
+
+
+# INSTALL ADD PROFILE
+cd ${HOME_USER}
 
 cat << EOM >> ${HOME_USER}/.bashrc
 
@@ -70,12 +79,12 @@ fi
 EOM
 
 
-# cd ${HOME_USER}/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
+cd ${HOME_USER}/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
 
 
 # INTALL: 2- DeepRacer Utils
-# pip3 install deepracer-utils
+pip3 install deepracer-utils
 python3 -m deepracer install-cli --force
 
 

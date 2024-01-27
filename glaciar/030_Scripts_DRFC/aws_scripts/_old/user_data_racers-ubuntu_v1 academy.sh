@@ -55,9 +55,18 @@ cp ${HOME_USER}/.ssh/known_hosts  /root/.ssh/
 
 git clone git@github.com:Pabloin/deepracer-pei.git
 
-chown ubuntu -r  ${HOME_USER}/deepracer-pei
-chgrp ubuntu -r  ${HOME_USER}/deepracer-pei
+chown ubuntu -R  ${HOME_USER}/deepracer-pei
+chgrp ubuntu -R  ${HOME_USER}/deepracer-pei
 
+cd ${HOME_USER}/deepracer-pei
+
+git config user.name  Pabloin
+git config user.email pablo.ezequiel.inchausti@gmail.com
+
+
+
+# INSTALL ADD PROFILE
+cd ${HOME_USER}
 
 cat << EOM >> ${HOME_USER}/.bashrc
 
