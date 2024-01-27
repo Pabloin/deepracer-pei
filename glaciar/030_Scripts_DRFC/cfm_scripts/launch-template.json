@@ -1,0 +1,103 @@
+ {
+    "EbsOptimized": false,
+    "IamInstanceProfile": {
+        "Arn": "arn:aws:iam::730335328884:instance-profile/DeepRacerRole"
+    },
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+                "Encrypted": false,
+                "DeleteOnTermination": true,
+                "SnapshotId": "snap-091ad9e7cd4cb0736",
+                "VolumeSize": 60,
+                "VolumeType": "gp2"
+            }
+        }
+    ],
+    "NetworkInterfaces": [
+        {
+            "AssociatePublicIpAddress": true,
+            "DeleteOnTermination": true,
+            "Description": "",
+            "DeviceIndex": 0,
+            "Groups": [
+                "sg-0c2288c9eb13509d8"
+            ],
+            "InterfaceType": "interface",
+            "Ipv6Addresses": [],
+            "PrivateIpAddresses": [
+                {
+                    "Primary": true,
+                    "PrivateIpAddress": "172.31.93.125"
+                }
+            ],
+            "SubnetId": "subnet-0b04987faa1ea2e62",
+            "NetworkCardIndex": 0
+        }
+    ],
+    "ImageId": "ami-0c7217cdde317cfec",
+    "InstanceType": "c5.4xlarge",
+    "KeyName": "racer1-virginia",
+    "Monitoring": {
+        "Enabled": false
+    },
+    "Placement": {
+        "AvailabilityZone": "us-east-1a",
+        "GroupName": "",
+        "Tenancy": "default"
+    },
+    "DisableApiTermination": false,
+    "InstanceInitiatedShutdownBehavior": "stop",
+    "UserData": "IyEvYmluL2Jhc2gKYXB0IHVwZGF0ZSAteQphcHQgaW5zdGFsbCAteSBnaXQKYXB0IGluc3RhbGwgLXkgdHJlZSBkb3MydW5peAphcHQgaW5zdGFsbCAteSB1bnppcAphcHQgaW5zdGFsbCAteSBweXRob24zLXBpcAoKSE9NRV9ST09UPS9yb290CkhPTUVfVVNFUj0vaG9tZS91YnVudHUKSE9NRV9QUk9GSUxFX1MzPWRyLXJhY2Vycy1jb25maWcKIyBIT01FX1BST0ZJTEVfUzM9ZHItcmFjZXJzLWNvbmZpZy1wZXplCgojIElOVEFMTDogMC0gU2V0IEhvbWUKIyBJTlRBTEw6IDEtIEFXUyBDTEkKIyBJTlRBTEw6IDItIEdpdCBDbG9uZQojIElOVEFMTDogMy0gRGVlcFJhY2VyIFV0aWxzCgojIElOVEFMTDogMC0gU2V0IEhvbWUKY2QgJHtIT01FX1JPT1R9CgojIElOVEFMTDogMS0gQVdTIENMSQpjdXJsICJodHRwczovL2F3c2NsaS5hbWF6b25hd3MuY29tL2F3c2NsaS1leGUtbGludXgteDg2XzY0LnppcCIgLW8gImF3c2NsaXYyLnppcCIKdW56aXAgYXdzY2xpdjIuemlwCi4vYXdzL2luc3RhbGwKcm0gYXdzY2xpdjIuemlwCgoKIyBJTlRBTEw6IDItIEdpdCBDbG9uZQojIE5vIGVzIG55dXkgc2VndXJvLCBoYXkgY2FtYmlhcmxvCiMgQ29waWEgYWwgVXN1YXJpbyByb290IHByaW1lcm8KYXdzIHMzIGNwIHMzOi8vJHtIT01FX1BST0ZJTEVfUzN9L2lkX3JzYS1yYWNlcnMgICAgICAgICAgIC5zc2gvaWRfcnNhCmF3cyBzMyBjcCBzMzovLyR7SE9NRV9QUk9GSUxFX1MzfS9pZF9yc2EtcmFjZXJzLnB1YiAgICAgICAuc3NoL2lkX3JzYS5wdWIKYXdzIHMzIGNwIHMzOi8vJHtIT01FX1BST0ZJTEVfUzN9L2tub3duX2hvc3RzX2Zpbmdlcl9naXQgIC5zc2gva25vd25faG9zdHMKCmRvczJ1bml4ICAgLnNzaC9pZF9yc2EKY2htb2QgNDAwICAuc3NoL2lkX3JzYQoKY3AgLnNzaC9pZF9yc2EgICAgICAgICAke0hPTUVfVVNFUn0vLnNzaC9pZF9yc2EKY3AgLnNzaC9pZF9yc2EucHViICAgICAke0hPTUVfVVNFUn0vLnNzaC9pZF9yc2EucHViCgpjaG93biB1YnVudHUgICR7SE9NRV9VU0VSfS8uc3NoL2lkX3JzYQpjaGdycCB1YnVudHUgICR7SE9NRV9VU0VSfS8uc3NoL2lkX3JzYQpjaG93biB1YnVudHUgICR7SE9NRV9VU0VSfS8uc3NoL2lkX3JzYS5wdWIKY2hncnAgdWJ1bnR1ICAke0hPTUVfVVNFUn0vLnNzaC9pZF9yc2EucHViCgoKIyBQcm9maWxlIHJvb3QgcGFyYSBHaXQgQ2xvbmUgKHJvb3QgaGFjZSBnaXQgY2xvbmUpCmNkICR7SE9NRV9VU0VSfQoKZ2l0IGNsb25lIGdpdEBnaXRodWIuY29tOlBhYmxvaW4vZGVlcHJhY2VyLXBlaS5naXQKCmNob3duIHVidW50dSAtUiAgJHtIT01FX1VTRVJ9L2RlZXByYWNlci1wZWkKY2hncnAgdWJ1bnR1IC1SICAke0hPTUVfVVNFUn0vZGVlcHJhY2VyLXBlaQoKY2QgJHtIT01FX1VTRVJ9L2RlZXByYWNlci1wZWkKCmdpdCBjb25maWcgdXNlci5uYW1lICBQYWJsb2luCmdpdCBjb25maWcgdXNlci5lbWFpbCBwYWJsby5lemVxdWllbC5pbmNoYXVzdGlAZ21haWwuY29tCgoKCiMgSU5TVEFMTCBBREQgUFJPRklMRQpjZCAke0hPTUVfVVNFUn0KCmVjaG8gIkhlbGxvIGVuIEhvbWUgVXNlciBVYnVudHUgIiA+ICR7SE9NRV9VU0VSfS9oZWxsby50eHQKCmNhdCA8PCBFT00gPj4gJHtIT01FX1VTRVJ9Ly5iYXNocmMKCiMgVWJ1bnR1IGVuIC5iYXNocmMKZXhwb3J0IEJBU0hfRFJGQz1+L2RlZXByYWNlci1wZWkvZ2xhY2lhci8wMzBfU2NyaXB0c19EUkZDCiMgaWYgYmFzaCBkb3RzCmlmIFsgLWYgIlwkQkFTSF9EUkZDLy5iYXNoRFJGQyIgXTsgdGhlbgogICAgZWNobyAiSG9sYSIKICAgIC4gIlwkQkFTSF9EUkZDLy5iYXNoRFJGQyIKZmkKCkVPTQoKCgojIElOVEFMTDogRklOQUwgLSBNeSBVYnVudHUgSU5JVAoKY2F0IDw8IEVPTSA+PiAke0hPTUVfVVNFUn0vbXlfdWJ1bnR1X2luaXQuc2gKCgojIElOVEFMTDogQSAtIERlZXBSYWNlciBVdGlscwpwaXAzIGluc3RhbGwgZGVlcHJhY2VyLXV0aWxzCnB5dGhvbjMgLW0gZGVlcHJhY2VyIGluc3RhbGwtY2xpIC0tZm9yY2UKCgojIElOU1RBTEw6IEIgLSBDT05EQSAoRW4gV0lQIHkgJikKIyBjdXJsIC0tb3V0cHV0IGFuYWNvbmRhLnNoIGh0dHBzOi8vcmVwby5hbmFjb25kYS5jb20vYXJjaGl2ZS9BbmFjb25kYTMtMjAyMy4wOS0wLUxpbnV4LXg4Nl82NC5zaAoKCiMgSU5TVEFMTDogQyAtIERPVFMgUHJlcGFyZQpjZCBcJHtIT01FX1VTRVJ9L2RlZXByYWNlci1wZWkvZGVlcHJhY2VyLWZvci1jbG91ZCAmJiAuL2Jpbi9wcmVwYXJlLnNoCgoKRU9NCgpjaG93biB1YnVudHUgICR7SE9NRV9VU0VSfS9teV91YnVudHVfaW5pdC5zaApjaGdycCB1YnVudHUgICR7SE9NRV9VU0VSfS9teV91YnVudHVfaW5pdC5zaApjaG1vZCAreCAgICAgICR7SE9NRV9VU0VSfS9teV91YnVudHVfaW5pdC5zaAoKCg==",
+    "TagSpecifications": [
+        {
+            "ResourceType": "instance",
+            "Tags": [
+                {
+                    "Key": "lab",
+                    "Value": "DeepRacer"
+                }
+            ]
+        }
+    ],
+    "InstanceMarketOptions": {
+        "MarketType": "spot",
+        "SpotOptions": {
+            "MaxPrice": "0.680000",
+            "SpotInstanceType": "persistent",
+            "InstanceInterruptionBehavior": "stop"
+        }
+    },
+    "CpuOptions": {
+        "CoreCount": 8,
+        "ThreadsPerCore": 2
+    },
+    "CapacityReservationSpecification": {
+        "CapacityReservationPreference": "open"
+    },
+    "HibernationOptions": {
+        "Configured": false
+    },
+    "MetadataOptions": {
+        "HttpTokens": "required",
+        "HttpPutResponseHopLimit": 2,
+        "HttpEndpoint": "enabled",
+        "HttpProtocolIpv6": "disabled",
+        "InstanceMetadataTags": "disabled"
+    },
+    "EnclaveOptions": {
+        "Enabled": false
+    },
+    "PrivateDnsNameOptions": {
+        "HostnameType": "ip-name",
+        "EnableResourceNameDnsARecord": true,
+        "EnableResourceNameDnsAAAARecord": false
+    },
+    "MaintenanceOptions": {
+        "AutoRecovery": "default"
+    },
+    "DisableApiStop": false
+}
+
+

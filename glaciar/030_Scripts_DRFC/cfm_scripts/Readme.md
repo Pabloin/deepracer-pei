@@ -1,29 +1,38 @@
 Cloud Formation Scripts
 
 
-     a) Crear un Security Group
-
+## Crear un Security Group
 
      - cfn-DRFC-sg.yaml
 
           Anduvo Ok!
           Lo bueno, hace el attach a la Default Network
 
-----------------
+### Describe un Security Group
+
+     aws ec2 describe-security-groups \
+           --group-ids sg-0bd9125ce1fe461ae     \
+           --output yaml    \
+           --profile pabloeze-glaciar
+
+     aws ec2 describe-security-groups `
+           --group-ids sg-0bd9125ce1fe461ae     `
+           --output yaml    `
+           --profile pabloeze-glaciar
+
+### Crear un Security Group
 
      aws cloudformation deploy     \
      --template ./cfn-DRFC-sg.yaml  \
      --stack-name my-dr-sg-stack     \
      --profile pabloeze-glaciar
 
-     #Windows
 
      aws cloudformation deploy --template ./cfn-DRFC-sg.yaml --stack-name my-dr-sg-stack --profile pabloeze-glaciar
 
-
      aws cloudformation deploy  `
           --template ./cfn-DRFC-sg.yaml `
-          --stack-name my-dr-sg--dos  `
+          --stack-name my-dr-sg--tres  `
           --profile pabloeze-glaciar
      
 
@@ -31,9 +40,22 @@ Cloud Formation Scripts
      and "`" for PowerShell.
      
      
-----------------
+### Crear un Launch Template
 
-     aws cloudformation deploy \
-     --template /path_to_template/my-template.json \
-     --stack-name my-new-stack \
-     --parameter-overrides Key1=Value1 Key2=Value2 \
+
+     aws ec2 describe-launch-templates   `
+          --launch-template-ids lt-0347d4d94c810ac3a  `
+          --profile racer1
+
+
+     aws ec2 create-launch-template \
+     --launch-template-name TemplateForEncryption \
+     --launch-template-data file://config.json
+
+
+     aws ec2 get-launch-template-data  `
+             --instance-id i-0c2a2a5130bcbe147  `
+             --query 'LaunchTemplateData'   `
+             --output yaml `
+             --profile racer1
+

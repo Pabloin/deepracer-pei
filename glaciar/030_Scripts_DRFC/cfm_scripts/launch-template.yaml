@@ -1,0 +1,74 @@
+
+
+
+BlockDeviceMappings:
+- DeviceName: /dev/sda1
+  Ebs:
+    DeleteOnTermination: true
+    Encrypted: false
+    SnapshotId: snap-091ad9e7cd4cb0736
+    VolumeSize: 60
+    VolumeType: gp2
+CapacityReservationSpecification:
+  CapacityReservationPreference: open
+CpuOptions:
+  CoreCount: 8
+  ThreadsPerCore: 2
+DisableApiStop: false
+DisableApiTermination: false
+EbsOptimized: false
+EnclaveOptions:
+  Enabled: false
+HibernationOptions:
+  Configured: false
+IamInstanceProfile:
+  Arn: arn:aws:iam::730335328884:instance-profile/DeepRacerRole
+ImageId: ami-0c7217cdde317cfec
+InstanceInitiatedShutdownBehavior: stop
+InstanceMarketOptions:
+  MarketType: spot
+  SpotOptions:
+    InstanceInterruptionBehavior: stop
+    MaxPrice: '0.680000'
+    SpotInstanceType: persistent
+InstanceType: c5.4xlarge
+KeyName: racer1-virginia
+MaintenanceOptions:
+  AutoRecovery: default
+MetadataOptions:
+  HttpEndpoint: enabled
+  HttpProtocolIpv6: disabled
+  HttpPutResponseHopLimit: 2
+  HttpTokens: required
+  InstanceMetadataTags: disabled
+Monitoring:
+  Enabled: false
+NetworkInterfaces:
+- AssociatePublicIpAddress: true
+  DeleteOnTermination: true
+  Description: ''
+  DeviceIndex: 0
+  Groups:
+  - sg-0c2288c9eb13509d8
+  InterfaceType: interface
+  Ipv6Addresses: []
+  NetworkCardIndex: 0
+  PrivateIpAddresses:
+  - Primary: true
+    PrivateIpAddress: 172.31.93.125
+  SubnetId: subnet-0b04987faa1ea2e62
+Placement:
+  AvailabilityZone: us-east-1a
+  GroupName: ''
+  Tenancy: default
+PrivateDnsNameOptions:
+  EnableResourceNameDnsAAAARecord: false
+  EnableResourceNameDnsARecord: true
+  HostnameType: ip-name
+TagSpecifications:
+- ResourceType: instance
+  Tags:
+  - Key: lab
+    Value: DeepRacer
+
+    
