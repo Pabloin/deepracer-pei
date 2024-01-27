@@ -7,8 +7,8 @@ apt install -y python3-pip
 
 
 HOME_USER=/home/ubuntu
-HOME_PROFILE_S3=dr-racers-config
-# HOME_PROFILE_S3=dr-racers-config-peze
+# HOME_PROFILE_S3=dr-racers-config
+HOME_PROFILE_S3=dr-racers-config-peze
 
 # INTALL: 1- AWS CLI
 # INTALL: 2- DeepRacer Utils
@@ -40,6 +40,8 @@ chown ubuntu  ${HOME_USER}/.ssh/id_rsa
 chgrp ubuntu  ${HOME_USER}/.ssh/id_rsa
 chown ubuntu  ${HOME_USER}/.ssh/id_rsa.pub
 chgrp ubuntu  ${HOME_USER}/.ssh/id_rsa.pub
+
+# Lo borro?
 chown ubuntu  ${HOME_USER}/.ssh/known_hosts
 chgrp ubuntu  ${HOME_USER}/.ssh/known_hosts
 
