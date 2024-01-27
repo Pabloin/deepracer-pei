@@ -89,11 +89,13 @@ python3 -m deepracer install-cli --force
 
 
 # INSTALL: B - CONDA (En WIP y &)
-# curl --output anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+curl --output ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+chmod +x      ~/anaconda.sh
+
 
 
 # INSTALL: C - DOTS Prepare
-cd \${HOME_USER}/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
+cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
 
 EOM
