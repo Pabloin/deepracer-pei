@@ -22,8 +22,9 @@ rm awscliv2.zip
 
 # INTALL: 3- Git Clone
 # No es nyuy seguro, hay cambiarlo
-aws s3 cp s3://dr-racers-config/id_rsa-racers       ${HOME_USER}/.ssh/id_rsa
-aws s3 cp s3://dr-racers-config/id_rsa-racers.pub   ${HOME_USER}/.ssh/id_rsa.pub
+aws s3 cp s3://dr-racers-config/known_hosts_finger_git  ${HOME_USER}/.ssh/known_hosts
+aws s3 cp s3://dr-racers-config/id_rsa-racers           ${HOME_USER}/.ssh/id_rsa
+aws s3 cp s3://dr-racers-config/id_rsa-racers.pub       ${HOME_USER}/.ssh/id_rsa.pub
 
 dos2unix ${HOME_USER}/.ssh/id_rsa
 dos2unix ${HOME_USER}/.ssh/id_rsa.pub
