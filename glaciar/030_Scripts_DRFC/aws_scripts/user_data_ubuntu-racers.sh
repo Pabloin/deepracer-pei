@@ -40,9 +40,7 @@ apt update -y
 apt-cache policy docker-ce
 apt install docker-ce -y 
 systemctl status docker
-usermod -aG docker ${USER}
-su - ${USER}
-docker ps -a
+
 
 # INTALL: 2- Git Clone
 # No es nyuy seguro, hay cambiarlo
@@ -122,15 +120,15 @@ sudo usermod -aG docker ${USER}
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
 
-# INSTALL
-# NVM - NPM y CDK
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-source ~/.bashrc
-nvm install --lts 18
-npm install -g aws-cdk
-nvm  --version
-node --version
-cdk  --version
+# # INSTALL
+# # NVM - NPM y CDK
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# source ~/.bashrc
+# nvm install --lts 18
+# npm install -g aws-cdk
+# nvm  --version
+# node --version
+# cdk  --version
 
 
 EOM
