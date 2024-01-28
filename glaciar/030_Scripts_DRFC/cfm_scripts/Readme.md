@@ -72,7 +72,7 @@ aws cloudformation describe-stack-events --stack-name my-dr-groups --profile rac
      Si quiero random numero ...
      Todavía no estoy seguro ....
      Está interesante la Lambda de la respuesta aceptada de:
-     
+
           https://stackoverflow.com/questions/57660653/how-to-create-some-random-or-unique-value-in-a-cloudformation-template
 
 
@@ -80,12 +80,12 @@ aws cloudformation describe-stack-events --stack-name my-dr-groups --profile rac
 
      aws cloudformation deploy  `
           --template ./cfn-DRFC-groups.yaml `
-          --stack-name my-dr-grupos  `
+          --stack-name dr-cloud-group-stack  `
           --capabilities CAPABILITY_NAMED_IAM `
           --profile racer1
 
      aws cloudformation delete-stack `
-          --stack-name my-dr-grupos `
+          --stack-name dr-cloud-group-stack `
           --profile racer1
 
      # Update (Create a Change Set)

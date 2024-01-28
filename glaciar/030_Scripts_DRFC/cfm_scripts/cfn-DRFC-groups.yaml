@@ -13,10 +13,10 @@ Parameters:
 
 Resources:
   
-  GrupoDRFC:
+  DRCloudGroup:
     Type: "AWS::IAM::Group"
     Properties:
-      GroupName: AdminDRFC3
+      GroupName: DR-Cloud-Admin
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AdministratorAccess
         - arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess
@@ -26,19 +26,19 @@ Resources:
   RacerUser:
     Type: AWS::IAM::User
     Properties:
-      UserName: RacerX
+      UserName: racer1
       LoginProfile: 
         Password: CambiameLaPas!!
         PasswordResetRequired: true
       Groups: 
-        - !Ref GrupoDRFC
+        - !Ref DRCloudGroup
       Path: /racers/
 
 
-  DeepRacerRoleNuevo:
+  DeepRacerCloudRole:
     Type: 'AWS::IAM::Role'
     Properties: 
-      RoleName: DeepRacerRoleNuevo # give a name to this role
+      RoleName: DeepRacerCloudRole 
       Description: IAM role for EC2 instance en DRFC
       ManagedPolicyArns: 
         - arn:aws:iam::aws:policy/AmazonKinesisVideoStreamsFullAccess
@@ -58,22 +58,22 @@ Resources:
             Action: 
               - 'sts:AssumeRole'
  #    MaxSessionDuration: 3600 # in seconds, 1 hour
-      Path: '/'
+      Path: '/racers/'
 
 
 
 Outputs:
 
-  GrupoDRFC:
-    Description: Grupo GrupoDRFC
-    Value: !Ref GrupoDRFC
+  DRCloudGroup:
+    Description: Grupo DRCloudGroup
+    Value: !Ref DRCloudGroup
 
   RacerUser:
     Description: User RacerUser
     Value: !Ref RacerUser
 
-  DeepRacerRoleNuevo:
-    Description: Role DeepRacerRoleNuevo
-    Value: !Ref DeepRacerRoleNuevo
+  DeepRacerCloudRole:
+    Description: Role DeepRacerCloudRole
+    Value: !Ref DeepRacerCloudRole
 
 
