@@ -80,6 +80,17 @@ Cloud Formation Scripts
           --profile racer2
 
 
+### Bucket S3 copy racers sample
+
+     aws s3 cp s3://dr-racers-config/id_rsa-racers           .home/ --profile racer1
+     aws s3 cp s3://dr-racers-config/id_rsa-racers.pub       .home/ --profile racer1
+     aws s3 cp s3://dr-racers-config/known_hosts_finger_git  .home/ --profile racer1
+
+     aws s3 cp .home/id_rsa-racers          s3://dr-racer2-config/id_rsa-racers           --profile racer2
+     aws s3 cp .home/id_rsa-racers.pub      s3://dr-racer2-config/id_rsa-racers.pub       --profile racer2
+     aws s3 cp .home/known_hosts_finger_git s3://dr-racer2-config/known_hosts_finger_git  --profile racer2
+
+
 ### Crear un Launch Template (En WIP ... )
 
 
