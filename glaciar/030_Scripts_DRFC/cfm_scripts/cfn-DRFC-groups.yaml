@@ -60,6 +60,15 @@ Resources:
  #    MaxSessionDuration: 3600 # in seconds, 1 hour
       Path: '/racers/'
 
+  
+  DeepRacerCloudProfile: 
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties: 
+      InstanceProfileName: DeepRacerCloudProfile
+      Roles: 
+        - !Ref DeepRacerCloudRole
+      Path: '/racers/'
+
 
 
 Outputs:
