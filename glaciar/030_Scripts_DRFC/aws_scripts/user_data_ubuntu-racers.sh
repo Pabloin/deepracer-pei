@@ -16,8 +16,9 @@ HOME_PROFILE_S3=dr-racers-config
 
 # INTALL: 0- Set Home
 # INTALL: 1- AWS CLI
-# INTALL: 2- Git Clone
-# INTALL: 3- DeepRacer Utils
+# INTALL: 2- Docker (CE)
+# INTALL: 3- Git Clone
+# INTALL: 4- DeepRacer Utils
 
 # INTALL: 0- Set Home
 cd ${HOME_ROOT}
@@ -29,7 +30,7 @@ unzip awscliv2.zip
 rm awscliv2.zip
 
 
-# INTALL Docker (CE) en Ubutntu 22
+# INTALL 2 -Docker (CE) en Ubutntu 22
 # Basado en:
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
 
@@ -41,6 +42,16 @@ apt-cache policy docker-ce
 apt install docker-ce -y 
 systemctl status docker
 
+
+# INSTALL  DICKE GPU
+# https://linuxhint.com/use-nvidia-gpu-docker-containers-ubuntu-22-04-lts/
+
+
+
+# INSTALL  NVIDIA DRRIVERS (WIP)
+# https://linuxhint.com/install-nvidia-drivers-on-ubuntu/
+# sudo apt install nvidia-driver-510
+# lsmod | grep nvidia
 
 # INTALL: 2- Git Clone
 # No es nyuy seguro, hay cambiarlo

@@ -15,38 +15,54 @@ Resources:
   SecurityGroupDRFC:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupName: "DR-SG-DRFC"
-      GroupDescription: "Deep Racer Security Group for DRFC"
+      GroupName: DR-SG-DRFC
+      GroupDescription: Deep Racer Security Group for DRFC
       SecurityGroupIngress:
+        - FromPort: 22
+          IpProtocol: tcp
+          CidrIp: 181.164.84.94/32
+          ToPort: 22
+          Description: SSH De My PC
         - FromPort: 80
           IpProtocol: tcp
           CidrIp: 0.0.0.0/0
           ToPort: 80
-        - FromPort: 8080
-          IpProtocol: tcp
-          CidrIp: 0.0.0.0/0
-          ToPort: 8080
-        - FromPort: 8888
-          IpProtocol: tcp
-          CidrIp: 0.0.0.0/0
-          ToPort: 8888
-        - FromPort: 22
-          IpProtocol: tcp
-          CidrIp: 0.0.0.0/0
-          ToPort: 22
-        - FromPort: 8100
-          IpProtocol: tcp
-          CidrIp: 0.0.0.0/0
-          ToPort: 8100
+          Description: Web HTTPS
         - FromPort: 443
           IpProtocol: tcp
           CidrIp: 0.0.0.0/0
           ToPort: 443
+          Description: Web HTTPS
+        - FromPort: 8080
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8080
+          Description: NGINX o Viewer
+        - FromPort: 8100
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8100
+          Description: Logs Config
+        - FromPort: 8888
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8888
+          Description: Jupyter Ntbk
         - FromPort: 8889
           IpProtocol: tcp
           CidrIp: 0.0.0.0/0
           ToPort: 8889
-
+          Description: Jupyter Lab
+        - FromPort: 9000
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 9000
+          Description: Minio Interno
+        - FromPort: 9001
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 9001
+          Description: Minio Web
 
 Outputs:
  
