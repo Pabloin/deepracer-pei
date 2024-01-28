@@ -75,6 +75,11 @@ Cloud Formation Scripts
           --stack-name dr-cloud-s3-stack  `
           --profile racer2
 
+     aws cloudformation delete-stack  `
+          --stack-name dr-cloud-s3-stack  `
+          --profile racer2
+
+
 ### Crear un Launch Template (En WIP ... )
 
 

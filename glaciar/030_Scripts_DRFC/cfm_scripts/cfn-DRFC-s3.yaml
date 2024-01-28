@@ -37,5 +37,9 @@ Outputs:
   DrConfigBucket:
     Description: Racer Bucket
     Value: !Ref DrConfigBucket
-  
- 
+
+  DrModelsBucket:
+    Description: Racer Bucket
+    Value: !Ref DrModelsBucket
+
+
