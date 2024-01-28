@@ -32,6 +32,17 @@ alias D008="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_008_local_gpu"
 alias D009="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_009_local_gpu"
 alias D010="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_010_local_gpu"
 
+alias D011="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_011_local_gpu"
+alias D012="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_012_local_gpu"
+alias D013="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_013_local_gpu"
+alias D014="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_014_local_gpu"
+alias D015="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_015_local_gpu"
+
+alias D016="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_016_local_gpu"
+alias D017="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_017_local_gpu"
+alias D018="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_018_local_gpu"
+alias D019="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_019_local_gpu"
+alias D020="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_020_local_gpu"
 
 
 function gia() {
