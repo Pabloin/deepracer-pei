@@ -68,8 +68,12 @@ Cloud Formation Scripts
           --profile racer1
 
 
+### Crear un Bucket de S3 (En WIP ... )
 
-
+     aws cloudformation deploy  `
+          --template ./cfn-DRFC-s3-wip.yaml `
+          --stack-name dr-cloud-s3-stack  `
+          --profile racer2
 
 ### Crear un Launch Template (En WIP ... )
 

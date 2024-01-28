@@ -15,20 +15,27 @@ Parameters:
 
 Resources:
   
-  RacerBucket: 
+  DrConfigBucket: 
     Type: 'AWS::S3::Bucket' 
     Properties:
-      BucketName: dr-racerx-bucket-lab
+      BucketName: dr-racer2-config
       Tags:
         - Key: lab
           Value: DeepRacer
 
+  DrModelsBucket: 
+    Type: 'AWS::S3::Bucket' 
+    Properties:
+      BucketName: dr-models-racer2-dots-to-pabloedu-gmail
+      Tags:
+        - Key: lab
+          Value: DeepRacer
   
 
 Outputs:
  
-  RacerBucket:
+  DrConfigBucket:
     Description: Racer Bucket
-    Value: !Ref RacerBucket
+    Value: !Ref DrConfigBucket
   
  
