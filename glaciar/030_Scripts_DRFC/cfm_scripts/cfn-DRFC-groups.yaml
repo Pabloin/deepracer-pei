@@ -1,0 +1,71 @@
+Description:  Un Cloud Formation que crea 
+  Un Grupo Admin
+  Un Usuario Racer 
+  Un Rol DeepRacer
+
+
+Parameters:
+    
+  MyLabName:
+    Description: Lab Name
+    Type: String
+    Default: Deep Racer Lab
+
+Resources:
+  
+  GrupoDRFC:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: AdminDRFC3
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+        - arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess
+        - arn:aws:iam::aws:policy/AWSBudgetsActionsWithAWSResourceControlAccess
+      Tags:
+        - Key: lab
+          Value: DeepRacer
+
+  RacerUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: RacerX
+      LoginProfile: 
+        Password: CambiameLaPas!!
+        PasswordResetRequired: true
+      Groups: 
+        - !Ref GrupoDRFC
+      Path: /racers/
+      Tags:
+        - Key: lab
+          Value: DeepRacer
+
+  DeepRacerRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RolName: DeepRacerRole
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/AmazonKinesisVideoStreamsFullAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/AmazonVPCReadOnlyAccess
+        - arn:aws:iam::aws:policy/AWSCloudFormationFullAccess
+        - arn:aws:iam::aws:policy/CloudWatchFullAccess
+        - arn:aws:iam::aws:policy/CloudWatchFullAccessV2
+      Tags:
+        - Key: lab
+          Value: DeepRacer
+
+Outputs:
+
+  GrupoDRFC:
+    Description: Grupo GrupoDRFC
+    Value: !Ref GrupoDRFC
+
+  RacerUser:
+    Description: User RacerUser
+    Value: !Ref RacerUser
+
+  DeepRacerRole:
+    Description: Role DeepRacerRole
+    Value: !Ref DeepRacerRole
+
+

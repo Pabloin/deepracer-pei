@@ -49,8 +49,8 @@ Cloud Formation Scripts
 
 
      aws ec2 create-launch-template \
-     --launch-template-name TemplateForEncryption \
-     --launch-template-data file://config.json
+          --launch-template-name TemplateForEncryption \
+          --launch-template-data file://config.json
 
 
      aws ec2 get-launch-template-data  `
@@ -59,3 +59,64 @@ Cloud Formation Scripts
              --output yaml `
              --profile racer1
 
+
+## Crear Grupo - User y Role
+
+     Links Utiles:
+     
+     https://shisho.dev/dojo/providers/aws/IAM/aws-iam-group/
+     https://dev.to/tiamatt/hands-on-aws-cloudformation-part-5-iam-users-groups-and-roles-5d9f
+
+
+
+     aws cloudformation deploy  `
+          --template ./cfn-DRFC-groups.yaml `
+          --stack-name my-dr-groups  `
+          --capabilities CAPABILITY_NAMED_IAM `
+          --profile racer1
+
+     aws cloudformation delete-stack `
+          --stack-name my-dr- `
+          --profile racer1
+
+     # Update (Create a Change Set)
+     # No funciona bien ...
+
+
+     aws cloudformation create-change-set  `
+          --stack-name arn:aws:cloudformation:us-east-1:730335328884:stack/my-dr-groups/0199e100-bd71-11ee-a28a-0a32c661bb95    `
+          --change-set-name SampleChangeSet2   `
+          --use-previous-template    `
+          --profile racer1
+
+
+     aws cloudformation create-change-set  `
+          --stack-name arn:aws:cloudformation:us-east-1:730335328884:stack/my-dr-groups/0199e100-bd71-11ee-a28a-0a32c661bb95    `
+          --change-set-name SampleChangeSet2   `
+          --template-body ./cfn-DRFC-groups.yaml `
+          --profile racer1
+
+
+    
+    
+--parameters ParameterKey="InstanceType",UsePreviousValue=true ParameterKey="KeyPairName",UsePreviousValue=true ParameterKey="Purpose",ParameterValue="production"
+
+
+     aws cloudformation update-stack  `
+          --template ./cfn-DRFC-groups.yaml `
+          --stack-name my-dr-groups  `
+          --capabilities CAPABILITY_NAMED_IAM `
+          --profile racer1
+
+  GrupoDRFC:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: AdminDRFC
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+        - arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess
+        - arn:aws:iam::aws:policy/AWSBudgetsActionsWithAWSResourceControlAccess
+
+      Path: String
+      Policies: 
+        - Policy

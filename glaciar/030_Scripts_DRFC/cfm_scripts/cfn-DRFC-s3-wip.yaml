@@ -1,0 +1,34 @@
+Description:  Un Cloud Formation que crea los Buckets
+  Esta en WIP
+  Los Buckets deseados son
+  El de las ssh
+  Etc ...
+  Como lo hago privado y me quedo tranquilo?
+
+
+Parameters:
+    
+  MyLabName:
+    Description: Lab Name
+    Type: String
+    Default: Deep Racer Lab
+
+Resources:
+  
+  RacerBucket: 
+    Type: 'AWS::S3::Bucket' 
+    Properties:
+      BucketName: dr-racerx-bucket-lab
+      Tags:
+        - Key: lab
+          Value: DeepRacer
+
+  
+
+Outputs:
+ 
+  RacerBucket:
+    Description: Racer Bucket
+    Value: !Ref RacerBucket
+  
+ 
