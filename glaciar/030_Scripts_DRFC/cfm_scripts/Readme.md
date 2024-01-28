@@ -68,6 +68,14 @@ aws cloudformation describe-stack-events --stack-name my-dr-groups --profile rac
      https://shisho.dev/dojo/providers/aws/IAM/aws-iam-group/
      https://dev.to/tiamatt/hands-on-aws-cloudformation-part-5-iam-users-groups-and-roles-5d9f
 
+     NOTA:
+     Si quiero random numero ...
+     Todavía no estoy seguro ....
+     Está interesante la Lambda de la respuesta aceptada de:
+     
+          https://stackoverflow.com/questions/57660653/how-to-create-some-random-or-unique-value-in-a-cloudformation-template
+
+
 
 
      aws cloudformation deploy  `
