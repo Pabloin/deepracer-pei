@@ -26,9 +26,11 @@ alias D003="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_003_aws_cpu"
 # TODO: Se vana a agregar o FIX It!
 alias D004="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_004_aws_cpu"
 alias D005="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_005_aws_cpu"
-alias D006="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_006_aws_cpu"
-alias D007="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_007_aws_cpu"
-alias D008="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_008_aws_cpu"
+alias D006="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_006_local_gpu"
+alias D007="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_007_local_gpu"
+alias D008="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_008_local_gpu"
+alias D009="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_009_local_gpu"
+alias D010="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_010_local_gpu"
 
 
 
