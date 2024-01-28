@@ -33,7 +33,8 @@ Cloud Formation Scripts
      aws cloudformation deploy  `
           --template ./cfn-DRFC-sg.yaml `
           --stack-name dr-cloud-sg-stack  `
-          --profile racer2
+          --region eu-north-1  `
+          --profile racer1
      
 
      When entering multi-line commands, you'll use "\" for Bash 
@@ -71,13 +72,21 @@ Cloud Formation Scripts
 ### Crear un Bucket de S3 (En WIP ... )
 
      aws cloudformation deploy  `
-          --template ./cfn-DRFC-s3-wip.yaml `
+          --template ./cfn-DRFC-s3.yaml `
           --stack-name dr-cloud-s3-stack  `
           --profile racer2
 
      aws cloudformation delete-stack  `
           --stack-name dr-cloud-s3-stack  `
           --profile racer2
+
+}
+     aws cloudformation deploy  `
+          --template ./cfn-DRFC-s3.yaml `
+          --stack-name dr-cloud-s3-stack  `
+          --region eu-north-1  `
+          --profile racer1
+
 
 
 ### Bucket S3 copy racers sample
@@ -89,6 +98,10 @@ Cloud Formation Scripts
      aws s3 cp .home/id_rsa-racers          s3://dr-racer2-config/id_rsa-racers           --profile racer2
      aws s3 cp .home/id_rsa-racers.pub      s3://dr-racer2-config/id_rsa-racers.pub       --profile racer2
      aws s3 cp .home/known_hosts_finger_git s3://dr-racer2-config/known_hosts_finger_git  --profile racer2
+
+     aws s3 cp id_rsa-racers          s3://dr-racer1-stoc-config/id_rsa-racers           --profile racer1
+     aws s3 cp id_rsa-racers.pub      s3://dr-racer1-stoc-config/id_rsa-racers.pub       --profile racer1
+     aws s3 cp known_hosts_finger_git s3://dr-racer1-stoc-config/known_hosts_finger_git  --profile racer1
 
 
 ### Crear un Launch Template (En WIP ... )
@@ -111,3 +124,35 @@ Cloud Formation Scripts
              --profile racer1
              
 aws cloudformation describe-stack-events --stack-name my-dr-groups --profile racer1
+
+
+
+## Precio de las Instancias SPOT
+
+aws ec2 describe-spot-price-history   `
+     --instance-types m1.xlarge  `
+     --start-time 2024-01-06T07:08:09  `
+     --end-time 2024-01-06T08:09:10    
+
+g4dn.2xlarge
+
+aws ec2 describe-spot-price-history   `
+     --instance-types g4dn.2xlarge     `
+     --start-time 2024-01-26T07:08:09  `
+     --end-time   2024-01-27T08:09:10   `
+     --region sa-east-1
+     
+      `
+     --region us-east-1
+
+
+     Europe (Milan)	               eu-south-1
+     Europe (Stockholm)	          eu-north-1
+     South America (São Paulo)	sa-east-1
+     Asia Pacific (Osaka)	     ap-northeast-3
+     Middle East (Bahrain)	     me-south-1
+     Middle East (Bahrain)	     me-south-1
+
+
+Europe (Stockholm)
+eu-north-1

@@ -18,7 +18,7 @@ Resources:
   DrConfigBucket: 
     Type: 'AWS::S3::Bucket' 
     Properties:
-      BucketName: dr-racer2-config
+      BucketName: dr-racer1-stoc-config
       Tags:
         - Key: lab
           Value: DeepRacer
@@ -26,7 +26,7 @@ Resources:
   DrModelsBucket: 
     Type: 'AWS::S3::Bucket' 
     Properties:
-      BucketName: dr-models-racer2-dots-to-pabloedu-gmail
+      BucketName: dr-racer1-stoc-models-to-pabloedu-gmail
       Tags:
         - Key: lab
           Value: DeepRacer
