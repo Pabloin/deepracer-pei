@@ -4,6 +4,8 @@ apt install -y git
 apt install -y tree dos2unix
 apt install -y unzip
 apt install -y python3-pip
+apt install -y docker.io
+
 
 HOME_ROOT=/root
 HOME_USER=/home/ubuntu
@@ -91,9 +93,13 @@ pip3 install deepracer-utils
 python3 -m deepracer install-cli --force
 
 
+
 # INSTALL: B - CONDA (En WIP y &)
 curl --output ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
 chmod +x      ~/anaconda.sh
+
+
+
 
 
 
