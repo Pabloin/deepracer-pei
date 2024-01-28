@@ -113,7 +113,8 @@ curl --output ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-
 chmod +x      ~/anaconda.sh
 
 
-
+# Ejecutar Docker sin SUDO (log out of the server and back in)
+sudo usermod -aG docker ${USER}
 
 
 
