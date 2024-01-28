@@ -4,7 +4,6 @@ apt install -y git
 apt install -y tree dos2unix
 apt install -y unzip
 apt install -y python3-pip
-apt install -y docker.io
 
 
 HOME_ROOT=/root
@@ -29,6 +28,21 @@ unzip awscliv2.zip
 ./aws/install
 rm awscliv2.zip
 
+
+# INTALL Docker (CE) en Ubutntu 22
+# Basado en:
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+
+apt install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" |  tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update -y
+apt-cache policy docker-ce
+apt install docker-ce -y 
+systemctl status docker
+usermod -aG docker ${USER}
+su - ${USER}
+docker ps -a
 
 # INTALL: 2- Git Clone
 # No es nyuy seguro, hay cambiarlo
