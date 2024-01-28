@@ -55,4 +55,10 @@ function prof() {
     fi
 }
 
+
+cat ~/.aws/config | grep profile
+
+echo ""
+
+
 alias hello="cat ~/hello.txt"
