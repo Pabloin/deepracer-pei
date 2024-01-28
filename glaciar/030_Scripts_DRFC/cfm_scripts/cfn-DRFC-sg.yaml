@@ -1,5 +1,7 @@
-Description:  Un Cloud Formation que crea un Security Group
-
+Description:  Un Cloud Formation con la infra de DRFC
+  Por ahora es un Security Group
+  Creo que hay que agregar un LT
+  Los Buckets los tengo en otro CFM
 
 Parameters:
     
