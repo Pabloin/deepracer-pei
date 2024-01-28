@@ -21,9 +21,7 @@ Resources:
         - arn:aws:iam::aws:policy/AdministratorAccess
         - arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess
         - arn:aws:iam::aws:policy/AWSBudgetsActionsWithAWSResourceControlAccess
-      Tags:
-        - Key: lab
-          Value: DeepRacer
+
 
   RacerUser:
     Type: AWS::IAM::User
@@ -35,14 +33,13 @@ Resources:
       Groups: 
         - !Ref GrupoDRFC
       Path: /racers/
-      Tags:
-        - Key: lab
-          Value: DeepRacer
 
-  DeepRacerRole:
+
+  DeepRacerRoleNuevo:
     Type: 'AWS::IAM::Role'
-    Properties:
-      RolName: DeepRacerRole
+    Properties: 
+      RoleName: DeepRacerRoleNuevo # give a name to this role
+      Description: IAM role for EC2 instance en DRFC
       ManagedPolicyArns: 
         - arn:aws:iam::aws:policy/AmazonKinesisVideoStreamsFullAccess
         - arn:aws:iam::aws:policy/AmazonS3FullAccess
@@ -50,9 +47,20 @@ Resources:
         - arn:aws:iam::aws:policy/AWSCloudFormationFullAccess
         - arn:aws:iam::aws:policy/CloudWatchFullAccess
         - arn:aws:iam::aws:policy/CloudWatchFullAccessV2
-      Tags:
-        - Key: lab
-          Value: DeepRacer
+      AssumeRolePolicyDocument: # (required) only one trust policy with a role
+        Version: '2012-10-17'
+        Statement: 
+          - 
+            Effect: Allow
+            Principal: 
+              Service: 
+                - 'ec2.amazonaws.com'
+            Action: 
+              - 'sts:AssumeRole'
+ #    MaxSessionDuration: 3600 # in seconds, 1 hour
+      Path: '/'
+
+
 
 Outputs:
 
@@ -64,8 +72,8 @@ Outputs:
     Description: User RacerUser
     Value: !Ref RacerUser
 
-  DeepRacerRole:
-    Description: Role DeepRacerRole
-    Value: !Ref DeepRacerRole
+  DeepRacerRoleNuevo:
+    Description: Role DeepRacerRoleNuevo
+    Value: !Ref DeepRacerRoleNuevo
 
 

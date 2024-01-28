@@ -58,12 +58,13 @@ Cloud Formation Scripts
              --query 'LaunchTemplateData'   `
              --output yaml `
              --profile racer1
-
+             
+aws cloudformation describe-stack-events --stack-name my-dr-groups --profile racer1
 
 ## Crear Grupo - User y Role
 
      Links Utiles:
-     
+
      https://shisho.dev/dojo/providers/aws/IAM/aws-iam-group/
      https://dev.to/tiamatt/hands-on-aws-cloudformation-part-5-iam-users-groups-and-roles-5d9f
 
@@ -71,12 +72,12 @@ Cloud Formation Scripts
 
      aws cloudformation deploy  `
           --template ./cfn-DRFC-groups.yaml `
-          --stack-name my-dr-groups  `
+          --stack-name my-dr-grupos  `
           --capabilities CAPABILITY_NAMED_IAM `
           --profile racer1
 
      aws cloudformation delete-stack `
-          --stack-name my-dr- `
+          --stack-name my-dr-grupos `
           --profile racer1
 
      # Update (Create a Change Set)
