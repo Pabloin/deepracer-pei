@@ -26,7 +26,7 @@ Resources:
   RacerUser:
     Type: AWS::IAM::User
     Properties:
-      UserName: racer1
+      UserName: racer2
       LoginProfile: 
         Password: CambiameLaPas!!
         PasswordResetRequired: true

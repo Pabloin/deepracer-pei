@@ -24,7 +24,7 @@ Cloud Formation Scripts
 
      aws cloudformation deploy     \
      --template ./cfn-DRFC-sg.yaml  \
-     --stack-name my-dr-sg-stack     \
+     --stack-name dr-cloud-sg-stack  \
      --profile pabloeze-glaciar
 
 
@@ -32,35 +32,14 @@ Cloud Formation Scripts
 
      aws cloudformation deploy  `
           --template ./cfn-DRFC-sg.yaml `
-          --stack-name my-dr-sg--tres  `
-          --profile pabloeze-glaciar
+          --stack-name dr-cloud-sg-stack  `
+          --profile racer2
      
 
      When entering multi-line commands, you'll use "\" for Bash 
      and "`" for PowerShell.
      
      
-### Crear un Launch Template
-
-
-     aws ec2 describe-launch-templates   `
-          --launch-template-ids lt-0347d4d94c810ac3a  `
-          --profile racer1
-
-
-     aws ec2 create-launch-template \
-          --launch-template-name TemplateForEncryption \
-          --launch-template-data file://config.json
-
-
-     aws ec2 get-launch-template-data  `
-             --instance-id i-0c2a2a5130bcbe147  `
-             --query 'LaunchTemplateData'   `
-             --output yaml `
-             --profile racer1
-             
-aws cloudformation describe-stack-events --stack-name my-dr-groups --profile racer1
-
 ## Crear Grupo - User y Role
 
      Links Utiles:
@@ -82,50 +61,33 @@ aws cloudformation describe-stack-events --stack-name my-dr-groups --profile rac
           --template ./cfn-DRFC-groups.yaml `
           --stack-name dr-cloud-group-stack  `
           --capabilities CAPABILITY_NAMED_IAM `
-          --profile racer1
+          --profile racer2
 
      aws cloudformation delete-stack `
           --stack-name dr-cloud-group-stack `
           --profile racer1
 
-     # Update (Create a Change Set)
-     # No funciona bien ...
 
 
-     aws cloudformation create-change-set  `
-          --stack-name arn:aws:cloudformation:us-east-1:730335328884:stack/my-dr-groups/0199e100-bd71-11ee-a28a-0a32c661bb95    `
-          --change-set-name SampleChangeSet2   `
-          --use-previous-template    `
+
+
+### Crear un Launch Template (En WIP ... )
+
+
+     aws ec2 describe-launch-templates   `
+          --launch-template-ids lt-0347d4d94c810ac3a  `
           --profile racer1
 
 
-     aws cloudformation create-change-set  `
-          --stack-name arn:aws:cloudformation:us-east-1:730335328884:stack/my-dr-groups/0199e100-bd71-11ee-a28a-0a32c661bb95    `
-          --change-set-name SampleChangeSet2   `
-          --template-body ./cfn-DRFC-groups.yaml `
-          --profile racer1
+     aws ec2 create-launch-template \
+          --launch-template-name TemplateForEncryption \
+          --launch-template-data file://config.json
 
 
-    
-    
---parameters ParameterKey="InstanceType",UsePreviousValue=true ParameterKey="KeyPairName",UsePreviousValue=true ParameterKey="Purpose",ParameterValue="production"
-
-
-     aws cloudformation update-stack  `
-          --template ./cfn-DRFC-groups.yaml `
-          --stack-name my-dr-groups  `
-          --capabilities CAPABILITY_NAMED_IAM `
-          --profile racer1
-
-  GrupoDRFC:
-    Type: "AWS::IAM::Group"
-    Properties:
-      GroupName: AdminDRFC
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/AdministratorAccess
-        - arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess
-        - arn:aws:iam::aws:policy/AWSBudgetsActionsWithAWSResourceControlAccess
-
-      Path: String
-      Policies: 
-        - Policy
+     aws ec2 get-launch-template-data  `
+             --instance-id i-0c2a2a5130bcbe147  `
+             --query 'LaunchTemplateData'   `
+             --output yaml `
+             --profile racer1
+             
+aws cloudformation describe-stack-events --stack-name my-dr-groups --profile racer1
