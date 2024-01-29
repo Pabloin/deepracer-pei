@@ -39,19 +39,48 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" |  tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt update -y
 apt-cache policy docker-ce
-apt install docker-ce -y 
+apt install -y docker-ce docker-ce docker-ce-cli containerd.io docker-compose-plugin
 systemctl status docker
+usermod -aG docker ubuntu
 
 
-# INSTALL  DICKE GPU
-# https://linuxhint.com/use-nvidia-gpu-docker-containers-ubuntu-22-04-lts/
+# Installing NVIDIA Container Toolkit GPG Keys on Ubuntu 22.04:
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"  | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# vim /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+# deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/$(ARCH) /
+# #deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu22.04/$(ARCH) /
+
+cat << EOM > /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/\$(ARCH) /
+#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu22.04/\$(ARCH) /
+
+EOM
+apt update -y
+apt install -y nvidia-docker2
+
+sudo service docker stop
+sudo service docker start
+
+# Se necesita un Reboot tambien ...?
+# sudo reboot
+
+# Checking if NVIDIA GPU is Accessible from Docker Containers in Ubuntu 22.04 LTS:
+docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
 
 
 
-# INSTALL  NVIDIA DRRIVERS (WIP)
+
+# INSTALL y VERIFICAR NVIDIA DRRIVERS (WIP)
 # https://linuxhint.com/install-nvidia-drivers-on-ubuntu/
-# sudo apt install nvidia-driver-510
-# lsmod | grep nvidia
+apt -y install nvidia-driver-510
+# Necesita REBOOT ... 
+lsmod | grep nvidia
+nvidia-smi
+
 
 # INTALL: 2- Git Clone
 # No es nyuy seguro, hay cambiarlo
@@ -122,13 +151,17 @@ curl --output ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-
 chmod +x      ~/anaconda.sh
 
 
-# Ejecutar Docker sin SUDO (log out of the server and back in)
-sudo usermod -aG docker ${USER}
-
+# VErificacion NVIDIA
+lsmod | grep nvidia
+nvidia-smi
+# Checking if NVIDIA GPU is Accessible from Docker Containers in Ubuntu 22.04 LTS:
+docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
 
 
 # INSTALL: C - DOTS Prepare
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
+
+
 
 
 # # INSTALL
