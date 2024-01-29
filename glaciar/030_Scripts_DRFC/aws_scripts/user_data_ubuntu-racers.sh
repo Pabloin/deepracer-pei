@@ -4,7 +4,7 @@ apt install -y git
 apt install -y tree dos2unix
 apt install -y unzip
 apt install -y python3-pip
-
+apt install -y net-tools
 
 HOME_ROOT=/root
 HOME_USER=/home/ubuntu

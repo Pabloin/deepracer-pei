@@ -136,3 +136,37 @@ Comandos:
 
     apt install -y nvidia-driver-510
     
+
+
+
+
+
+# COMO DETECTAR y ANULAR A 
+https://darren-broderick.medium.com/aws-deepracer-local-training-drfc-fd550f619410
+
+
+    sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+    sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+    sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+
+    Verificar si tenemos IPv6: ifconfig
+    
+        ip addr
+        ip addr | grep inet6
+        ip -6 addr
+        ifconfig | grep inet6
+
+    Linux: Desactivar IPv6 de forma temporal
+
+        sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
+    Linux: Desactivar IPv6 de forma permanente
+
+        sudo vim /etc/sysctl.conf
+
+        net.ipv6.conf.all.disable_ipv6=1
+        net.ipv6.conf.default.disable_ipv6=1
+
+
+
