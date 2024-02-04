@@ -45,7 +45,7 @@ nacl=$(aws ec2 describe-network-acls --filters Name=vpc-id,Values=$vpc --query '
 
 aws cloudformation deploy --template ./base-resources.yaml \
 						  --stack-name $stackName  \
-						  --capabilities CAPABILITY_IAM \ 
+						  --capabilities CAPABILITY_IAM \
 						  --parameter-overrides ${subnetsConfig}  \
 						  VPC=$vpc MyIPAddress=$ip NetworkAclId=$nacl RuleNumber=$ruleN
 						  
