@@ -1,5 +1,5 @@
 # deepracer-pei
-Empiezo con DRFC
+Empiezo con DOTS
 
 
 Esta es la config 000
