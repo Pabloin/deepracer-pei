@@ -39,7 +39,6 @@ Resources:
             !ImportValue
             'Fn::Sub': '${ResourcesStackName}-InstanceProfile'
         ImageId: !Ref AmiId
-        KeyName: GlaciarVirginia
         InstanceType: !Ref InstanceType
         InstanceMarketOptions:
           MarketType: spot

@@ -48,6 +48,7 @@ Resources:
             !ImportValue
             'Fn::Sub': '${ResourcesStackName}-InstanceProfile'
         ImageId: !Ref AmiId
+        KeyName: GlaciarVirginia
         InstanceType: !Ref InstanceType
         BlockDeviceMappings:
           - DeviceName: /dev/sda1

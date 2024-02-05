@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: Setup a spot EC2 Autoscaling Group for deep racer
+Description: Setup a standard EC2 instance for deep racer
 
 Parameters:
   InstanceType:
@@ -13,7 +13,7 @@ Parameters:
     Type: Number
     Description: timeout in minutes after which training is stopped and this stack is deleted
     Default: 60
-    MinValue: 10
+    MinValue: 0
     MaxValue: 1440 # 24 hours
   AmiId:
     Type: String
@@ -24,8 +24,17 @@ Parameters:
     Type: String
 Outputs:
 
+  DNS:
+    Value: !GetAtt Instance.PublicDnsName
+
   Instance:
-    Value: !Ref ASG
+    Value: !Ref Instance
+
+  InstanceIP:
+    Description: The IP of the instance created
+    Value: !GetAtt Instance.PublicIp
+    Export:
+      Name: !Sub "${AWS::StackName}-PublicIp"
 
 Resources:
 
@@ -39,41 +48,16 @@ Resources:
             !ImportValue
             'Fn::Sub': '${ResourcesStackName}-InstanceProfile'
         ImageId: !Ref AmiId
-        KeyName: GlaciarVirginia
         InstanceType: !Ref InstanceType
-        InstanceMarketOptions:
-          MarketType: spot
         BlockDeviceMappings:
           - DeviceName: /dev/sda1
             Ebs:
               VolumeType: gp3
               VolumeSize: 60
               DeleteOnTermination: 'true'
-        UserData:
-          Fn::Base64: !Sub |
-            #!/bin/bash -xe
-            /usr/local/bin/cfn-init --stack ${AWS::StackName} --resource ASG --region ${AWS::Region}
-            bash
-            sudo su ubuntu
-            cd /home/ubuntu/deepracer-for-cloud/
-            source bin/activate.sh
-            export DEEPRACER_S3_URI=${BUCKET}
-            export CUSTOM_FILE_LOCATION="${CUSTOMFILELOCATION}"
-        SecurityGroupIds:
-        - !ImportValue
-          'Fn::Sub': '${ResourcesStackName}-SecurityGroup'
-        TagSpecifications:
-        - ResourceType: instance        
-          Tags:
-          - Key: Name
-            Value: !Sub '${AWS::StackName}'
-        - ResourceType: volume      
-          Tags:
-          - Key: Name
-            Value: !Sub '${AWS::StackName}'
 
-  ASG:
-    Type: AWS::AutoScaling::AutoScalingGroup
+  Instance:
+    Type: AWS::EC2::Instance
     CreationPolicy:
       ResourceSignal:
         Count: '1'
@@ -90,11 +74,11 @@ Resources:
 
             3-signal-cfn:
               command:
-                      !Sub "bash -c '/usr/local/bin/cfn-signal -s true -e 0 --stack ${AWS::StackName} --resource ASG --region ${AWS::Region}'"
-
+                      !Sub "bash -c '/usr/local/bin/cfn-signal -s true -e 0 --stack ${AWS::StackName} --resource Instance --region ${AWS::Region}'"
+            
             4-start-train:
               command: "su -l ubuntu bash -c '/home/ubuntu/bin/start_training.sh'"
-
+            
           files:
             /tmp/fstabcontent.txt:
               content:
@@ -162,32 +146,6 @@ Resources:
               mode : "000755"
               owner: root
               group: root 
-            /home/ubuntu/deepracer-for-cloud/interrupt_spot.sh:
-              content: |
-                date >> /tmp/interrupt.log
-                sudo su ubuntu
-                INTERRUPT_TIME=$(date '+%Y%m%d-%H%M')
-                cd ~/deepracer-for-cloud
-                source bin/activate.sh
-                source /etc/profile.d/my_bucket.sh
-                dr-reload
-                dr-upload-model -bfw
-                dr-stop-training
-                sed -i '/DR_LOCAL_S3_PRETRAINED/d' ~/deepracer-for-cloud/run.env
-                sed -i -e '$aDR_LOCAL_S3_PRETRAINED=True' ~/deepracer-for-cloud/run.env
-                PRE_TRAINED_LOCATION=$(cat run.env | grep DR_LOCAL_S3_MODEL_PREFIX= | awk -F'=' '{print $2}')
-                sed -i 's|-continued-.*||' ~/deepracer-for-cloud/run.env
-                TRAINING_LOCATION=$(cat run.env | grep DR_LOCAL_S3_MODEL_PREFIX= | awk -F'=' '{print $2}')
-                UPLOAD_LOCATION=$(cat run.env | grep DR_UPLOAD_S3_PREFIX= | awk -F'=' '{print $2}')
-                sed -i -e '$aDR_LOCAL_S3_PRETRAINED_PREFIX=PLACEHOLDER' ~/deepracer-for-cloud/run.env
-                sed -i "s|DR_LOCAL_S3_PRETRAINED_PREFIX=PLACEHOLDER|DR_LOCAL_S3_PRETRAINED_PREFIX=$PRE_TRAINED_LOCATION|" ~/deepracer-for-cloud/run.env
-                sed -i "s|DR_LOCAL_S3_MODEL_PREFIX=$TRAINING_LOCATION|DR_LOCAL_S3_MODEL_PREFIX=$TRAINING_LOCATION-continued-$INTERRUPT_TIME|" ~/deepracer-for-cloud/run.env
-                sed -i "s|DR_UPLOAD_S3_PREFIX=$UPLOAD_LOCATION|DR_UPLOAD_S3_PREFIX=$UPLOAD_LOCATION-continued-$INTERRUPT_TIME|" ~/deepracer-for-cloud/run.env
-                sed -i -e '$aDR_LOCAL_S3_PRETRAINED_CHECKPOINT=last' ~/deepracer-for-cloud/run.env
-                aws s3 cp ~/deepracer-for-cloud/run.env s3://$DEEPRACER_S3_URI/$DR_LOCAL_S3_CUSTOM_FILES_PREFIX/
-              mode : "000755"
-              owner: ubuntu
-              group: ubuntu
             /home/ubuntu/bin/menu.html:
               content: |
                 <!DOCTYPE html>
@@ -210,7 +168,7 @@ Resources:
                 <p><a href="completedlaps.txt">Completed Laps - last step from Robomaker output (all Workers)</a></p>
                 
                 <h2>Configuration files</h2>
-                <p><a href="run.env.txt">run.env</a></p>
+                <p><a href="run.env.txt" >run.env</a></p>
                 <p><a href="system.env.txt">system.env</a></p>
                 <p><a href="hyperparameters.json">hyperparameters.json</a></p>
                 <p><a href="model_metadata.json">model_metadata.json</a></p>
@@ -239,7 +197,7 @@ Resources:
               content: |
                 <!DOCTYPE html>
                 <html>
-                <body>       
+                <body>    
                 <h2>Training analysis is typically available 20-30 minutes into training.  Please refresh in a few minutes. </h2>
                 </body>
                 </html>
@@ -261,7 +219,7 @@ Resources:
               content: |
                 <!DOCTYPE html>
                 <html>
-                <body>        
+                <body>  
                 <h2>Training analysis is typically available 20-30 minutes into training.  Please refresh in a few minutes. </h2>
                 </body>
                 </html>
@@ -272,7 +230,7 @@ Resources:
               content: |
                 <!DOCTYPE html>
                 <html>
-                <body>        
+                <body>   
                 <h2>Training analysis is typically available 20-30 minutes into training.  Please refresh in a few minutes. </h2>
                 </body>
                 </html>
@@ -283,7 +241,7 @@ Resources:
               content: |
                 <!DOCTYPE html>
                 <html>
-                <body>        
+                <body>
                 <h2>Training analysis is typically available 20-30 minutes into training.  Please refresh in a few minutes. </h2>
                 </body>
                 </html>
@@ -294,7 +252,7 @@ Resources:
               content: |
                 <!DOCTYPE html>
                 <html>
-                <body>         
+                <body> 
                 <h2>Training analysis is typically available 20-30 minutes into training.  Please refresh in a few minutes. </h2>
                 </body>
                 </html>
@@ -358,6 +316,7 @@ Resources:
                   echo "=====Memory usage=====" >> $USAGE_OUTPUT
                   cat /proc/meminfo | egrep '(^MemTotal|^MemFree|^SwapTotal|^SwapFree)' >> $USAGE_OUTPUT 2>&1
                   
+                  
                   echo "=====Robomaker Testing result logs (all Workers)=====" >> $USAGE_OUTPUT
                   for name in `docker ps --format "{{.Names}}" | grep obomaker`
                   do
@@ -366,8 +325,8 @@ Resources:
                   done
 
                   mv deepracer-0_robomaker.1.*.log robomaker1.log
-
-                  echo "=====Sagemaker training logs=====" >> $USAGE_OUTPUT
+                  
+                  echo  "=====Sagemaker training logs=====" >> $USAGE_OUTPUT
                   docker logs $(dr-find-sagemaker) 2>&1 | egrep '^Training>' | tail -n 10 >> $USAGE_OUTPUT
                   
                   echo "=====Robomaker Top 10 completed laps (all Workers)=====" >> $USAGE_OUTPUT
@@ -446,6 +405,7 @@ Resources:
             /home/ubuntu/bin/start_training.sh:
               content: |
                 #!/bin/bash
+
                 source /etc/profile.d/my_custom_files.sh
                 aws sns publish --topic-arn $MY_SNS_TOPIC --message "Training has initiated on a new instance.  The new url to monitor progress is http://$PUBLIC_IP:8100/menu.html" --region $DEEPRACER_REGION
                 cd ~/deepracer-for-cloud
@@ -1046,129 +1006,30 @@ Resources:
               owner: ubuntu
               group: ubuntu
     Properties:
-      AvailabilityZones: !GetAZs
+      SecurityGroupIds:
+        - !ImportValue
+          'Fn::Sub': '${ResourcesStackName}-SecurityGroup'
+      Tags:
+        - Key: Name
+          Value: !Sub '${AWS::StackName}'
       LaunchTemplate:
         LaunchTemplateId: !Ref LaunchTemplate
         Version: !GetAtt LaunchTemplate.LatestVersionNumber
-      MaxSize: '1'
-      MinSize: '0'
-      DesiredCapacity: '1'
-
-
-  SpotInterruptionHandlerFunction:
-    Type: AWS::Lambda::Function
-    DependsOn:
-    - LambdaFunctionRole
-    Properties:
-      Handler: index.handler
-      Role: !GetAtt LambdaFunctionRole.Arn
-      Code:
-        ZipFile: !Sub |
-          import boto3
-          from botocore.exceptions import ClientError
-          import os
-
-          def handler(event, context):
-
-              asg_created_by_this_stack = '${ASG}'
-              asg_client = boto3.client('autoscaling')
-              asg_info = asg_client.describe_auto_scaling_groups(
-                  AutoScalingGroupNames=[
-                      '${ASG}',
-                  ],
-              )
-              instance_in_the_asg = asg_info['AutoScalingGroups'][0]['Instances'][0]['InstanceId']
-              instance_id = event['detail']['instance-id']
-              instanceAction = event['detail']['instance-action']
-
-              print("Handling spot instance interruption notification for instance {id}".format(id=instance_id))
-
-              if instance_in_the_asg != instance_id:
-                  print("Interrupted instance was not created by the ASG in this stack.")
-                  return
-
-              ssm_client = boto3.client('ssm')
-              sns_client = boto3.client('sns')
-              try:
-                  response = ssm_client.send_command(
-                      InstanceIds=[instance_id],
-                      DocumentName='AWS-RunShellScript',
-                      Parameters={'commands': ['su - ubuntu bash -lc /home/ubuntu/deepracer-for-cloud/interrupt_spot.sh']},
-                      CloudWatchOutputConfig={'CloudWatchOutputEnabled': True},
-                      TimeoutSeconds=90)
-                  print(f'Running commands on instance {instance_id}. Command id: {id}')
-              except ssm_client.exceptions.InvalidInstanceId:
-                  print("SSM agent not running.")
-              except ClientError as e:
-                  print(e.response['Error']['Message'])
-              notification_topic = os.environ['INTERRUPTION_NOTIFICATION']
-              sns_client.publish(TopicArn=notification_topic, Message=f'Termination notification instance: {instance_id} stack: ${AWS::StackName}')
-      Runtime: python3.11
-      Timeout: 120
-      Environment:
-        Variables:
-          INTERRUPTION_NOTIFICATION: !ImportValue
-                                     'Fn::Sub': '${ResourcesStackName}-InterruptionNotification'
-      
-  LambdaFunctionRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-        - Effect: Allow
-          Principal:
-            Service:
-            - lambda.amazonaws.com
-          Action:
-          - sts:AssumeRole
-      Path: "/"
-      ManagedPolicyArns:
-      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-      Policies:
-      - PolicyName: lambdaExecution-SpotInterruptHandlerPolicy
-        PolicyDocument:
-          Version: '2012-10-17'
-          Statement:
-          - Effect: Allow
-            Action:
-            - ssm:*
-            - sns:*
-            - autoscaling:*
-            Resource: '*'
-
-  LambdaFunctionPermission:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName: !GetAtt SpotInterruptionHandlerFunction.Arn
-      Principal: events.amazonaws.com
-      SourceArn: !GetAtt CloudWatchEventRule.Arn
-
-  CloudWatchEventRule:
-    Type: AWS::Events::Rule
-    DependsOn:
-    - SpotInterruptionHandlerFunction
-    Properties:
-      Description: Events rule for EC2 Spot Instance Interruption Notices
-      EventPattern:
-        detail-type:
-        - EC2 Spot Instance Interruption Warning
-        source:
-        - aws.ec2
-      State: ENABLED
-      Targets:
-        - Arn:
-            Fn::GetAtt:
-            - SpotInterruptionHandlerFunction
-            - Arn
-          Id:
-            Ref: SpotInterruptionHandlerFunction
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash -xe
+          /usr/local/bin/cfn-init --stack ${AWS::StackName} --resource Instance --region ${AWS::Region}
+          bash
+          sudo su ubuntu
+          cd /home/ubuntu/deepracer-for-cloud/
+          source bin/activate.sh
+          export DEEPRACER_S3_URI=${BUCKET}
+          export CUSTOM_FILE_LOCATION="${CUSTOMFILELOCATION}"
 
   TerminationCronExpression:
     Type: Custom::TerminationCronExpression
     DependsOn:
-      - ASG
+      - Instance
     Properties:
       ServiceToken:
         !ImportValue
@@ -1185,7 +1046,7 @@ Resources:
             !ImportValue
             'Fn::Sub': '${ResourcesStackName}-TerminationLambdaArn'
           Id: TerminateInstance
-          Input: !Sub '{"instance": "${ASG}", "stack": "${AWS::StackName}"}'
+          Input: !Sub '{"instance": "${Instance}", "stack": "${AWS::StackName}"}'
 
   TerminatePermission:
     Type: AWS::Lambda::Permission
