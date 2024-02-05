@@ -65,4 +65,6 @@ ____________________-
 
 ## Racer1 - Spot en Estocolmo:
 
-    ./create-spot-instance-stocolm-racer1.sh base-stockholm first-model 30
+    ./create-spot-instance-racer1-stk.sh base-stockholm first-model 30
+
+    

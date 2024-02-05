@@ -39,7 +39,7 @@ Resources:
             !ImportValue
             'Fn::Sub': '${ResourcesStackName}-InstanceProfile'
         ImageId: !Ref AmiId
-        KeyName: racer2-stocolmo
+        KeyName: racer1-stocolmo
         InstanceType: !Ref InstanceType
         InstanceMarketOptions:
           MarketType: spot
