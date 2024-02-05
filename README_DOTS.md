@@ -62,3 +62,7 @@ ____________________-
     Cuanto tengo ahora?  8
     Esto es SPOT u On Demand?  On Dmand ...
 
+
+## Racer1 - Spot en Estocolmo:
+
+    ./create-spot-instance-stocolm-racer1 base-stockholm first-model 30
