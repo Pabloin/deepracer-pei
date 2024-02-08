@@ -146,7 +146,7 @@ cat << EOM >> ${HOME_USER}/my_ubuntu_init.sh
 # INTALL: A - DeepRacer Utils
 pip3 install deepracer-utils
 python3 -m deepracer install-cli --force
-
+aws deepracer help
 
 
 # INSTALL: B - CONDA (En WIP y &)
@@ -154,16 +154,38 @@ curl --output ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-
 chmod +x      ~/anaconda.sh
 
 
+# UBUNTU DESKTOP
+sudo su
+passwd ubuntu
+
+# Desktop XFCE
+#   Sigo a:
+#   https://www.linkedin.com/pulse/setting-up-rdp-ubuntu-aws-ec2-instance-abdul-bhashith
+sudo apt-get update
+sudo apt-get install -y xrdp
+sudo apt-get install -y xfce4
+sudo apt-get install -y xfce4-terminal    
+
+# Make xRDP use the environment we just create
+sudo sed -i.bak '/fi/a #xrdp multiple users’ configuration \n xfce-session \n' /etc/xrdp/startwm.sh
+
+sudo ufw allow 3389/tcp
+sudo /etc/init.d/xrdp restart   
+
+sudo apt install -y firefox
+
 
 # # INSTALL
-# # NVM - NPM y CDK
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-# source ~/.bashrc
-# nvm install --lts 18
-# npm install -g aws-cdk
-# nvm  --version
-# node --version
-# cdk  --version
+# # NVM - NPM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install --lts 18
+nvm  --version
+node --version
+
+# # INSTALL CDK
+npm install -g aws-cdk
+cdk --version
 
 
 EOM

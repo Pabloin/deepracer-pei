@@ -161,7 +161,10 @@ docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
 # INSTALL: C - DOTS Prepare
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
-
+sudo apt update
+sudo apt upgrade -y
+sudo apt-get install -y ubuntu-desktop
+sudo apt install -y 
 
 
 # # INSTALL

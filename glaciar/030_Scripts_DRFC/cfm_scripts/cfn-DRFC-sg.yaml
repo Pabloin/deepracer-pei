@@ -18,6 +18,11 @@ Resources:
       GroupName: DR-SG-DRFC
       GroupDescription: Deep Racer Security Group for DRFC
       SecurityGroupIngress:
+        - FromPort: 3389
+          IpProtocol: tcp
+          CidrIp: 181.164.87.98/32
+          ToPort: 3389
+          Description: RDP Desktop
         - FromPort: 22
           IpProtocol: tcp
           # CidrIp: 181.164.84.94/32
@@ -64,6 +69,7 @@ Resources:
           CidrIp: 0.0.0.0/0
           ToPort: 9001
           Description: Minio Web
+
 
 Outputs:
  
