@@ -20,7 +20,8 @@ Resources:
       SecurityGroupIngress:
         - FromPort: 22
           IpProtocol: tcp
-          CidrIp: 181.164.84.94/32
+          # CidrIp: 181.164.84.94/32
+          CidrIp: 181.164.87.98/32
           ToPort: 22
           Description: SSH De My PC
         - FromPort: 80
