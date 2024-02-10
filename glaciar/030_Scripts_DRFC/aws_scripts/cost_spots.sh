@@ -19,7 +19,7 @@ function getSpotPrice_xRegion() {
 function getPrecio_xRegiones() {
 
      MY_REGIONS=("${@}")
-     echo ${MY_REGIONS}
+     echo ${MY_REGIONS[@]}
 
      for region in "${MY_REGIONS[@]}"; do
 
