@@ -11,7 +11,7 @@ function getSpotPrice_xRegion() {
           --start-time ${MY_DESDE}   \
           --end-time   ${MY_HASTA}    \
           --output text  \
-          --profile racer1 \
+          --profile glaciar \
           --region ${MY_REGION}
    
 }
