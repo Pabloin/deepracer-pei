@@ -11,7 +11,6 @@ function getSpotPrice_xRegion() {
           --start-time ${MY_DESDE}   \
           --end-time   ${MY_HASTA}    \
           --output text  \
-          --profile glaciar \
           --region ${MY_REGION}
    
 }
