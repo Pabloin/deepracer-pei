@@ -19,6 +19,9 @@ function getPriceSpots() {
 MY_DESDE=2024-02-09T01:00:09
 MY_HASTA=2024-02-10T23:59:00
 
+# 1 hora
+MY_DESDE=(date +"%T")
+MY_HASTA=2024-02-10T23:59:00
 
 #---------------------
 MY_SPOT=g4dn.2xlarge
