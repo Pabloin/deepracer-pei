@@ -1,0 +1,43 @@
+SPOT g5.4xlarge
+ 
+REGIONS CON GPU ENUSO
+eu-north-1 us-east-1
+---[Region eu-north-1 ] ----------
+SPOTPRICEHISTORY	eu-north-1c	g5.4xlarge	Linux/UNIX	0.337300	2024-02-10T20:46:34+00:00
+SPOTPRICEHISTORY	eu-north-1b	g5.4xlarge	Linux/UNIX	0.374100	2024-02-10T19:16:34+00:00
+---[Region us-east-1 ] ----------
+SPOTPRICEHISTORY	us-east-1b	g5.4xlarge	Linux/UNIX	0.700600	2024-02-10T20:32:43+00:00
+SPOTPRICEHISTORY	us-east-1c	g5.4xlarge	Linux/UNIX	0.702500	2024-02-10T20:17:39+00:00
+SPOTPRICEHISTORY	us-east-1f	g5.4xlarge	Linux/UNIX	0.807500	2024-02-10T20:02:37+00:00
+SPOTPRICEHISTORY	us-east-1d	g5.4xlarge	Linux/UNIX	0.708000	2024-02-10T19:02:20+00:00
+SPOTPRICEHISTORY	us-east-1a	g5.4xlarge	Linux/UNIX	0.733800	2024-02-10T18:17:04+00:00
+ 
+REGIONS CON GPU TEMGO
+eu-north-1 us-east-1 us-west-2 af-south-1
+---[Region eu-north-1 ] ----------
+SPOTPRICEHISTORY	eu-north-1c	g5.4xlarge	Linux/UNIX	0.337300	2024-02-10T20:46:34+00:00
+SPOTPRICEHISTORY	eu-north-1b	g5.4xlarge	Linux/UNIX	0.374100	2024-02-10T19:16:34+00:00
+---[Region us-east-1 ] ----------
+SPOTPRICEHISTORY	us-east-1b	g5.4xlarge	Linux/UNIX	0.700600	2024-02-10T20:32:43+00:00
+SPOTPRICEHISTORY	us-east-1c	g5.4xlarge	Linux/UNIX	0.702500	2024-02-10T20:17:39+00:00
+SPOTPRICEHISTORY	us-east-1f	g5.4xlarge	Linux/UNIX	0.807500	2024-02-10T20:02:37+00:00
+SPOTPRICEHISTORY	us-east-1d	g5.4xlarge	Linux/UNIX	0.708000	2024-02-10T19:02:20+00:00
+SPOTPRICEHISTORY	us-east-1a	g5.4xlarge	Linux/UNIX	0.733800	2024-02-10T18:17:04+00:00
+---[Region us-west-2 ] ----------
+SPOTPRICEHISTORY	us-west-2a	g5.4xlarge	Linux/UNIX	0.513300	2024-02-10T21:46:43+00:00
+SPOTPRICEHISTORY	us-west-2b	g5.4xlarge	Linux/UNIX	0.472600	2024-02-10T19:47:47+00:00
+SPOTPRICEHISTORY	us-west-2c	g5.4xlarge	Linux/UNIX	0.525800	2024-02-10T17:17:33+00:00
+SPOTPRICEHISTORY	us-west-2a	g5.4xlarge	Linux/UNIX	0.512300	2024-02-10T16:47:28+00:00
+---[Region af-south-1 ] ----------
+ 
+REGIONS CON GPU CHEAP
+eu-south-1 eu-north-1 sa-east-1 ap-northeast-3 me-south-1
+---[Region eu-south-1 ] ----------
+---[Region eu-north-1 ] ----------
+SPOTPRICEHISTORY	eu-north-1c	g5.4xlarge	Linux/UNIX	0.337300	2024-02-10T20:46:34+00:00
+SPOTPRICEHISTORY	eu-north-1b	g5.4xlarge	Linux/UNIX	0.374100	2024-02-10T19:16:34+00:00
+---[Region sa-east-1 ] ----------
+SPOTPRICEHISTORY	sa-east-1a	g5.4xlarge	Linux/UNIX	0.484400	2024-02-10T15:01:39+00:00
+SPOTPRICEHISTORY	sa-east-1b	g5.4xlarge	Linux/UNIX	0.276000	2024-02-09T22:47:19+00:00
+---[Region ap-northeast-3 ] ----------
+---[Region me-south-1 ] ----------
