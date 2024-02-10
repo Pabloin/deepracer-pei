@@ -102,18 +102,32 @@ chgrp ubuntu  ${HOME_USER}/.ssh/id_rsa.pub
 
 
 # Profile root para Git Clone (root hace git clone)
-cd ${HOME_USER}
+function gitClone() {
 
-git clone git@github.com:Pabloin/deepracer-pei.git
+    cd ${HOME_USER}
 
-chown ubuntu -R  ${HOME_USER}/deepracer-pei
-chgrp ubuntu -R  ${HOME_USER}/deepracer-pei
+    # git clone git@github.com:Pabloin/deepracer-pei.git
+    # git clone git@github.com:Pabloin/deepracer-on-the-spot-pei.git
 
-cd ${HOME_USER}/deepracer-pei
+    git clone git@github.com:Pabloin/${GIT_REPO_NAME}.git
 
-git config user.name  Pabloin
-git config user.email pablo.ezequiel.inchausti@gmail.com
+    chown ubuntu -R  ${HOME_USER}/${GIT_REPO_NAME}
+    chgrp ubuntu -R  ${HOME_USER}/${GIT_REPO_NAME}
 
+    cd ${HOME_USER}/${GIT_REPO_NAME}
+
+    git config user.name  Pabloin
+    git config user.email pablo.ezequiel.inchausti@gmail.com
+
+    cd ${HOME_USER}
+}
+
+
+GIT_REPO_NAME=deepracer-pei;               
+gitClone
+
+GIT_REPO_NAME=deepracer-on-the-spot-pei;   
+gitClone
 
 
 # INSTALL ADD PROFILE
@@ -123,12 +137,38 @@ echo "Hello en Home User Ubuntu " > ${HOME_USER}/hello.txt
 
 cat << EOM >> ${HOME_USER}/.bashrc
 
-# Ubuntu en .bashrc
-export BASH_DRFC=~/deepracer-pei/glaciar/030_Scripts_DRFC
-# if bash dots
-if [ -f "\$BASH_DRFC/.bashDRFC" ]; then
-    echo "Hola"
-    . "\$BASH_DRFC/.bashDRFC"
+# DOTS - DRFC
+# export BASTION_CONFIG=DOTS
+export BASTION_CONFIG=DRFC
+
+if [ "\${BASTION_CONFIG}" = 'DRFC' ]; then
+
+    echo "Bastion DRFC"
+    # Ubuntu en .bashrc
+    export BASH_DRFC=~/deepracer-pei/glaciar/030_Scripts_DRFC
+    # if bash dots
+    if [ -f "\$BASH_DRFC/.bashDRFC" ]; then
+        echo "Hola"
+        . "\$BASH_DRFC/.bashDRFC"
+    fi
+fi
+
+if [ "\${BASTION_CONFIG}" = 'DOTS' ]; then
+
+    echo "Bastion DOTS"
+    export BASH_DOTS=/home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scripts
+    # if bash dots
+    if [ -f "\${BASH_DOTS}/.bashDotsRc" ]; then
+        echo "Hola"
+        . "\${BASH_DOTS}/.bashDotsRc"
+    fi
+
+    # if bash africa
+    if [ -f "\$BASH_DOTS/.bashRegion_Virginia" ]; then
+        echo "Hola"
+        . "\$BASH_DOTS/.bashRegion_Virginia"
+    fi
+
 fi
 
 EOM
@@ -143,12 +183,48 @@ cat << EOM >> ${HOME_USER}/my_ubuntu_init.sh
 # INTALL: A - DeepRacer Utils
 pip3 install deepracer-utils
 python3 -m deepracer install-cli --force
-
+aws deepracer help
 
 
 # INSTALL: B - CONDA (En WIP y &)
 curl --output ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
 chmod +x      ~/anaconda.sh
+
+
+# UBUNTU DESKTOP
+sudo su
+passwd ubuntu
+
+# Desktop XFCE
+#   Sigo a:
+#   https://www.linkedin.com/pulse/setting-up-rdp-ubuntu-aws-ec2-instance-abdul-bhashith
+sudo apt-get update
+sudo apt-get install -y xrdp
+sudo apt-get install -y xfce4
+sudo apt-get install -y xfce4-terminal    
+
+# Make xRDP use the environment we just create
+sudo sed -i.bak '/fi/a #xrdp multiple users’ configuration \n xfce-session \n' /etc/xrdp/startwm.sh
+
+sudo ufw allow 3389/tcp
+sudo /etc/init.d/xrdp restart   
+
+sudo apt install -y firefox
+
+
+# # INSTALL
+# # NVM - NPM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install --lts 18
+nvm  --version
+node --version
+
+# # INSTALL CDK
+npm install -g aws-cdk
+cdk --version
+
+
 
 
 # VErificacion NVIDIA
@@ -161,21 +237,7 @@ docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
 # INSTALL: C - DOTS Prepare
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
-sudo apt update
-sudo apt upgrade -y
-sudo apt-get install -y ubuntu-desktop
-sudo apt install -y 
 
-
-# # INSTALL
-# # NVM - NPM y CDK
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-# source ~/.bashrc
-# nvm install --lts 18
-# npm install -g aws-cdk
-# nvm  --version
-# node --version
-# cdk  --version
 
 
 EOM

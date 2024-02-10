@@ -1,6 +1,6 @@
 #!/bin/bash
 apt update -y
-apt install -y git 
+apt install -y git
 apt install -y tree jq dos2unix
 apt install -y unzip
 apt install -y python3-pip
