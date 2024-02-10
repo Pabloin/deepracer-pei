@@ -132,15 +132,22 @@ aws cloudformation describe-stack-events --stack-name my-dr-groups --profile rac
 aws ec2 describe-spot-price-history   `
      --instance-types m1.xlarge  `
      --start-time 2024-01-06T07:08:09  `
-     --end-time 2024-01-06T08:09:10    
+     --end-time   2024-01-06T08:09:10     `
+     --output text `
+     --region sa-east-1
 
 g4dn.2xlarge
 
 aws ec2 describe-spot-price-history   `
      --instance-types g4dn.2xlarge     `
-     --start-time 2024-01-26T07:08:09  `
-     --end-time   2024-01-27T08:09:10   `
+     --product-descriptions "Linux/UNIX" `
+     --start-time 2024-02-09T01:00:09  `
+     --end-time   2024-02-10T23:59:00   `
+     --output text `
      --region sa-east-1
+
+
+     --
      
       `
      --region us-east-1

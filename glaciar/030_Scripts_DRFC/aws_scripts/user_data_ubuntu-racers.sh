@@ -46,19 +46,25 @@ usermod -aG docker ubuntu
 
 # Installing NVIDIA Container Toolkit GPG Keys on Ubuntu 22.04:
 
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"  | tee /etc/apt/sources.list.d/docker.list > /dev/null
+# echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"  | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-# vim /etc/apt/sources.list.d/nvidia-container-toolkit.list
+# # vim /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
-# deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/$(ARCH) /
-# #deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu22.04/$(ARCH) /
+# # deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/$(ARCH) /
+# # #deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu22.04/$(ARCH) /
 
-cat << EOM > /etc/apt/sources.list.d/nvidia-container-toolkit.list
+# cat << EOM > /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
-deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/\$(ARCH) /
-#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu22.04/\$(ARCH) /
+# deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/\$(ARCH) /
+# #deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/ubuntu22.04/\$(ARCH) /
 
-EOM
+# EOM
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get -y update 
+sudo apt-get -y install nvidia-container-toolkit
+
 apt update -y
 apt install -y nvidia-docker2
 
@@ -70,6 +76,9 @@ sudo service docker start
 
 # Checking if NVIDIA GPU is Accessible from Docker Containers in Ubuntu 22.04 LTS:
 docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
+
+
+
 
 
 
@@ -234,10 +243,15 @@ nvidia-smi
 docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
 
 
+# Desktop Nvidia Control Pane
+sudo nvidia-settings
+
+
 # INSTALL: C - DOTS Prepare
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
 
 
+# TODO - Extender el SSH desde el SERVER ... 
 
 
 EOM
