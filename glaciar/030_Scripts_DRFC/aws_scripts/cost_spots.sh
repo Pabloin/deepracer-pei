@@ -18,8 +18,7 @@ function getSpotPrice_xRegion() {
 
 function getPrecio_xRegiones() {
 
-     echo " "
-     echo ${1}
+     MY_REGIONS=("${@}")
      echo ${MY_REGIONS}
 
      for region in "${MY_REGIONS[@]}"; do
@@ -66,13 +65,16 @@ REGIONS_CON_GPU_CHEAP=("eu-south-1" "eu-north-1" "sa-east-1" "ap-northeast-3" "m
 # Asia Pacific (Osaka)	     ap-northeast-3
 # Middle East (Bahrain)	     me-south-1
 
+echo " "
+echo "REGIONS CON GPU ENUSO"
+getPrecio_xRegiones  ${REGIONS_CON_GPU_ENUSO[@]}
 
-MY_REGIONS=${REGIONS_CON_GPU_ENUSO[@]}
-getPrecio_xRegiones "REGIONS_CON_GPU_ENUSO"
+echo " "
+echo "REGIONS CON GPU TEMGO"
+getPrecio_xRegiones  ${REGIONS_CON_GPU_TENGO[@]}
 
-MY_REGIONS=${REGIONS_CON_GPU_TENGO[@]}
-getPrecio_xRegiones "REGIONS_CON_GPU_TENGO"
+echo " "
+echo "REGIONS CON GPU CHEAP"
+getPrecio_xRegiones  ${REGIONS_CON_GPU_CHEAP[@]}
 
-MY_REGIONS=${REGIONS_CON_GPU_CHEAP[@]}
-getPrecio_xRegiones "REGIONS_CON_GPU_CHEAP"
 
