@@ -42,7 +42,8 @@ MY_HASTA=$(date +%Y-%m-%dT%H:%M:%S)
 
 
 #---------------------
-MY_SPOT=g4dn.2xlarge
+# MY_SPOT=g4dn.2xlarge
+MY_SPOT=g5.2xlarge
 
 REGIONS_CON_GPU_ENUSO=("eu-north-1" "us-east-1")
 REGIONS_CON_GPU_TENGO=("eu-north-1" "us-east-1"  "us-west-2" "af-south-1"  )
@@ -59,11 +60,11 @@ REGIONS_CON_GPU_CHEAP=("eu-south-1" "eu-north-1" "sa-east-1" "ap-northeast-3" "m
 # - Europe (Stockholm)	     eu-north-1
 
 # REGIONS_CON_GPU_CHEAP
-# Europe (Milan)         	eu-south-1
-# Europe (Stockholm)	     eu-north-1
-# South America (São Paulo)	sa-east-1
-# Asia Pacific (Osaka)	     ap-northeast-3
-# Middle East (Bahrain)	     me-south-1
+# - Europe (Milan)         	eu-south-1
+# - Europe (Stockholm)	     eu-north-1
+# - South America (São Paulo)	sa-east-1
+# - Asia Pacific (Osaka)	     ap-northeast-3
+# - Middle East (Bahrain)	me-south-1
 
 echo " "
 echo "REGIONS CON GPU ENUSO"
