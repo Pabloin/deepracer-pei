@@ -20,7 +20,7 @@ MY_DESDE=2024-02-09T01:00:09
 MY_HASTA=2024-02-10T23:59:00
 
 # 1 hora
-MY_DESDE=(date +%Y-%m-%dT%H:%M:%S)
+MY_DESDE=$(date +%Y-%m-%dT%H:%M:%S)
 MY_HASTA=2024-02-10T23:59:00
 
 #---------------------
