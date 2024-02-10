@@ -1,4 +1,12 @@
- 
+SPOT g5.2xlarge
+
+BEST	eu-north-1b	g5.2xlarge	Linux/UNIX	0.423600	2024-02-10T17:16:38+00:00
+BEST	eu-north-1c	g5.2xlarge	Linux/UNIX	0.433200	2024-02-10T16:46:37+00:00
+
+BEST	sa-east-1b	g5.2xlarge	Linux/UNIX	0.206000	2024-02-10T14:01:27+00:00
+BEST	sa-east-1a	g5.2xlarge	Linux/UNIX	0.206000	2024-02-09T17:46:22+00:00
+
+
 REGIONS CON GPU ENUSO
 eu-north-1 us-east-1
 ---[Region eu-north-1 ] ----------

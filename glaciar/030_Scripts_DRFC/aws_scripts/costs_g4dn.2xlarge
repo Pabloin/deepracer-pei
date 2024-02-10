@@ -1,5 +1,13 @@
 SPOT g4dn.2xlarge
- 
+
+BEST	eu-north-1c	g4dn.2xlarge	Linux/UNIX	0.131400	2024-02-10T21:02:05+00:00
+BEST	eu-north-1b	g4dn.2xlarge	Linux/UNIX	0.191200	2024-02-10T20:47:05+00:00
+
+BEST 	sa-east-1a	g4dn.2xlarge	Linux/UNIX	0.127800	2024-02-10T21:31:02+00:00
+BEST 	sa-east-1c	g4dn.2xlarge	Linux/UNIX	0.127800	2024-02-10T20:47:02+00:00
+BEST 	sa-east-1b	g4dn.2xlarge	Linux/UNIX	0.137100	2024-02-10T19:46:28+00:00
+
+
 REGIONS CON GPU ENUSO
 eu-north-1 us-east-1
 ---[Region eu-north-1 ] ----------
