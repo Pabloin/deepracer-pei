@@ -65,6 +65,7 @@ REGIONS_CON_GPU_CHEAP=("eu-south-1" "eu-north-1" "sa-east-1" "ap-northeast-3" "m
 # - Asia Pacific (Osaka)	     ap-northeast-3
 # - Middle East (Bahrain)	me-south-1
 
+echo "SPOT ${MY_SPOT}"
 echo " "
 echo "REGIONS CON GPU ENUSO"
 getPrecio_xRegiones  ${REGIONS_CON_GPU_ENUSO[@]}
@@ -77,4 +78,8 @@ echo " "
 echo "REGIONS CON GPU CHEAP"
 getPrecio_xRegiones  ${REGIONS_CON_GPU_CHEAP[@]}
 
+
+#  RUN
+#
+#  ./cost_spots.sh > costs_g5.2xlarge
 
