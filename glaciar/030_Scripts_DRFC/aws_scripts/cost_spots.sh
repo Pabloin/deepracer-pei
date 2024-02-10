@@ -20,6 +20,7 @@ function getPrecio_xRegiones() {
 
      echo " "
      echo ${1}
+     echo ${MY_REGIONS}
 
      for region in "${MY_REGIONS[@]}"; do
 
