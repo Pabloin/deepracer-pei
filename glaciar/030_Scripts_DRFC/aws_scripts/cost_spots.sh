@@ -37,7 +37,7 @@ function getPrecio_xRegiones() {
 # MY_HASTA=2024-02-10T23:59:00
 
 # 1 hora
-MY_DESDE=$(date +%Y-%m-%dT%H:%M:%S --date='-2 hour')
+MY_DESDE=$(date +%Y-%m-%dT%H:%M:%S --date='-1 hour')
 MY_HASTA=$(date +%Y-%m-%dT%H:%M:%S)
 
 
@@ -67,12 +67,12 @@ REGIONS_CON_GPU_CHEAP=("eu-south-1" "eu-north-1" "sa-east-1" "ap-northeast-3" "m
 # Middle East (Bahrain)	     me-south-1
 
 
-MY_REGIONS=${REGIONS_CON_GPU_ENUSO}
+MY_REGIONS=${REGIONS_CON_GPU_ENUSO[@]}
 getPrecio_xRegiones "REGIONS_CON_GPU_ENUSO"
 
-MY_REGIONS=${REGIONS_CON_GPU_TENGO}
+MY_REGIONS=${REGIONS_CON_GPU_TENGO[@]}
 getPrecio_xRegiones "REGIONS_CON_GPU_TENGO"
 
-MY_REGIONS=${REGIONS_CON_GPU_CHEAP}
+MY_REGIONS=${REGIONS_CON_GPU_CHEAP[@]}
 getPrecio_xRegiones "REGIONS_CON_GPU_CHEAP"
 
