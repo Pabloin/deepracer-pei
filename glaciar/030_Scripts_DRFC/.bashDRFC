@@ -6,7 +6,9 @@ echo "En DRFC"
 # Funcion que tome del Config y PISE ... 
 
 
-alias HC="cd ~/deepracer-pei/deepracer-for-cloud"
+alias HH="cd ~/deepracer-pei/deepracer-for-cloud"
+alias MM="cd ~/MINIO_SYNC/Spot-Tracks"
+
 
 export PATH_DOTS_SCRIPTS=~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs
 
@@ -69,7 +71,9 @@ cat ~/.aws/config | grep profile
 echo ""
 
 
-alias hello="cat ~/hello.txt"
+# alias hello="cat ~/hello.txt"
+
+alias hello="vim ~/hello.txt"
 
 alias   C="vim ~/.aws/credentials"
 
@@ -155,3 +159,72 @@ function spImport() {
 
 
 source ~/deepracer-pei/deepracer-for-cloud/bin/activate.sh
+
+
+function menu() {
+
+cat << EOM
+
+menu, $1!
+
+Estoy en  ~/deepracer-pei/deepracer-for-cloud/glaciar/030_Scripts_DRFC/.bashDRFC
+
+    - prof - hello - doing 
+
+    - SPOT (Minio): spDown | spUp | spImport 
+
+    # - drSync      |  drDown     | drUp  | TBD - logs | model 
+    # - drImport    | drImportGlaciar 
+    # - goVirginia  | _set _getRegion  
+    # - aws.ec2.run | aws.ec2.all 
+
+
+    alias - C | HH MM | 
+    
+                        # B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W | A01 a,b,c,d..  
+
+    -------------------------------------------------------- 
+    S3_SMINIO_SOURCE=${S3_SMINIO_SOURCE}
+    S3_BUCKET_TARGET=${S3_BUCKET_TARGET}
+    MODEL = ${KEY_MODEL}  
+
+EOM
+
+
+
+
+    cat ~/.aws/config | grep profile
+
+    echo ""
+
+
+}
+
+menu
+
+
+
+function doing() {
+
+    # The string after << indicates where to stop.
+    cat << EOM >> ${HOME_USER}/hello.txt
+    
+    DOING:
+
+    - pablo-eze-edu: Spots ... TBD ... 
+    
+    # jupyter notebook como servicio
+    
+
+    STATUS:
+    -           JLab | Ubuntu | TBD | TBD |
+
+    - PEZEG  |   X   |    X   |  -  |  100% config ... USD 9 gastado
+    - DEMET  |   X   |    X   |  -  |  100% config ... USD 0 gastado
+
+    - Notas... 
+    
+
+EOM
+}
+# doing

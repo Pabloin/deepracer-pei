@@ -151,6 +151,8 @@ gitClone
 cd ${HOME_USER}
 
 echo "Hello en Home User Ubuntu " > ${HOME_USER}/hello.txt
+chown ubuntu  ${HOME_USER}/hello.txt
+chgrp ubuntu  ${HOME_USER}/hello.txt
 
 cat << EOM >> ${HOME_USER}/.bashrc
 
