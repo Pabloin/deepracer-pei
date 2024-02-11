@@ -207,7 +207,7 @@ menu
 function doing() {
 
     # The string after << indicates where to stop.
-    cat << EOM >> ${HOME_USER}/hello.txt
+    cat << EOM 
     
     DOING:
 
