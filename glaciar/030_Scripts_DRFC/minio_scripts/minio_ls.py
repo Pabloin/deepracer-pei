@@ -16,6 +16,14 @@ mc admin info local
 mc ls local
 
 # Simil a DrDwon ... 
+# spDown
+mc cp local/bucket/rl-deepracer-sagemaker  RACER_PEZE/ --recursive
+
+
+# Simil spUp
+
+# Simip spImport
+
 mc cp local/bucket/   ee --recursive
 mc cp myminio/bucket/ ee --recursive
 
