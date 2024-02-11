@@ -83,10 +83,12 @@ echo "REGIONS CON GPU CHEAP"
 getPrecio_xRegiones  ${REGIONS_CON_GPU_CHEAP[@]}
 
 
-echo "BEST g4dn.2xlarge - "
-echo "BEST g4  .2xlarge - "
+echo "BEST g4dn.2xlarge - 0.1314 (eu-north-1b)  "
+echo "BEST g4dn.4xlarge - 0.2316 (eu-north-1b)  "
 
-echo "BEST g5.2xlarge   - 0.206' (sa-east-1b)  - 0.4236 (eu-north-1b)
+echo "BEST g5.2xlarge   - 0.4236 (eu-north-1b) - 0.206 (sa-east-1b)  "
+echo "BEST g5.4xlarge   - 0.3373 (eu-north-1b) - 0.276 (sa-east-1b)  "
+
 
 #  RUN
 #

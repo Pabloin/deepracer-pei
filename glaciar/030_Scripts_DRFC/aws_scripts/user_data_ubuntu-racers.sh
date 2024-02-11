@@ -30,6 +30,14 @@ unzip awscliv2.zip
 rm awscliv2.zip
 
 
+# INTALL: 1- MINIO CLIENT
+curl https://dl.min.io/client/mc/release/linux-amd64/mc --create-dirs \
+      -o $HOME/minio-binaries/mc
+chmod +x $HOME/minio-binaries/mc
+export PATH=$PATH:$HOME/minio-binaries/
+
+
+
 # INTALL 2 -Docker (CE) en Ubutntu 22
 # Basado en:
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
@@ -241,6 +249,14 @@ lsmod | grep nvidia
 nvidia-smi
 # Checking if NVIDIA GPU is Accessible from Docker Containers in Ubuntu 22.04 LTS:
 docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
+
+
+# MINIO CLIENT
+mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
+mc alias set local/     http://127.0.0.1:9000  Minio_USER  Minio_PASS
+
+pip install minio
+
 
 
 # Desktop Nvidia Control Pane
