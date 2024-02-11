@@ -109,6 +109,8 @@ function spDown() {
     echo "  mc ls local/bucket               "    
     echo "                                   "
  
+    mc ls local/bucket    
+
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
 
     mc cp local/bucket/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive
