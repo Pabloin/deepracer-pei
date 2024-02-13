@@ -63,7 +63,6 @@ function prof() {
 export PATH=$PATH:$HOME/minio-binaries/
 
 
-
 cat ~/.aws/config | grep profile
 
 echo ""
@@ -155,8 +154,10 @@ function spImport() {
 
 
 
+function drActivate() {
 
-source ~/deepracer-pei/deepracer-for-cloud/bin/activate.sh
+    source ~/deepracer-pei/deepracer-for-cloud/bin/activate.sh
+}
 
 function drAll() {
 
