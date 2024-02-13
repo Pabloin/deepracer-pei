@@ -10,41 +10,42 @@ alias HH="cd ~/deepracer-pei/deepracer-for-cloud"
 alias MM="cd ~/MINIO_SYNC/Spot-Tracks"
 
 
-export PATH_DOTS_SCRIPTS=~/deepracer-pei/glaciar/010_Configs/DRFC_Configs
-
-
-# ~/deepracer-pei/glaciar/010_Config$ tree -La 2
+export PATH_DRFC_Config=~/deepracer-pei/glaciar/010_Configs/DRFC_Configs
+# ~/deepracer-pei/glaciar/010_Configs$ tree -La 2
+#     .
+#     ├── DOTS_Configs
+#     │   ├── .config_DOTS_0001_orig
+#     │   ├── .config_DOTS_000_reset
+#     │   └── .config_DOTS_002_DE10
 #     └── DRFC_Configs
-#        ├── .config_DRFC_000_reset
-#        ├── .config_DRFC_001_original
-#        └── .config_DRFC_002_local_minio
+#         ├── .config_DRFC_000_reset
+#         ├── .config_DRFC_001_aws_orig
+#         ├── .config_DRFC_001_local_orig
+#         └── .config_DRFC_002_local_minio
 
-alias D000="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_000_reset"
-alias D001a="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_aws_orig"
-alias D001l="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_001_local_orig"
-alias D002="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_002_local_minio"
-alias D003="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_003_aws_cpu"
 
-# TODO: Se vana a agregar o FIX It!
-alias D004="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_004_aws_cpu"
-alias D005="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_005_aws_cpu"
-alias D006="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_006_local_gpu"
-alias D007="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_007_local_gpu"
-alias D008="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_008_local_gpu"
-alias D009="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_009_local_gpu"
-alias D010="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_010_local_gpu"
+alias D000="cd  ${PATH_DRFC_Config}/.config_DRFC_000_reset"
+alias D001a="cd ${PATH_DRFC_Config}/.config_DRFC_001_aws_orig"
+alias D001l="cd ${PATH_DRFC_Config}/.config_DRFC_001_local_orig"
+alias D002="cd  ${PATH_DRFC_Config}/.config_DRFC_002_local_minio"
 
-alias D011="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_011_local_gpu"
-alias D012="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_012_local_gpu"
-alias D013="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_013_local_gpu"
-alias D014="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_014_local_gpu"
-alias D015="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_015_local_gpu"
 
-alias D016="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_016_local_gpu"
-alias D017="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_017_local_gpu"
-alias D018="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_018_local_gpu"
-alias D019="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_019_local_gpu"
-alias D020="cd ${PATH_DOTS_SCRIPTS}/.config_DRFC_020_local_gpu"
+
+export PATH_DRFC_Models=~/deepracer-pei/glaciar/012_Models/DRFC_Models
+# ~/deepracer-pei/glaciar/012_Models$ tree -La 4
+#     .
+#     ├── DOTS_Models
+#     │   └── Readme.md
+#     └── DRFC_Models
+#         ├── Readme.md
+#         └── T2024-01
+#             └── Spot-Tracks
+#                 └── .config_DE10
+
+
+alias DE10="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE10"
+alias DE11="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE11"
+alias DE12="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE12"
 
 
 function gia() {
