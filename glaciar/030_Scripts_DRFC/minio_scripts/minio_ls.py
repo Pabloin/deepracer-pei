@@ -19,6 +19,7 @@ mc ls local
 # spDown
 mc cp local/bucket/rl-deepracer-sagemaker  RACER_PEZE/ --recursive
 
+mc cp local/bucket/Spot-Tracks/DE10      ~/MINIO_SYNC/Spot-Tracks   --recursive
 
 # Simil spUp
 
