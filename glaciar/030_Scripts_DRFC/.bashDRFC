@@ -173,7 +173,7 @@ cat << EOM
 
 menu, $1!
 
-Estoy en  ~/deepracer-pei/deepracer-for-cloud/glaciar/030_Scripts_DRFC/.bashDRFC
+Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
     - prof - hello - doing 
 
