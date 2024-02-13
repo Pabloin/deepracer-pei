@@ -8,10 +8,10 @@ echo "En DRFC"
 
 alias HC="cd ~/deepracer-pei/deepracer-for-cloud"
 
-export PATH_DOTS_SCRIPTS=~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs
+export PATH_DOTS_SCRIPTS=~/deepracer-pei/glaciar/010_Configs/DRFC_Configs
 
 
-# ~/deepracer-pei/glaciar/012_PEI_Models$ tree -La 2
+# ~/deepracer-pei/glaciar/010_Config$ tree -La 2
 #     └── DRFC_Configs
 #        ├── .config_DRFC_000_reset
 #        ├── .config_DRFC_001_original

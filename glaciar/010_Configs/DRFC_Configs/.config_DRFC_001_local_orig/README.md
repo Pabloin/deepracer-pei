@@ -19,10 +19,10 @@ Aparecio:
 
 ~/deepracer-pei/deepracer-for-cloud 
 
-~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs/.config_DRFC_001_original
+~/deepracer-pei/glaciar/010_Configs/DRFC_Configs/.config_DRFC_001_original
 
 -------------
-cd ~/deepracer-pei/glaciar/012_PEI_Models/DRFC_Configs/.config_DRFC_001_original
+cd ~/deepracer-pei/glaciar/010_Configs/DRFC_Configs/.config_DRFC_001_original
 
 cp -r ~/deepracer-pei/deepracer-for-cloud/custom_files/* ./custom_files/ 
 cp    ~/deepracer-pei/deepracer-for-cloud/run.env  . 
