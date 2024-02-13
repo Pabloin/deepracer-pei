@@ -39,3 +39,13 @@ mc alias set local/     http://127.0.0.1:9000  Minio_USER  Minio_PASS
 mc alias set s3deepracer/  https://s3.amazonaws.com  USER_ACC_KEY PASS_ACC_KEY
 mc alias remove s3deepracer/
 
+
+#
+mc ls local
+mc mb local/bucket-models-2024-01
+
+mc mb local/bucketaaaa
+
+mc rm -r local/bucketaaaa  --force --dangerous
+
+mc rm -r local/bucketaaaa  --force
