@@ -161,6 +161,13 @@ function spImport() {
 
 source ~/deepracer-pei/deepracer-for-cloud/bin/activate.sh
 
+function drAll() {
+
+    dr-update;
+    dr-upload-custom-files;
+    
+}
+
 
 function menu() {
 
