@@ -14,3 +14,9 @@ Por ejecutar:
     init.sh -c local -a gpu
 
 ---------------------------------
+Es DE10
+
+    - Objetivo --- que quede también bien los folders --- 
+
+
+    
