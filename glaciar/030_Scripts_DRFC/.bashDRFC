@@ -77,6 +77,8 @@ alias   C="vim ~/.aws/credentials"
 
 S3_SMINIO_SOURCE=~/MINIO_SYNC
 S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
+S3_BUCKET_SMINIO=bucket-models-2024-01
+
 
 # KEY_MODEL=Ulab-Tracks
 KEY_MODEL=Spot-Tracks
@@ -106,15 +108,15 @@ function spUp() {
 # Down de local Minio
 function spDown() {
 
-    echo "                                   "
-    echo "  mc ls local/bucket               "    
-    echo "                                   "
+    echo "                                     "
+    echo "  mc ls local/${S3_BUCKET_SMINIO}    "    
+    echo "                                     "
  
-    mc ls local/bucket    
+    mc ls local/${S3_BUCKET_SMINIO}    
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
 
-    mc cp local/bucket/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive
+    mc cp local/${S3_BUCKET_SMINIO}/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive
 }
 
 function spImport() {
@@ -192,6 +194,7 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
     -------------------------------------------------------- 
     S3_SMINIO_SOURCE=${S3_SMINIO_SOURCE}
     S3_BUCKET_TARGET=${S3_BUCKET_TARGET}
+    S3_BUCKET_SMINIO=${S3_BUCKET_SMINIO}
     MODEL = ${KEY_MODEL}  
 
 EOM
