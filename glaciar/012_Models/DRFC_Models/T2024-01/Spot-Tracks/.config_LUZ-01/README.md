@@ -12,8 +12,7 @@ a) Tengo al modelo de Luz "tem88-test-v001" como el mejor del track
     Preguntas:
         a) ¿Lo pudeo entrenar con DRFC ...?
         b) ¿Con qué CPU entrena la consola... ?
-        c) ... tenía otra pregunta más pero no la recuerdo .. 
-
+        c) DUDA: Estoy seguro que entrena con GPU ? Con cuantos workers ?
 -------------------------
 Por fin estoy con g4dn GPU
 
