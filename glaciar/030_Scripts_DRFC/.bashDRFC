@@ -173,6 +173,13 @@ function drActivate() {
 }
 
 function drAll() {
+    dr-update;
+    dr-upload-custom-files;    
+}
+
+function drLuz() {
+    
+    ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-01/Spot-Tracks/.config_LUZ-01/xSet.sh
 
     dr-update;
     dr-upload-custom-files;
