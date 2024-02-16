@@ -253,6 +253,20 @@ nvidia-smi
 docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi
 
 
+
+# Extra de GPU
+# Para $ DRFC/utils/setup-xorg.sh
+sudo apt-get install -y xserver-xorg-dev
+sudo apt-get install -y  xutils-dev
+# quiza - dpkg -S xorg-server.pc
+
+sudo apt install -y gazebo
+
+docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-gpu-gl
+docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-cpu-gl-avx2
+
+#------------- 
+
 # MINIO CLIENT
 mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 mc alias set local/     http://127.0.0.1:9000  Minio_USER  Minio_PASS

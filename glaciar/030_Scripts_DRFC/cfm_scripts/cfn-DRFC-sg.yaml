@@ -39,6 +39,11 @@ Resources:
           CidrIp: 0.0.0.0/0
           ToPort: 443
           Description: Web HTTPS
+        - FromPort: 5900
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 5900
+          Description: VNC server Interact Gazebo
         - FromPort: 8080
           IpProtocol: tcp
           CidrIp: 0.0.0.0/0

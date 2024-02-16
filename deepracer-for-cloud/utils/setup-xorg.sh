@@ -19,3 +19,15 @@ Section "DRI"
         Mode 0666
 EndSection
 EOF
+
+
+# NOTAS PEI
+# PARA QUE FUNCIONE TUVE QUE HACER DOS COSAS
+# a) Instalar DEV
+# b) Restar / reboot
+#       sudo apt-get install xserver-xorg-dev
+#       sudo apt-get install xutils-dev
+#       ./setup-xorg.sh
+#        dpkg -S xorg-server.pc
+#       reboot ..
+
