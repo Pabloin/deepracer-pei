@@ -32,4 +32,10 @@ Es Luz001 ...
     - Objetivo --- mismo algoritmo pero con GPU en por ejemplo San Pablo --- 
 
 
-    
+SPOTPRICEHISTORY        
+    eu-north-1c     
+    g4dn.2xlarge    
+    Linux/UNIX      
+    0.134400
+
+    Lo entrenamos creo que con Racer1

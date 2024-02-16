@@ -74,6 +74,8 @@ alias hello="vim ~/hello.txt"
 
 alias   C="vim ~/.aws/credentials"
 
+alias costos="cd ~/deepracer-pei/glaciar/030_Scripts_DRFC/aws_scripts/"
+
 
 S3_SMINIO_SOURCE=~/MINIO_SYNC
 S3_SMINIO_SERVER=local
@@ -185,7 +187,7 @@ menu, $1!
 
 Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
-    - prof - hello - doing 
+    - prof - hello - doing - costos
 
     - SPOT (Minio): spDown | spUp | spImport 
 
