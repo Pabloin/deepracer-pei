@@ -47,6 +47,7 @@ alias DE10="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE10"
 alias DE11="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE11"
 alias DE12="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE12"
 
+alias LUZ01="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-01"
 
 
 
