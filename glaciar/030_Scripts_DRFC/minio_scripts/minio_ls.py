@@ -28,6 +28,7 @@ mc cp local/bucket/Spot-Tracks/DE10      ~/MINIO_SYNC/Spot-Tracks   --recursive
 mc cp local/bucket/   ee --recursive
 mc cp myminio/bucket/ ee --recursive
 
+mc cp myminio/bucket-models-2024-01/Spot-Tracks/LUZ-01bis1      ~/MINIO_SYNC/Spot-Tracks   --recursive
 
 s3://aws-deepracer-logs-varios/Hola Pablo Eze gmail.txt
 
