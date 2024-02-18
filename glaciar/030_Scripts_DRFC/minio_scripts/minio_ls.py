@@ -33,9 +33,19 @@ mc cp myminio/bucket-models-2024-01/Spot-Tracks/LUZ-01bis1      ~/MINIO_SYNC/Spo
 s3://aws-deepracer-logs-varios/Hola Pablo Eze gmail.txt
 
 
-mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 mc alias set local/     http://127.0.0.1:9000  Minio_USER  Minio_PASS
+mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 
+    
+    Nota: Parece que tienen que ser reales las claves para el profile de Minio
+           al menos para el config ... quiza despues de pueda rotar y no 
+           perder el acceso ... 
+
+
+        Minio try default credentials :
+
+            user: minioadmin
+            PWD: minioadmin
 
 mc alias set s3deepracer/  https://s3.amazonaws.com  USER_ACC_KEY PASS_ACC_KEY
 mc alias remove s3deepracer/
@@ -50,3 +60,13 @@ mc mb local/bucketaaaa
 mc rm -r local/bucketaaaa  --force --dangerous
 
 mc rm -r local/bucketaaaa  --force
+
+
+
+-----------------
+Config en DRFC
+
+    ${DR_DIR}
+    ./docs/_config.yml
+    ./data/minio/.minio.sys/config
+    ./data/minio/.minio.sys/config/config.json
