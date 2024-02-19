@@ -103,6 +103,7 @@ S3_SMINIO_BUCKET=bucket-models-2024-01
 
 S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
 PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+PROFILE_LAB_ROLE=arn:aws:iam::307424703238:role/LabRole
 
 # KEY_MODEL=Ulab-Tracks
 KEY_MODEL=Spot-Tracks
@@ -179,7 +180,7 @@ function spImport() {
     echo "      --type REINFORCEMENT_LEARNING \          "
     echo "      --name ${MODEL_VERSION_NAME}  \                 "
     echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_VERSION_NAME} \ "
-    echo "      --role-arn arn:aws:iam::307424703238:role/LabRole \      "
+    echo "      --role-arn ${PROFILE_LAB_ROLE} \      "
     echo "      --profile  ${PROFILE_PEZE_EDU}               "
     echo "   "
 
@@ -187,7 +188,7 @@ function spImport() {
         --type REINFORCEMENT_LEARNING \
         --name ${MODEL_VERSION_NAME}  \
         --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_VERSION_NAME} \
-        --role-arn arn:aws:iam::307424703238:role/LabRole \
+        --role-arn ${PROFILE_LAB_ROLE} \
         --profile  ${PROFILE_PEZE_EDU}               
    
 }
