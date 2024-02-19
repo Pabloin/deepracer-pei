@@ -180,7 +180,7 @@ function spImport() {
     echo "   "
     echo "  aws deepracer import-model \                 "
     echo "      --type REINFORCEMENT_LEARNING \          "
-    echo "      --name ${MODEMODEL_NAME_ALIASL_FOLDER}  \                 "
+    echo "      --name ${MODEL_NAME_ALIAS}  \                 "
     echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \ "
     echo "      --role-arn ${PROFILE_LAB_ROLE} \      "
     echo "      --profile  ${PROFILE_PEZE_EDU}               "
