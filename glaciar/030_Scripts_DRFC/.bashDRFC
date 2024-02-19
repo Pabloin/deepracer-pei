@@ -72,6 +72,10 @@ cat ~/.aws/config | grep profile
 echo ""
 
 
+sudo chown ubuntu  ~/hello.txt
+sudo chgrp ubuntu  ~/hello.txt
+
+
 alias hello="vim  ~/hello.txt"
 alias hellos="cat ~/hello.txt"
 

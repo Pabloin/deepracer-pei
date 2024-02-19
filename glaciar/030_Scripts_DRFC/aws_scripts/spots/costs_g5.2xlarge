@@ -7,6 +7,11 @@ BEST	sa-east-1b	g5.2xlarge	Linux/UNIX	0.206000	2024-02-10T14:01:27+00:00
 BEST	sa-east-1a	g5.2xlarge	Linux/UNIX	0.206000	2024-02-09T17:46:22+00:00
 
 
+---[Region sa-east-1 ] ----------
+SPOTPRICEHISTORY        sa-east-1b      g5.2xlarge      Linux/UNIX      0.206000        2024-02-18T23:16:31+00:00
+SPOTPRICEHISTORY        sa-east-1a      g5.2xlarge      Linux/UNIX      0.206000        2024-02-18T23:01:31+00:00
+
+
 REGIONS CON GPU ENUSO
 eu-north-1 us-east-1
 ---[Region eu-north-1 ] ----------
@@ -56,3 +61,14 @@ SPOTPRICEHISTORY	sa-east-1b	g5.2xlarge	Linux/UNIX	0.206000	2024-02-10T14:01:27+0
 SPOTPRICEHISTORY	sa-east-1a	g5.2xlarge	Linux/UNIX	0.206000	2024-02-09T17:46:22+00:00
 ---[Region ap-northeast-3 ] ----------
 ---[Region me-south-1 ] ----------
+
+
+
+*****************
+Observar G4 vs G5 en San Pablo
+
+---[Region sa-east-1 ] ----------
+SPOTPRICEHISTORY        sa-east-1b      g5.2xlarge      Linux/UNIX      0.206000        2024-02-18T23:16:31+00:00
+SPOTPRICEHISTORY        sa-east-1b      g4dn.2xlarge    Linux/UNIX      0.133300        2024-02-18T22:46:24+00:00
+SPOTPRICEHISTORY        sa-east-1c      g4dn.2xlarge    Linux/UNIX      0.128300        2024-02-18T22:16:24+00:00
+SPOTPRICEHISTORY        sa-east-1a      g4dn.2xlarge    Linux/UNIX      0.128800        2024-02-18T19:31:23+00:00
