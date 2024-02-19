@@ -271,7 +271,12 @@ function aws.ec2.run.luz() {
     
     aws.ec2.run  
 
+    echo "                                                "
+    echo " aws ec2 stop-instances --instance-ids id-todelete --profile ${AWS_CLI_PROFILE}    "
+    echo "                                                "
+    
     AWS_CLI_PROFILE=default
+
 }
 
 
