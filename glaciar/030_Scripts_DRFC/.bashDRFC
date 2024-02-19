@@ -142,19 +142,19 @@ function spDown() {
  
     mc ls ${MINIO_HOME}    
 
-    read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
+    read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_FOLDER
 
 
     echo "                                                                           "
     echo "  cd  ${S3_SMINIO_SOURCE}                                                  "    
     echo "                                                                           "
-    echo "  mc cp ${MINIO_HOME}/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive     "
+    echo "  mc cp ${MINIO_HOME}/${MODEL_FOLDER}  ${KEY_MODEL}/ --recursive     "
     echo "                                                                           "
     
 
     cd  ${S3_SMINIO_SOURCE} 
 
-    mc cp ${MINIO_HOME}/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive
+    mc cp ${MINIO_HOME}/${MODEL_FOLDER}  ${KEY_MODEL}/ --recursive
 
 }
 
@@ -173,21 +173,25 @@ function spImport() {
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
                  --profile  ${PROFILE_PEZE_EDU} 
 
-    read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
+
+    read -p "¿Folder Modelo S3/minio ?  (Ejemplo:  "LUZ-001"       ? " MODEL_FOLDER
+    read -p "¿Modelo Version Name    ?  (Ejemplo:  "LUZ-001-Wip01" ? " MODEL_NAME_ALIAS
 
     echo "   "
     echo "  aws deepracer import-model \                 "
     echo "      --type REINFORCEMENT_LEARNING \          "
-    echo "      --name ${MODEL_VERSION_NAME}  \                 "
-    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_VERSION_NAME} \ "
+    echo "      --name ${MODEMODEL_NAME_ALIASL_FOLDER}  \                 "
+    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \ "
     echo "      --role-arn ${PROFILE_LAB_ROLE} \      "
     echo "      --profile  ${PROFILE_PEZE_EDU}               "
     echo "   "
 
+    read -p "Hacemos spImport? Todo Ok? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
     aws deepracer import-model \
         --type REINFORCEMENT_LEARNING \
-        --name ${MODEL_VERSION_NAME}  \
-        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_VERSION_NAME} \
+        --name ${MODEL_NAME_ALIAS}  \
+        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \
         --role-arn ${PROFILE_LAB_ROLE} \
         --profile  ${PROFILE_PEZE_EDU}               
    
