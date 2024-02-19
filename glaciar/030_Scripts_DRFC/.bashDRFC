@@ -47,11 +47,14 @@ alias DE10="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE10"
 alias DE11="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE11"
 alias DE12="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE12"
 
-alias LUZ01="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-001"
-alias LUZ02="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-002"
-alias LUZ03="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-003"
-alias LUZ04="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-004"
-alias LUZ05="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-005"
+alias LUZ001="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-001"
+alias LUZ002="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-002"
+alias LUZ003="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-003"
+
+alias LUZ100="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-100"
+alias LUZ101="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-101"
+alias LUZ102="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-102"
+alias LUZ103="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-103"
 
 
 # REPETIDA CON DOTS (Mantener sincro iguales)
