@@ -1,6 +1,6 @@
 # deepracer-pei
 
-Experimento siguiendo a Luz-200
+Experimento siguiendo a Luz-100
 
 -------------------------
 Test Race 
