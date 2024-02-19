@@ -67,6 +67,14 @@ function prof() {
     fi
 }
 
+
+function setx() {
+    ls -la 
+    chmod +x xSet.sh
+    ls -la 
+    git add xSet.sh; git commit -m "setx"; git push
+}
+
 export PATH=$PATH:$HOME/minio-binaries/
 
 
