@@ -274,10 +274,12 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
     - SPOT (Minio): spDown | spUp | spImport 
 
+    - aws.ec2.run | aws.ec2.all 
+    
+    
     # - drSync      |  drDown     | drUp  | TBD - logs | model 
     # - drImport    | drImportGlaciar 
     # - goVirginia  | _set _getRegion  
-    # - aws.ec2.run | aws.ec2.all 
 
 
     alias - C | HH MM | 
