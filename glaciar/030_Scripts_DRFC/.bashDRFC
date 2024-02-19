@@ -212,7 +212,7 @@ menu, $1!
 
 Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
-    - prof - hello - doing - costos
+    - prof - setx - hello - doing - costos
 
     - SPOT (Minio): spDown | spUp | spImport 
 
@@ -273,4 +273,34 @@ EOM
 }
 # doing
 
+
+
+cat << EOM > ~/my_ubuntu_golden.sh
+
+# Echo FIXEX para que anden la instancia Golden
+
+cd ~/deepracer-pei/deepracer-for-cloud
+git pull
+
+# Update Hello text
+# Setear a aws credential con san-pablo
+# Setear a aws config     con racer1
+
+
+# Para que ande sagemaker
+sudo service docker stop 
+sudo service docker start
+
+# Para que ande minio
+mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
+
+
+# Lanzar de nuevo a DRFC (no estoy seguro ... )
+# prepare
+# activate
+# los update
+# train ...
+
+
+EOM
 

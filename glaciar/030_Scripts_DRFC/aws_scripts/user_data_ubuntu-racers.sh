@@ -196,7 +196,7 @@ EOM
 
 # INTALL: FINAL - My Ubuntu INIT
 
-cat << EOM >> ${HOME_USER}/my_ubuntu_init.sh
+cat << EOM >  ${HOME_USER}/my_ubuntu_init.sh
 
 
 # INTALL: A - DeepRacer Utils
