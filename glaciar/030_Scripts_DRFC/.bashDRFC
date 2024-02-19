@@ -175,7 +175,7 @@ function spImport() {
 
 
     read -p "¿Folder Modelo S3/minio ?  (Ejemplo:  "LUZ-001"       ? " MODEL_FOLDER
-    read -p "¿Modelo Version Name    ?  (Ejemplo:  "LUZ-001-Wip01" ? " MODEL_NAME_ALIAS
+    read -p "¿Alias  Modelo Name     ?  (Ejemplo:  "LUZ-001-Wip01" ? " MODEL_NAME_ALIAS
 
     echo "   "
     echo "  aws deepracer import-model \                 "
