@@ -267,7 +267,7 @@ function aws.ec2.all() {
 
 function aws.ec2.run.luz() {
 
-    AWS_CLI_PROFILE=Luz
+    AWS_CLI_PROFILE=luz
     
     aws.ec2.run  
 
