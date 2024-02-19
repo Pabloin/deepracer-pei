@@ -142,6 +142,14 @@ function spDown() {
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
 
+
+    echo "                                                                           "
+    echo "  cd  ${S3_SMINIO_SOURCE}                                                  "    
+    echo "                                                                           "
+    echo "  mc cp ${MINIO_HOME}/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive     "
+    echo "                                                                           "
+    
+
     cd  ${S3_SMINIO_SOURCE} 
 
     mc cp ${MINIO_HOME}/${MODEL_VERSION_NAME}  ${KEY_MODEL}/ --recursive
