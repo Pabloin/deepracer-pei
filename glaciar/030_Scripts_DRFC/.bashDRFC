@@ -240,11 +240,14 @@ function drLuz() {
 
 
 ##--------------------
+AWS_CLI_PROFILE=default
+
 function aws.ec2.run() {
 
     aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
-          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name}'  \
-          --output table
+          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }'  \
+          --output table \
+          --profile ${AWS_CLI_PROFILE}  
 }
 
 
@@ -259,6 +262,18 @@ function aws.ec2.all() {
       jq '.Reservations[].Instances[] | "EC2: \(.InstanceId): \(.State.Name) \(.InstanceType)  "'
   done
 }
+
+
+
+function aws.ec2.run.luz() {
+
+    AWS_CLI_PROFILE=Luz
+    
+    aws.ec2.run  
+
+    AWS_CLI_PROFILE=default
+}
+
 
 ##----------------------------
 
