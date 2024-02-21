@@ -21,6 +21,8 @@ ls   -la   ${MY_HOME_DRFC}/run.env
 ls   -la   ${MY_HOME_DRFC}/system.env
 
 
+dr-update
+
 echo "---- [ run.env ] ---"
 echo ""
 echo "DR_WORLD_NAME=${DR_WORLD_NAME}"
