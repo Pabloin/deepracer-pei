@@ -21,7 +21,6 @@ ls   -la   ${MY_HOME_DRFC}/run.env
 ls   -la   ${MY_HOME_DRFC}/system.env
 
 
-dr-update
 
 echo "---- [ run.env ] ---"
 echo ""
