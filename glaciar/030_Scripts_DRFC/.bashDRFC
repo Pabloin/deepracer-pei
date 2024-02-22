@@ -367,21 +367,25 @@ cat << EOM > ~/my_ubuntu_golden.sh
 cd ~/deepracer-pei/deepracer-for-cloud
 git pull
 
+sudo chown ubuntu  ~/hello.txt
+sudo chgrp ubuntu  ~/hello.txt
+
 # Update Hello text
-# Setear a aws credential con san-pablo
-# Setear a aws config     con racer1
+# Setear a aws config     con san-pablo  (sa-east-1)
+# Setear a aws credential con racer1
 
 
 # Para que ande sagemaker
 sudo service docker stop 
 sudo service docker start
 
-# Para que ande minio
+# Para que ande minio (los mismos que - aws default - en mi caso racer1)
 mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 
 
-# Lanzar de nuevo a DRFC (no estoy seguro ... )
-# prepare
+
+# Lanzar de nuevo a DRFC (lo pude lanzar sin el "prepare" pero necesitó activate y docker restart)
+# docker stop/star
 # activate
 # los update
 # train ...

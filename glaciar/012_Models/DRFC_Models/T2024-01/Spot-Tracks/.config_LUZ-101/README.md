@@ -35,3 +35,13 @@ NOTA:
     porque el anterior era de 100 es de 14 el actoin space y este de 21
      
     ValueError: Failed to restore agent's checkpoint: Cannot feed value of shape (512, 14) for Tensor 'Placeholder_20:0', which has shape '(512, 21)'
+
+____________________
+Nota 2024-02-22
+
+    Con este experimento...
+    - Estoy probando si el action space generado es mejor que el mío
+    - No pude entrenar un modelo 101 a partir del 100 porque:
+        - En G5 spot1 de racer1 - el minio estaba lleno 
+        - En G5 spot2 de racer1 - esta vacio pero no esta el modelo 100 ... y no se importarlo ... 
+        - Capaz hacer un G5 en racer2 (san Pablo) ... y ver ...
