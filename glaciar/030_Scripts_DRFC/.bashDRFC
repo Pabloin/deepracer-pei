@@ -248,6 +248,17 @@ AWS_CLI_PROFILE=default
 
 function aws.ec2.run() {
 
+cat << EOM
+    # aws.ec2.run
+    #     Se EJECUTA:
+
+    aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
+          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }'  \
+          --output table \
+          --profile ${AWS_CLI_PROFILE}  
+EOM
+
+
     aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
           --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }'  \
           --output table \
@@ -256,6 +267,12 @@ function aws.ec2.run() {
 
 
 function aws.ec2.all() {
+
+cat << EOM
+    # aws.ec2.all
+    #     Se Utiliza: ${AWS_CLI_PROFILE}
+EOM
+
   REGIONS=`aws ec2 describe-regions --region us-east-1 --output text --query Regions[*].[RegionName]`
 
   REGIONS_PEI='us-east-1 af-south-1 sa-east-1 eu-north-1'
@@ -385,7 +402,7 @@ mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 
 
 # Lanzar de nuevo a DRFC (lo pude lanzar sin el "prepare" pero necesitó activate y docker restart)
-# docker stop/star
+# docker stop/start
 # activate
 # los update
 # train ...
