@@ -257,12 +257,13 @@ cat << EOM
           --output table \
           --profile ${AWS_CLI_PROFILE}  
 EOM
+    aws s3 ls --profile ${AWS_CLI_PROFILE} | grep config
 
 
     aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
           --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }'  \
           --output table \
-          --profile ${AWS_CLI_PROFILE}  
+          --profile ${AWS_CLI_PROFILE}
 }
 
 
@@ -272,6 +273,8 @@ cat << EOM
     # aws.ec2.all
     #     Se Utiliza: ${AWS_CLI_PROFILE}
 EOM
+  aws s3 ls  | grep config
+
 
   REGIONS=`aws ec2 describe-regions --region us-east-1 --output text --query Regions[*].[RegionName]`
 
