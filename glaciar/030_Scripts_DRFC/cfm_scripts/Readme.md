@@ -8,7 +8,7 @@ Cloud Formation Scripts
           Anduvo Ok!
           Lo bueno, hace el attach a la Default Network
 
-### Describe un Security Group
+### Describe un Security Group (Windows y linux) - Salto de Líneas
 
      aws ec2 describe-security-groups \
            --group-ids sg-0bd9125ce1fe461ae     \
@@ -20,7 +20,7 @@ Cloud Formation Scripts
            --output yaml    `
            --profile pabloeze-glaciar
 
-### Crear un Security Group
+### Crear un Security Group (Windows y linux) - Salto de Líneas
 
      aws cloudformation deploy     \
      --template ./cfn-DRFC-sg.yaml  \
@@ -40,7 +40,32 @@ Cloud Formation Scripts
      When entering multi-line commands, you'll use "\" for Bash 
      and "`" for PowerShell.
      
-     
+### Describe instancias prendidas (Windows y linux) - Salto de Líneas
+
+
+bestion.bat
+
+@echo off
+
+for %%x in (glaciar racer1 racer2 racer3) do (
+
+    @echo on
+
+    echo:
+    echo:
+    echo: ....[ PROFILE: %%x ]...........................
+    echo:    
+
+    aws ec2 describe-instances --filters Name=instance-state-name,Values=running ^
+        --query "Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }"  ^
+        --output table ^
+        --profile %%x
+
+    @echo off
+
+)
+
+
 ## Crear Grupo - User y Role
 
      Links Utiles:
