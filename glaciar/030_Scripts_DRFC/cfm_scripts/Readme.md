@@ -65,6 +65,13 @@ for %%x in (glaciar racer1 racer2 racer3) do (
 
 )
 
+@echo on
+
+
+echo: para detener algo:
+
+echo: aws ec2 stop-instances --profile profile --instance-ids id-todelete
+
 
 ## Crear Grupo - User y Role
 
