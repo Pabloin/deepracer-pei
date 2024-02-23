@@ -4,6 +4,7 @@ Description:  Un Cloud Formation que crea los Buckets
   El de las ssh
   Etc ...
   Como lo hago privado y me quedo tranquilo?
+  Name dr-cloud-s3-stack
 
 
 Parameters:
@@ -18,7 +19,7 @@ Resources:
   DrConfigBucket: 
     Type: 'AWS::S3::Bucket' 
     Properties:
-      BucketName: dr-racer1-stoc-config
+      BucketName: dr-racer3-sao-config
       Tags:
         - Key: lab
           Value: DeepRacer
@@ -26,7 +27,7 @@ Resources:
   DrModelsBucket: 
     Type: 'AWS::S3::Bucket' 
     Properties:
-      BucketName: dr-racer1-stoc-models-to-pabloedu-gmail
+      BucketName: dr-racer3-sao-models-to-pabloedu-gmail
       Tags:
         - Key: lab
           Value: DeepRacer

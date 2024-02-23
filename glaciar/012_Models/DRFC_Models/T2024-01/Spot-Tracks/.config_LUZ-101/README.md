@@ -47,7 +47,52 @@ Nota 2024-02-22
         - Capaz hacer un G5 en racer2 (san Pablo) ... y ver ...
 
 
+    Hasta el Episodop 2000
+    - LUZ-101-Ini-Ep2000
 
+        Empezó aprox: 
+        2024/02/22 10:15 GMT-3  (Es Launch timpe no start training)
+
+        Starting 6 workers
+        Creating Robomaker configuration in s3://bucket-models-2024-01/Spot-Tracks/LUZ-101/training_params.yaml
+        Creating service deepracer-0_rl_coach
+        Creating service deepracer-0_robomaker
+        Waiting up to 15 seconds for Sagemaker to start up...
+        20:C 22 Feb 2024 13:41:08.755 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+        20:C 22 Feb 2024 13:41:08.755 # Redis version=6.2.7, bits=64, commit=00000000, modified=0, pid=20, just started
+        20:C 22 Feb 2024 13:41:08.755 # Configuration loaded
+
+        Start en GMT -3
+
+        22 Feb 2024 10:41:08.755 # Configuration loaded
+
+        Episodio 2000
+        2024/02/22 13:15 GMT-3  (captura de pantalla del log)
+
+        Training Aprox - 1.35 hs
+
+        El modelo bien... tuvo dos Off Tracks y la veulta limpia en 17 / 18 segundos ---
+        Entrenó dos horas y asi los mismos resultados que el otro que entrenó 24 horas ...
+        Voy a darle quizá mil episodios mas a ver si lo completa sin off tracks
+        Igual necesito mas velocidad para desplazar al primer modelo que hace la vuelta en 16 ... 
+
+
+    Hasta el Episodop 3000
+    - LUZ-101-Ini-Ep3000
+    - LUZ-101-Upg-Ep3000
+    - LUZ-101-End-Ep3160
+
+        Episodio 2000
+        2024/02/22 13:15 GMT-3  (captura de pantalla del log)
+
+        Training Aprox - 1.35 hs
+
+        Episodio 3000
+        2024/02/22 15:38 GMT-3  (captura de pantalla del log)
+
+        Training Aprox - 2.25 hs
+
+        Training Total - 4.00 hs
 ____________________
 Otra pregunta para hacerme es donde están los logs ...
     En realidad se donde están...

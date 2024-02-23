@@ -391,13 +391,17 @@ sudo chown ubuntu  ~/hello.txt
 sudo chgrp ubuntu  ~/hello.txt
 
 # Update Hello text
-# Setear a aws config     con san-pablo  (sa-east-1)
-# Setear a aws credential con racer1
+# vim ~/.aws/config     con san-pablo  (sa-east-1)
+# vim ~/.aws/credential con racer1
 
 
 # Para que ande sagemaker
 sudo service docker stop 
 sudo service docker start
+
+# quizá docker kill el container de  awsdeepracercommunity/deepracer-sagemaker:5.1.1-gpu 
+# docker ps -a
+# docker kill id
 
 # Para que ande minio (los mismos que - aws default - en mi caso racer1)
 mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS

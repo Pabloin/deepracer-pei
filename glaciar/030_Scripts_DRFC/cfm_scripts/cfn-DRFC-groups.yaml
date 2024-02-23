@@ -2,6 +2,7 @@ Description:  Un Cloud Formation que crea
   Un Grupo Admin
   Un Usuario Racer 
   Un Rol DeepRacer
+  NAme dr-cloud-gropus-stack
 
 
 Parameters:
