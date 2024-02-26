@@ -101,3 +101,7 @@ Otra pregunta para hacerme es donde están los logs ...
     Es decir a que hora llega al episodio X ... 
 
 
+____________________
+Nota 2024-02-26
+
+    Vamos con 101a
