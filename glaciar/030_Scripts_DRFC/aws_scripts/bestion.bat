@@ -12,14 +12,18 @@ REM sa-east-1  - San Pablo
 
 REM for %%r in (us-east-1 eu-south-1 eu-north-1 sa-east-1 ap-northeast-3) do (
 
-for %%x in (glaciar racer1 racer2 racer3) do (
+REM for %%x in (glaciar racer1 racer2 racer3) do (
+    for %%x in (glaciar racer1 racer2 racer3) do (
 
     @echo off
 
         echo:
         echo: ....[ PROFILE: %%x ].................................................
 
-    for %%r in (us-east-1 us-west-2 af-south-1 eu-north-1 sa-east-1) do (
+REM             virginia    oregon     africa     stock      SAO
+REM for %%r in (us-east-1 us-west-2 af-south-1 eu-north-1 sa-east-1) do (
+    for %%r in (us-east-1                      eu-north-1 sa-east-1) do (
+
         
         echo: ....[ PROFILE: %%x - region: %%r  ].....
 
