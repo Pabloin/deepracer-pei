@@ -105,3 +105,15 @@ ____________________
 Nota 2024-02-26
 
     Vamos con 101a
+
+
+PREFIX='model-name'   # Name of the model, without trailing '/'
+BUCKET='bucket'       # Bucket name is default 'bucket' when training locally
+PROFILE=None          # The credentials profile in .aws - 'minio' for local training
+S3_ENDPOINT_URL=None  # Endpoint URL: None for AWS S3, 'http://minio:9000' for local training
+
+PREFIX='Spot-Tracks/LUZ-101a'
+BUCKET='bucket-models-2024-01'
+S3_ENDPOINT_URL='http://minio:9000'
+
+AmericasGeneratedInclStart
