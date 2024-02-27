@@ -131,8 +131,40 @@ function spUp() {
 }
 
 
+function spDwon_S3() {
+
+    echo "  "
+    echo "  aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \            "
+    echo "               --profile  ${PROFILE_PEZE_EDU}                    "
+    echo "  "
+
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+             --profile  ${PROFILE_PEZE_EDU} 
+
+    read -p "¿Folder Model S3?  (Ejemplo:  "LUZ-101b"     ? "   MODEL_FOLDER
+
+    echo "                                                                 "
+    echo "  cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}                  "    
+    echo "                                                                 "
+    echo "  aws s3 sync   \                                                "
+    echo "         s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/   \              "
+    echo "              ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER} \ "
+    echo "         --profile  ${PROFILE_PEZE_EDU}                          "
+    echo "                                                                 "
+    echo "                                                                 "
+        
+    read -p "Hacemos DOWN S3 ? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
+    cd  ${S3_SMINIO_SOURCE}/${KEY_MODEL} 
+                                                                
+    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+                     ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \
+                    --profile ${PROFILE_PEZE_EDU}    
+
+}
+
 # Down de local Minio
-function spDown() {
+function spDown_Minio() {
 
     MINIO_HOME=${S3_SMINIO_SERVER}/${S3_SMINIO_BUCKET}/${KEY_MODEL}
 
@@ -143,7 +175,6 @@ function spDown() {
     mc ls ${MINIO_HOME}    
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_FOLDER
-
 
     echo "                                                                           "
     echo "  cd  ${S3_SMINIO_SOURCE}                                                  "    
@@ -317,7 +348,9 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
     - prof - setx - hello - doing - costos
 
-    - SPOT (Minio): spDown | spUp | spImport 
+    - SPOT (Minio): spDown_Minio  |  spUp     |  spImport 
+                    spDwon_S3     |  spUpLuz  |  spImportLuz
+                    spDwon_S3Luz  |  -        |  -
 
     - aws.ec2.run | aws.ec2.all 
     
