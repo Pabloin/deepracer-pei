@@ -191,6 +191,10 @@ function spDown_Minio() {
 
     mc cp ${MINIO_HOME}/${MODEL_FOLDER}  ${KEY_MODEL}/ --recursive
 
+    # Nota:
+    #   Capaz esto mismo se podía hacer sacando de los dis de
+    #   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
+
 }
 
 # Upload to local Minio
