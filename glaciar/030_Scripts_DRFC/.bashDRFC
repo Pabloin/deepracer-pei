@@ -333,8 +333,6 @@ function spUp_Minio() {
 }
 
 
-
-
 function spImport() {
 
     aws deepracer list-models --model-type REINFORCEMENT_LEARNING  \
@@ -515,12 +513,9 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 EOM
 
 
-
-
     cat ~/.aws/config | grep profile
 
     echo ""
-
 
 }
 

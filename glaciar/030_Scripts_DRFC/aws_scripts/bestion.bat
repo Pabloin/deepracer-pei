@@ -61,9 +61,15 @@ for %%z in (luz) do (
 )
 
 
-echo: .....................................................................
-echo: 
+echo: ......................................................................
 echo: Para borrar :
 echo: 
-echo: aws ec2 stop-instances --profile profile --instance-ids id-todelete
+echo: aws ec2 stop-instances --profile <p> --region <r> --instance-ids <id>
+echo: 
+echo: ......................................................................
+echo: Ejemplo :
+echo: 
+echo: aws ec2 stop-instances --profile racer1 --region sa-east-1 --instance-ids <id>
+echo: 
+
 
