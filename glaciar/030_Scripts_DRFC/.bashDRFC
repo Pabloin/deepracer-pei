@@ -252,6 +252,17 @@ function spUpLuz() {
     PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
 }
 
+function spDwon_S3Luz() {
+
+    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
+    PROFILE_PEZE_EDU=luz
+
+    spDwon_S3
+
+    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
+    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+}
+
 
 function drActivate() {
 
