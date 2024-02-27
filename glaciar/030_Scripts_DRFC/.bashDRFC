@@ -461,3 +461,6 @@ mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 
 EOM
 
+
+
+echo " .bashDRFC reload " 
