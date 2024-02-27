@@ -115,25 +115,32 @@ alias MM="cd   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024
 
 function mmUp() {
 
-cat << EOM
-    cd     ${MM_HOME}
-    ls -la ${MM_HOME}
-EOM
+cat << EOM_DESTINO
+    DESTINO:
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+             --profile  ${PROFILE_PEZE_EDU} 
+EOM_DESTINO
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+             --profile  ${PROFILE_PEZE_EDU} 
 
-    cd     ${MM_HOME}
+cat << EOM_ORIGEN
+    ORIGEN:
     ls -la ${MM_HOME}
+EOM_ORIGEN
+    ls -la ${MM_HOME}
+
 
     read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 cat << EOM
-    aws s3 sync                                 ./${MODEL_FOLDER}   \
+    aws s3 sync                        ${MM_HOME}/${MODEL_FOLDER}   \
             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   \
                     --profile ${PROFILE_PEZE_EDU}    
 EOM
 
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    aws s3 sync                                 ./${MODEL_FOLDER}  \
+    aws s3 sync                        ${MM_HOME}/${MODEL_FOLDER}  \
             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
                     --profile ${PROFILE_PEZE_EDU}    
 
