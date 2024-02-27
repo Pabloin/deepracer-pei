@@ -142,17 +142,18 @@ EOM
 
 function mmDown() {
 
-cat << EOM
+cat << EOM_DESTINO
     DESTINO:
     ls -la ${MM_HOME}
+EOM_DESTINO
+    ls -la ${MM_HOME}
 
-    SOURCE:
+cat << EOM_ORIGEN
+    ORIGEN:
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
              --profile  ${PROFILE_PEZE_EDU} 
-EOM
-    ls -la ${MM_HOME}
-    echo ""
-    
+EOM_ORIGEN
+
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
              --profile  ${PROFILE_PEZE_EDU} 
 
