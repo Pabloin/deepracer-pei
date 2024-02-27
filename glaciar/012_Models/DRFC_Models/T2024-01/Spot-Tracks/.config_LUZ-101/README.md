@@ -117,3 +117,11 @@ BUCKET='bucket-models-2024-01'
 S3_ENDPOINT_URL='http://minio:9000'
 
 AmericasGeneratedInclStart
+
+
+
+    Vamos con 101b
+
+    - La idea suburle a 12 workers ? o por lo menos 8 ...
+
+        o quiza 9 ... un 50% mas 
