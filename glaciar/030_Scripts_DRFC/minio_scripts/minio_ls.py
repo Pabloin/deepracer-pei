@@ -64,17 +64,20 @@ mc rm -r local/bucketaaaa  --force
 
 mc admin service restart myminio
 
------------------
+# -----------------
  # Nota: ...
     # Capaz para subir a Minio lo puedo copiar directo en el folder de data ...
     #     y para bajar capaz que también .. y no tengo que utilizar el otro dir de download...   
     # ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
 
 
-----------------
+# ----------------
 Config en DRFC
 
     ${DR_DIR}
     ./docs/_config.yml
     ./data/minio/.minio.sys/config
     ./data/minio/.minio.sys/config/config.json
+
+
+

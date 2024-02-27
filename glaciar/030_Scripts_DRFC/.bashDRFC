@@ -6,8 +6,7 @@ echo "En DRFC"
 
 
 alias HH="cd ~/deepracer-pei/deepracer-for-cloud"
-alias MM="cd ~/MINIO_SYNC/Spot-Tracks"
-alias MMM="cd /deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks "
+alias MMM="cd ~/MINIO_SYNC/Spot-Tracks"
 
 
 export PATH_DRFC_Config=~/deepracer-pei/glaciar/010_Configs/DRFC_Configs
@@ -109,16 +108,103 @@ PROFILE_LAB_ROLE=arn:aws:iam::307424703238:role/LabRole
 KEY_MODEL=Spot-Tracks
 
 
+#---[Api mm()  ]-----------------------------------
+
+export MM_HOME=~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
+alias MM="cd ${MMM_HOME}"
+
+function mmUp() {
+
+cat << EOM
+    cd     ${MM_HOME}
+    ls -la ${MM_HOME}
+EOM
+
+    cd     ${MM_HOME}
+    ls -la ${MM_HOME}
+
+    read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
+
+cat << EOM
+    aws s3 sync                                 ./${MODEL_FOLDER}   \
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   \
+                    --profile ${PROFILE_PEZE_EDU}    
+EOM
+
+    read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
+    aws s3 sync                                 ./${MODEL_FOLDER}  \
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+                    --profile ${PROFILE_PEZE_EDU}    
+
+    cd ~/deepracer-pei/deepracer-for-cloud
+}
+
+function mmDown() {
+
+cat << EOM
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+             --profile  ${PROFILE_PEZE_EDU} 
+EOM
+
+    read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
+
+
+cat << EOM
+    cd     ${MM_HOME}
+    ls -la ${MM_HOME}
+    pwd
+    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+                     ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER}  \
+                     --profile ${PROFILE_PEZE_EDU}
+EOM
+
+    cd     ${MM_HOME}
+    ls -la ${MM_HOME}
+    pwd
+
+    read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
+    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+                                                    ./${MODEL_FOLDER}  \
+                     --profile ${PROFILE_PEZE_EDU}
+
+}
+
+function mmUpLuz() {
+
+    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
+    PROFILE_PEZE_EDU=luz
+
+    mmUp
+
+    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
+    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+}
+
+function mmDownLuz() {
+
+    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
+    PROFILE_PEZE_EDU=luz
+
+    mmDown
+
+    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
+    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+}
+
+#---[Api sp()  ]-----------------------------------
+
 function spUp() {
 
-    echo "                                                                 "
-    echo "  cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}                  "    
-    echo "                                                                 "
-    echo "  aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \   "
-    echo "          s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \   "
-    echo "                 --profile ${PROFILE_PEZE_EDU}       "
-    echo "                                                                 "
-    echo "                                                                 "
+    echo "                                                          "
+    echo "  cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}           "
+    echo "                                                          "
+    echo "  aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \       "
+    echo "          s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \       "
+    echo "                 --profile ${PROFILE_PEZE_EDU}            "
+    echo "                                                          "
+    echo "                                                          "
         
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
@@ -403,6 +489,8 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
     - SPOT (Minio): spDown_Minio  |  spUp     |  spImport 
                     spDown_S3     |  spUpLuz  |  spImportLuz
                     spDown_S3Luz  |  -        |  -
+                    mmDown        |  mmUp     |  
+                    mmDownLuz     |  mmUpLuz  |  
 
     - aws.ec2.run | aws.ec2.all 
     
