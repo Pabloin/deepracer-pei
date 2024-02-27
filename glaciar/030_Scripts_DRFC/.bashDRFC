@@ -7,7 +7,7 @@ echo "En DRFC"
 
 alias HH="cd ~/deepracer-pei/deepracer-for-cloud"
 alias MM="cd ~/MINIO_SYNC/Spot-Tracks"
-
+alias MMM="cd /deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks "
 
 
 export PATH_DRFC_Config=~/deepracer-pei/glaciar/010_Configs/DRFC_Configs
@@ -412,7 +412,7 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
     # - goVirginia  | _set _getRegion  
 
 
-    alias - C | HH MM | 
+    alias - C | HH MM MMM | 
     
                         # B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W | A01 a,b,c,d..  
 
