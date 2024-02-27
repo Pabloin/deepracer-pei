@@ -62,6 +62,7 @@ mc rm -r local/bucketaaaa  --force --dangerous
 mc rm -r local/bucketaaaa  --force
 
 
+mc admin service restart myminio
 
 -----------------
 Config en DRFC

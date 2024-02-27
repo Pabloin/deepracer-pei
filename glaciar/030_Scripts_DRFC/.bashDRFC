@@ -193,6 +193,39 @@ function spDown_Minio() {
 
 }
 
+# Upload to local Minio
+function spUp_Minio() {
+
+
+    # OJO ...
+    # Que capaz lo puedo copiar directo en el folder de data: (y mucho mas facil..)
+    # ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
+
+    MINIO_HOME=${S3_SMINIO_SERVER}/${S3_SMINIO_BUCKET}/${KEY_MODEL}
+
+    echo " "
+    echo " DESTINO:  mc ls ${MINIO_HOME} "
+
+    mc ls ${MINIO_HOME}
+
+    echo " ORIGEN:  ls -a ~/MINIO_SYNC/Spot-Tracks "
+
+    cd ~/MINIO_SYNC/Spot-Tracks
+
+    echo " "
+
+    read -p "¿Folder to Minio?  (Ejemplo: "LUZ-101b" ? " MODEL_FOLDER
+
+    echo "                                                          "
+    echo "  mc cp ${MODEL_FOLDER}   ${MINIO_HOME}  --recursive      "
+    echo "                                                          "
+    
+    mc cp ${MODEL_FOLDER}   ${MINIO_HOME}  --recursive
+}
+
+
+
+
 function spImport() {
 
     aws deepracer list-models --model-type REINFORCEMENT_LEARNING  \
