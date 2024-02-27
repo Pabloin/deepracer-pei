@@ -128,11 +128,9 @@ function mmUp() {
 
 cat << EOM_DESTINO
     DESTINO:
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  
-             --profile  ${PROFILE_PEZE_EDU} 
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
 EOM_DESTINO
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  
-             --profile  ${PROFILE_PEZE_EDU} 
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
 
 cat << EOM_ORIGEN
     ORIGEN:
@@ -144,14 +142,14 @@ EOM_ORIGEN
     read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 cat << EOM
-    aws s3 sync                        ${MM_HOME}/${MODEL_FOLDER}   
+    aws s3 sync  ${MM_HOME}/${MODEL_FOLDER}   
             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   
                     --profile ${PROFILE_PEZE_EDU}    
 EOM
 
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    aws s3 sync                        ${MM_HOME}/${MODEL_FOLDER}  \
+    aws s3 sync  ${MM_HOME}/${MODEL_FOLDER}  \
             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
                     --profile ${PROFILE_PEZE_EDU}    
 
@@ -168,26 +166,24 @@ EOM_DESTINO
 
 cat << EOM_ORIGEN
     ORIGEN:
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  
-             --profile  ${PROFILE_PEZE_EDU} 
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
 EOM_ORIGEN
 
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
-             --profile  ${PROFILE_PEZE_EDU} 
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
 
     read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 
 cat << EOM
     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
-                                           ${MM_HOME}/${MODEL_FOLDER} 
+                     ${MM_HOME}/${MODEL_FOLDER} 
                      --profile ${PROFILE_PEZE_EDU}
 EOM
 
     read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
-                                           ${MM_HOME}/${MODEL_FOLDER}  \
+                     ${MM_HOME}/${MODEL_FOLDER}  \
                      --profile ${PROFILE_PEZE_EDU}
 
 }
