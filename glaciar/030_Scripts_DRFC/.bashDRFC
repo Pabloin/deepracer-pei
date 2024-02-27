@@ -131,7 +131,7 @@ function spUp() {
 }
 
 
-function spDwon_S3() {
+function spDown_S3() {
 
     echo "                                                                 "
     echo "  aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \            "
@@ -254,12 +254,12 @@ function spUpLuz() {
     PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
 }
 
-function spDwon_S3Luz() {
+function spDown_S3Luz() {
 
     S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
     PROFILE_PEZE_EDU=luz
 
-    spDwon_S3
+    spDown_S3
 
     S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
     PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
@@ -362,8 +362,8 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
     - prof - setx - hello - doing - costos
 
     - SPOT (Minio): spDown_Minio  |  spUp     |  spImport 
-                    spDwon_S3     |  spUpLuz  |  spImportLuz
-                    spDwon_S3Luz  |  -        |  -
+                    spDown_S3     |  spUpLuz  |  spImportLuz
+                    spDown_S3Luz  |  -        |  -
 
     - aws.ec2.run | aws.ec2.all 
     
