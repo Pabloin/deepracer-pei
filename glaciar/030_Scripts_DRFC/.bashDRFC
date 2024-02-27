@@ -111,7 +111,7 @@ KEY_MODEL=Spot-Tracks
 #---[Api mm()  ]-----------------------------------
 
 export MM_HOME=~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
-alias MM="cd ${MMM_HOME}"
+alias MM="cd   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks"
 
 function mmUp() {
 
