@@ -188,26 +188,28 @@ EOM
 
 }
 
-function mmUpLuz() {
-
+function PRE_CONTEXT_LUZ() {
     S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
-    PROFILE_PEZE_EDU=luz
-
-    mmUp
-
+    PROFILE_PEZE_EDU=luz    
+    PROFILE_LAB_ROLE=arn:aws:iam::559093250226:role/LabRole
+}
+function POST_CONTEXT_PEZE_EDU() {
     S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
     PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+    PROFILE_LAB_ROLE=arn:aws:iam::307424703238:role/LabRole
+}
+
+
+function mmUpLuz() {
+    PRE_CONTEXT_LUZ
+    mmUp
+    POST_CONTEXT_PEZE_EDU
 }
 
 function mmDownLuz() {
-
-    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
-    PROFILE_PEZE_EDU=luz
-
+    PRE_CONTEXT_LUZ
     mmDown
-
-    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
-    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+    POST_CONTEXT_PEZE_EDU
 }
 
 #---[Api sp()  ]-----------------------------------
@@ -373,38 +375,21 @@ function spImport() {
 }
 
 function spImportLuz() {
-
-    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
-    PROFILE_PEZE_EDU=luz
-    PROFILE_LAB_ROLE=arn:aws:iam::559093250226:role/LabRole
-    
+    PRE_CONTEXT_LUZ
     spImport
-
-    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
-    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
-    PROFILE_LAB_ROLE=arn:aws:iam::307424703238:role/LabRole
+    POST_CONTEXT_PEZE_EDU
 }
 
 function spUpLuz() {
-
-    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
-    PROFILE_PEZE_EDU=luz
-
+    PRE_CONTEXT_LUZ
     spUp
-
-    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
-    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+    POST_CONTEXT_PEZE_EDU
 }
 
 function spDown_S3Luz() {
-
-    S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
-    PROFILE_PEZE_EDU=luz
-
+    PRE_CONTEXT_LUZ
     spDown_S3
-
-    S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
-    PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
+    POST_CONTEXT_PEZE_EDU
 }
 
 
