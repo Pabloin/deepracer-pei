@@ -143,12 +143,19 @@ EOM
 function mmDown() {
 
 cat << EOM
+    DESTINO:
+    ls -la ${MM_HOME}
+
+    SOURCE:
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
              --profile  ${PROFILE_PEZE_EDU} 
 EOM
+    ls -la ${MM_HOME}
+    echo ""
+    
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
              --profile  ${PROFILE_PEZE_EDU} 
-             
+
     read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 
