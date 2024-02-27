@@ -113,14 +113,25 @@ KEY_MODEL=Spot-Tracks
 export MM_HOME=~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
 alias MM="cd   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks"
 
+
+
+function mmS3() {
+
+cat << EOM_S3_HELP
+   HELP S3:
+   aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/                      --profile  ${PROFILE_PEZE_EDU}
+   aws s3 rm s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/LUZ-NNNN --recursive  --profile  ${PROFILE_PEZE_EDU}
+EOM_S3_HELP
+}
+
 function mmUp() {
 
 cat << EOM_DESTINO
     DESTINO:
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  
              --profile  ${PROFILE_PEZE_EDU} 
 EOM_DESTINO
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  
              --profile  ${PROFILE_PEZE_EDU} 
 
 cat << EOM_ORIGEN
@@ -133,8 +144,8 @@ EOM_ORIGEN
     read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 cat << EOM
-    aws s3 sync                        ${MM_HOME}/${MODEL_FOLDER}   \
-            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   \
+    aws s3 sync                        ${MM_HOME}/${MODEL_FOLDER}   
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   
                     --profile ${PROFILE_PEZE_EDU}    
 EOM
 
@@ -157,7 +168,7 @@ EOM_DESTINO
 
 cat << EOM_ORIGEN
     ORIGEN:
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  
              --profile  ${PROFILE_PEZE_EDU} 
 EOM_ORIGEN
 
@@ -431,9 +442,9 @@ cat << EOM
     # aws.ec2.run
     #     Se EJECUTA:
 
-    aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
-          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }'  \
-          --output table \
+    aws ec2 describe-instances --filters Name=instance-state-name,Values=running  
+          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name, Placement: Placement.AvailabilityZone }'  
+          --output table 
           --profile ${AWS_CLI_PROFILE}  
 EOM
     aws s3 ls --profile ${AWS_CLI_PROFILE} | grep config
