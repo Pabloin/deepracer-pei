@@ -18,28 +18,39 @@ REM MY_SPOT=g4dn.4xlarge
 REM MY_SPOT=g5.2xlarge
 set "MY_SPOT=g5.4xlarge"
 
-REM for %%x in (eu-south-1 eu-north-1 sa-east-1 ap-northeast-3 me-south-1) do (
-for %%x in (eu-north-1 sa-east-1) do (
 
-    @echo on
-
-    echo:
-    echo:
-    echo: ....[ REGION: %%x - SPOT: %MY_SPOT ]...........................
-    echo:    
-
-    aws ec2 describe-spot-price-history ^
-        --instance-types %MY_SPOT%       ^
-        --product-descriptions "Linux/UNIX"  ^
-        --start-time %MY_DESDE%   ^
-        --end-time   %MY_HASTA%   ^
-        --output text ^
-        --region %%x  ^
-        --profile glaciar
-
-    @echo off
-
-)
+REM us-east-1  - Virginia
+REM us-west-2  - Oregon
+REM af-south-1 - Africa
+REM eu-north-1 - Estocolmo
+REM sa-east-1  - San Pablo
+REM TBD - ap-northeast-3
+REM TBD - me-south-1
 
 
-echo: para detener algo:
+
+REM             virginia   africa        stock      SAO
+REM for %%x in (us-east-1  eu-south-1 eu-north-1 sa-east-1 ap-northeast-3 me-south-1) do (
+    for %%x in (us-east-1             eu-north-1 sa-east-1                          ) do (
+
+        @echo on
+
+        echo:
+        echo:
+        echo: ....[ REGION: %%x - SPOT: %MY_SPOT ]...........................
+        echo:    
+
+        aws ec2 describe-spot-price-history ^
+            --instance-types %MY_SPOT%       ^
+            --product-descriptions "Linux/UNIX"  ^
+            --start-time %MY_DESDE%   ^
+            --end-time   %MY_HASTA%   ^
+            --output text ^
+            --region %%x  ^
+            --profile glaciar
+
+        @echo off
+
+    )
+
+
