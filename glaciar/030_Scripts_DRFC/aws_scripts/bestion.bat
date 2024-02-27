@@ -61,7 +61,7 @@ for %%z in (luz) do (
 )
 
 
-
+echo: 
 echo: ......................................................................
 echo: Para borrar (Ejemplo):
 echo: 
