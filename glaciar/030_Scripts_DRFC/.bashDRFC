@@ -161,22 +161,15 @@ EOM_ORIGEN
 
 
 cat << EOM
-    cd     ${MM_HOME}
-    ls -la ${MM_HOME}
-    pwd
-    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
-                     ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER}  \
+    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
+                                           ${MM_HOME}/${MODEL_FOLDER} 
                      --profile ${PROFILE_PEZE_EDU}
 EOM
-
-    cd     ${MM_HOME}
-    ls -la ${MM_HOME}
-    pwd
 
     read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
-                                                    ./${MODEL_FOLDER}  \
+                                          ${MM_HOME}/${MODEL_FOLDER}  \
                      --profile ${PROFILE_PEZE_EDU}
 
 }
