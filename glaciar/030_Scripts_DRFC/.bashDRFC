@@ -153,10 +153,12 @@ function spDown_S3() {
     echo "              --profile  ${PROFILE_PEZE_EDU}                     "
     echo "                                                                 "
     echo "                                                                 "
-        
+    
+    echo "Esto tenemos en destion: "
     cd      ${S3_SMINIO_SOURCE}/${KEY_MODEL} 
     ls -la  ${S3_SMINIO_SOURCE}/${KEY_MODEL} 
-    
+    echo " "
+
     read -p "Hacemos DOWN S3 ? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
