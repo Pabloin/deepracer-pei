@@ -42,7 +42,7 @@ REM for %%r in (us-east-1 us-west-2 af-south-1 eu-north-1 sa-east-1) do (
 
 SET "REGION_EDU=us-east-1"
 
-for %%z in (luz) do (
+for %%z in (luz bastion_PEZE_DRFC_CPU) do (
 
     @echo on
 
