@@ -44,9 +44,9 @@ export PATH_DRFC_Models=~/deepracer-pei/glaciar/012_Models/DRFC_Models
 echo "BASH_DRFC_ALIAS"
 export BASH_DRFC_ALIAS=~/deepracer-pei/glaciar/030_Scripts_DRFC
 
-if [ -f "\$BASH_DRFC_ALIAS/.bashDRFC_alias" ]; then
+if [ -f "$BASH_DRFC_ALIAS/.bashDRFC_alias" ]; then
     echo "Hola"
-    . "\$BASH_DRFC_ALIAS/.bashDRFC_alias"
+    . "$BASH_DRFC_ALIAS/.bashDRFC_alias"
 else 
     echo "nosta"
 
