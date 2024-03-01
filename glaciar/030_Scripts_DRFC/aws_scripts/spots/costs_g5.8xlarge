@@ -1,0 +1,29 @@
+SPOT g5.8xlarge
+
+BEST        eu-north-1c     g5.8xlarge      Linux/UNIX      0.401600        2024-02-29T21:01:34+00:00    
+BEST        eu-north-1b     g5.8xlarge      Linux/UNIX      0.444200        2024-02-29T20:46:34+00:00     
+
+BEST        sa-east-1b      g5.8xlarge      Linux/UNIX      0.416100        2024-02-29T11:54:22+00:00    
+BEST        sa-east-1a      g5.8xlarge      Linux/UNIX      0.416100        2024-02-29T11:54:22+00:00     
+
+ ....[ REGION: us-east-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        us-east-1c      g5.8xlarge      Linux/UNIX      1.081800        2024-02-29T20:47:34+00:00    
+SPOTPRICEHISTORY        us-east-1b      g5.8xlarge      Linux/UNIX      1.169500        2024-02-29T20:17:49+00:00
+SPOTPRICEHISTORY        us-east-1f      g5.8xlarge      Linux/UNIX      1.248500        2024-02-29T16:47:42+00:00
+SPOTPRICEHISTORY        us-east-1a      g5.8xlarge      Linux/UNIX      1.289300        2024-02-29T16:47:42+00:00
+SPOTPRICEHISTORY        us-east-1d      g5.8xlarge      Linux/UNIX      1.195300        2024-02-29T12:47:56+00:00
+
+
+
+ ....[ REGION: eu-north-1 - SPOT: MY_SPOT ]...........................
+    
+SPOTPRICEHISTORY        eu-north-1c     g5.8xlarge      Linux/UNIX      0.401600        2024-02-29T21:01:34+00:00    
+SPOTPRICEHISTORY        eu-north-1b     g5.8xlarge      Linux/UNIX      0.444200        2024-02-29T20:46:34+00:00     
+
+
+
+ ....[ REGION: sa-east-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        sa-east-1b      g5.8xlarge      Linux/UNIX      0.416100        2024-02-29T11:54:22+00:00    
+SPOTPRICEHISTORY        sa-east-1a      g5.8xlarge      Linux/UNIX      0.416100        2024-02-29T11:54:22+00:00     
