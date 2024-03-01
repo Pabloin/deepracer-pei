@@ -1,4 +1,4 @@
 # deepracer-pei
 
-Experimento siguiendo a PEI-0100
+Experimento siguiendo a Pg3-0100
 
