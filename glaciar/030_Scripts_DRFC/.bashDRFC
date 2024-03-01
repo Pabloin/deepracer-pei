@@ -41,13 +41,12 @@ export PATH_DRFC_Models=~/deepracer-pei/glaciar/012_Models/DRFC_Models
 #             └── Spot-Tracks
 #                 └── .config_DE10
 
-echo "Bastion DRFC"
-# Ubuntu en .bashrc
-export BASH_DRFC=~/deepracer-pei/glaciar/030_Scripts_DRFC
-# if bash dots
-if [ -f "\$BASH_DRFC/.bashDRFC_alias" ]; then
+echo "BASH_DRFC_ALIAS"
+export BASH_DRFC_ALIAS=~/deepracer-pei/glaciar/030_Scripts_DRFC
+
+if [ -f "\$BASH_DRFC_ALIAS/.bashDRFC_alias" ]; then
     echo "Hola"
-    . "\$BASH_DRFC/.bashDRFC_alias"
+    . "\$BASH_DRFC_ALIAS/.bashDRFC_alias"
 fi
 
 # REPETIDA CON DOTS (Mantener sincro iguales)
