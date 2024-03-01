@@ -12,6 +12,8 @@ client_prod = Minio("http://http://34.207.199.63/:9000",
 
 
 
+
+
 mc admin info local
 mc ls local
 
@@ -52,8 +54,18 @@ mc alias remove s3deepracer/
 
 
 #
-mc ls local
-mc mb local/bucket-models-2024-01
+mc ls myminio
+mc mb myminio/bucket-models-2024-01
+
+mc mb myminio/bucket-models-2024-03
+mc mb myminio/bucket-models-2024-04
+mc mb myminio/bucket-models-2024-05
+mc mb myminio/bucket-models-2024-06
+mc mb myminio/bucket-models-2024-07
+mc mb myminio/bucket-models-2024-08
+mc mb myminio/bucket-models-2024-09
+mc mb myminio/bucket-models-2024-10
+
 
 mc mb local/bucketaaaa
 
