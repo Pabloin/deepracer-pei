@@ -17,5 +17,16 @@ DRFC Models
 
 
 _____________________________________
+TODO:
+
+    ¿Me traigo los tiempos?
+    ¿Me traingo la racing line?
+
+
+
+
+.............................
+
+
 
 
