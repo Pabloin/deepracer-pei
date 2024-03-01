@@ -319,6 +319,8 @@ function spUp_Minio() {
 
     echo " ORIGEN:  ls -a ~/MINIO_SYNC/Spot-Tracks "
 
+    ls -a ~/MINIO_SYNC/Spot-Tracks
+
     cd ~/MINIO_SYNC/Spot-Tracks
 
     echo " "
