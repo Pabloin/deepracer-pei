@@ -41,20 +41,14 @@ export PATH_DRFC_Models=~/deepracer-pei/glaciar/012_Models/DRFC_Models
 #             └── Spot-Tracks
 #                 └── .config_DE10
 
-
-alias DE10="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE10"
-alias DE11="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE11"
-alias DE12="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_DE12"
-
-alias LUZ001="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-001"
-alias LUZ002="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-002"
-alias LUZ003="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-003"
-
-alias LUZ100="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-100"
-alias LUZ101="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-101"
-alias LUZ102="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-102"
-alias LUZ103="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-103"
-
+echo "Bastion DRFC"
+# Ubuntu en .bashrc
+export BASH_DRFC=~/deepracer-pei/glaciar/030_Scripts_DRFC
+# if bash dots
+if [ -f "\$BASH_DRFC/.bashDRFC_alias" ]; then
+    echo "Hola"
+    . "\$BASH_DRFC/.bashDRFC_alias"
+fi
 
 # REPETIDA CON DOTS (Mantener sincro iguales)
 function prof() {
