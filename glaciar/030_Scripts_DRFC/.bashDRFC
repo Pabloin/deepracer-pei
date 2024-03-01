@@ -47,6 +47,9 @@ export BASH_DRFC_ALIAS=~/deepracer-pei/glaciar/030_Scripts_DRFC
 if [ -f "\$BASH_DRFC_ALIAS/.bashDRFC_alias" ]; then
     echo "Hola"
     . "\$BASH_DRFC_ALIAS/.bashDRFC_alias"
+else 
+    echo "nosta"
+
 fi
 
 # REPETIDA CON DOTS (Mantener sincro iguales)
