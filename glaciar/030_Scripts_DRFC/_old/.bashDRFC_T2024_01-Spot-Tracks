@@ -6,7 +6,7 @@ echo "En DRFC"
 
 
 alias HH="cd ~/deepracer-pei/deepracer-for-cloud"
-alias MMM="cd ~/MINIO_SYNC/DR-Qualifier"
+alias MMM="cd ~/MINIO_SYNC/Spot-Tracks"
 
 
 export PATH_DRFC_Config=~/deepracer-pei/glaciar/010_Configs/DRFC_Configs
@@ -38,7 +38,7 @@ export PATH_DRFC_Models=~/deepracer-pei/glaciar/012_Models/DRFC_Models
 #     └── DRFC_Models
 #         ├── Readme.md
 #         └── T2024-01
-#             └── DR-Qualifier
+#             └── Spot-Tracks
 #                 └── .config_DE10
 
 echo "BASH_DRFC_ALIAS"
@@ -98,14 +98,13 @@ PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
 PROFILE_LAB_ROLE=arn:aws:iam::307424703238:role/LabRole
 
 # KEY_MODEL=Ulab-Tracks
-# KEY_MODEL=Spot-Tracks
-KEY_MODEL=DR-Qualifier
+KEY_MODEL=Spot-Tracks
 
 
 #---[Api mm()  ]-----------------------------------
 
-export MM_HOME=~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-03/DR-Qualifier
-alias MM="cd   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-03/DR-Qualifier"
+export MM_HOME=~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
+alias MM="cd   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks"
 
 
 
@@ -292,7 +291,7 @@ function spDown_Minio() {
 
     # Nota:
     #   Capaz esto mismo se podía hacer sacando de los dis de
-    #   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-03/DR-Qualifier
+    #   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
 
 }
 
@@ -302,7 +301,7 @@ function spUp_Minio() {
 
     # OJO ...
     # Que capaz lo puedo copiar directo en el folder de data: (y mucho mas facil..)
-    # ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-03/DR-Qualifier
+    # ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-01/Spot-Tracks
 
     MINIO_HOME=${S3_SMINIO_SERVER}/${S3_SMINIO_BUCKET}/${KEY_MODEL}
 
@@ -311,11 +310,11 @@ function spUp_Minio() {
 
     mc ls -la ${MINIO_HOME}
 
-    echo " ORIGEN:  ls -a ~/MINIO_SYNC/DR-Qualifier "
+    echo " ORIGEN:  ls -a ~/MINIO_SYNC/Spot-Tracks "
 
-    ls -a ~/MINIO_SYNC/DR-Qualifier
+    ls -a ~/MINIO_SYNC/Spot-Tracks
 
-    cd ~/MINIO_SYNC/DR-Qualifier
+    cd ~/MINIO_SYNC/Spot-Tracks
 
     echo " "
 
@@ -399,7 +398,7 @@ function drAll() {
 
 function drLuz() {
     
-    ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LUZ-001/xSet.sh
+    ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-01/Spot-Tracks/.config_LUZ-001/xSet.sh
 
     dr-update;
     dr-upload-custom-files;

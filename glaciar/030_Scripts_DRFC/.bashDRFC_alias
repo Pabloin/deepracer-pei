@@ -15,146 +15,146 @@ alias LUZ102="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-102"
 alias LUZ103="cd  ${PATH_DRFC_Models}/T2024-01/Spot-Tracks/.config_LUZ-103"
 
 
-# Qualify 2024-03 Pg3
+# Qualifier 2024-03 Pg3
 
-alias Pg3-0100="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0100"
-alias Pg3-0101="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0101"
-alias Pg3-0102="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0102"
-alias Pg3-0103="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0103"
+alias Pg3-0100="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0100"
+alias Pg3-0101="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0101"
+alias Pg3-0102="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0102"
+alias Pg3-0103="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0103"
 
-alias Pg3-0200="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0200"
-alias Pg3-0201="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0201"
-alias Pg3-0202="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0202"
-alias Pg3-0203="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0203"
+alias Pg3-0200="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0200"
+alias Pg3-0201="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0201"
+alias Pg3-0202="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0202"
+alias Pg3-0203="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0203"
 
-alias Pg3-0300="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0300"
-alias Pg3-0301="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0301"
-alias Pg3-0302="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0302"
-alias Pg3-0303="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualify/.config_Pg3-0303"
-
-
-# Qualify 2024-04 Pg4
-
-alias Pg4-0100="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0100"
-alias Pg4-0101="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0101"
-alias Pg4-0102="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0102"
-alias Pg4-0103="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0103"
-
-alias Pg4-0200="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0200"
-alias Pg4-0201="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0201"
-alias Pg4-0202="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0202"
-alias Pg4-0203="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0203"
-
-alias Pg4-0300="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0300"
-alias Pg4-0301="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0301"
-alias Pg4-0302="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0302"
-alias Pg4-0303="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualify/.config_Pg4-0303"
+alias Pg3-0300="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0300"
+alias Pg3-0301="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0301"
+alias Pg3-0302="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0302"
+alias Pg3-0303="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0303"
 
 
-# Qualify 2024-05 Pg5
+# Qualifier 2024-04 Pg4
 
-alias Pg5-0100="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0100"
-alias Pg5-0101="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0101"
-alias Pg5-0102="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0102"
-alias Pg5-0103="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0103"
+alias Pg4-0100="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0100"
+alias Pg4-0101="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0101"
+alias Pg4-0102="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0102"
+alias Pg4-0103="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0103"
 
-alias Pg5-0200="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0200"
-alias Pg5-0201="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0201"
-alias Pg5-0202="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0202"
-alias Pg5-0203="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0203"
+alias Pg4-0200="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0200"
+alias Pg4-0201="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0201"
+alias Pg4-0202="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0202"
+alias Pg4-0203="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0203"
 
-alias Pg5-0300="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0300"
-alias Pg5-0301="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0301"
-alias Pg5-0302="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0302"
-alias Pg5-0303="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualify/.config_Pg5-0303"
-
-
-# Qualify 2024-06 Pg6
-
-alias Pg6-0100="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0100"
-alias Pg6-0101="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0101"
-alias Pg6-0102="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0102"
-alias Pg6-0103="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0103"
-
-alias Pg6-0200="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0200"
-alias Pg6-0201="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0201"
-alias Pg6-0202="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0202"
-alias Pg6-0203="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0203"
-
-alias Pg6-0300="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0300"
-alias Pg6-0301="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0301"
-alias Pg6-0302="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0302"
-alias Pg6-0303="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualify/.config_Pg6-0303"
+alias Pg4-0300="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0300"
+alias Pg4-0301="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0301"
+alias Pg4-0302="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0302"
+alias Pg4-0303="cd  ${PATH_DRFC_Models}/T2024-04/DR-Qualifier/.config_Pg4-0303"
 
 
-# Qualify 2024-07 Pg7
+# Qualifier 2024-05 Pg5
 
-alias Pg7-0100="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0100"
-alias Pg7-0101="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0101"
-alias Pg7-0102="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0102"
-alias Pg7-0103="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0103"
+alias Pg5-0100="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0100"
+alias Pg5-0101="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0101"
+alias Pg5-0102="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0102"
+alias Pg5-0103="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0103"
 
-alias Pg7-0200="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0200"
-alias Pg7-0201="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0201"
-alias Pg7-0202="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0202"
-alias Pg7-0203="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0203"
+alias Pg5-0200="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0200"
+alias Pg5-0201="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0201"
+alias Pg5-0202="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0202"
+alias Pg5-0203="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0203"
 
-alias Pg7-0300="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0300"
-alias Pg7-0301="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0301"
-alias Pg7-0302="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0302"
-alias Pg7-0303="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualify/.config_Pg7-0303"
-
-
-# Qualify 2024-08 Pg8
-
-alias Pg8-0100="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0100"
-alias Pg8-0101="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0101"
-alias Pg8-0102="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0102"
-alias Pg8-0103="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0103"
-
-alias Pg8-0200="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0200"
-alias Pg8-0201="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0201"
-alias Pg8-0202="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0202"
-alias Pg8-0203="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0203"
-
-alias Pg8-0300="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0300"
-alias Pg8-0301="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0301"
-alias Pg8-0302="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0302"
-alias Pg8-0303="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualify/.config_Pg8-0303"
+alias Pg5-0300="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0300"
+alias Pg5-0301="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0301"
+alias Pg5-0302="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0302"
+alias Pg5-0303="cd  ${PATH_DRFC_Models}/T2024-05/DR-Qualifier/.config_Pg5-0303"
 
 
-# Qualify 2024-09 Pg9
+# Qualifier 2024-06 Pg6
 
-alias Pg9-0100="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0100"
-alias Pg9-0101="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0101"
-alias Pg9-0102="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0102"
-alias Pg9-0103="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0103"
+alias Pg6-0100="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0100"
+alias Pg6-0101="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0101"
+alias Pg6-0102="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0102"
+alias Pg6-0103="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0103"
 
-alias Pg9-0200="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0200"
-alias Pg9-0201="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0201"
-alias Pg9-0202="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0202"
-alias Pg9-0203="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0203"
+alias Pg6-0200="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0200"
+alias Pg6-0201="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0201"
+alias Pg6-0202="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0202"
+alias Pg6-0203="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0203"
 
-alias Pg9-0300="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0300"
-alias Pg9-0301="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0301"
-alias Pg9-0302="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0302"
-alias Pg9-0303="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualify/.config_Pg9-0303"
+alias Pg6-0300="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0300"
+alias Pg6-0301="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0301"
+alias Pg6-0302="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0302"
+alias Pg6-0303="cd  ${PATH_DRFC_Models}/T2024-06/DR-Qualifier/.config_Pg6-0303"
 
 
-# Qualify 2024-10 Pg10
+# Qualifier 2024-07 Pg7
 
-alias Pg10-0100="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0100"
-alias Pg10-0101="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0101"
-alias Pg10-0102="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0102"
-alias Pg10-0103="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0103"
+alias Pg7-0100="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0100"
+alias Pg7-0101="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0101"
+alias Pg7-0102="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0102"
+alias Pg7-0103="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0103"
 
-alias Pg10-0200="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0200"
-alias Pg10-0201="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0201"
-alias Pg10-0202="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0202"
-alias Pg10-0203="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0203"
+alias Pg7-0200="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0200"
+alias Pg7-0201="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0201"
+alias Pg7-0202="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0202"
+alias Pg7-0203="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0203"
 
-alias Pg10-0300="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0300"
-alias Pg10-0301="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0301"
-alias Pg10-0302="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0302"
-alias Pg10-0303="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualify/.config_Pg10-0303"
+alias Pg7-0300="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0300"
+alias Pg7-0301="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0301"
+alias Pg7-0302="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0302"
+alias Pg7-0303="cd  ${PATH_DRFC_Models}/T2024-07/DR-Qualifier/.config_Pg7-0303"
+
+
+# Qualifier 2024-08 Pg8
+
+alias Pg8-0100="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0100"
+alias Pg8-0101="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0101"
+alias Pg8-0102="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0102"
+alias Pg8-0103="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0103"
+
+alias Pg8-0200="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0200"
+alias Pg8-0201="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0201"
+alias Pg8-0202="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0202"
+alias Pg8-0203="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0203"
+
+alias Pg8-0300="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0300"
+alias Pg8-0301="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0301"
+alias Pg8-0302="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0302"
+alias Pg8-0303="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_Pg8-0303"
+
+
+# Qualifier 2024-09 Pg9
+
+alias Pg9-0100="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0100"
+alias Pg9-0101="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0101"
+alias Pg9-0102="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0102"
+alias Pg9-0103="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0103"
+
+alias Pg9-0200="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0200"
+alias Pg9-0201="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0201"
+alias Pg9-0202="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0202"
+alias Pg9-0203="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0203"
+
+alias Pg9-0300="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0300"
+alias Pg9-0301="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0301"
+alias Pg9-0302="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0302"
+alias Pg9-0303="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0303"
+
+
+# Qualifier 2024-10 Pg10
+
+alias Pg10-0100="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0100"
+alias Pg10-0101="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0101"
+alias Pg10-0102="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0102"
+alias Pg10-0103="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0103"
+
+alias Pg10-0200="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0200"
+alias Pg10-0201="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0201"
+alias Pg10-0202="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0202"
+alias Pg10-0203="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0203"
+
+alias Pg10-0300="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0300"
+alias Pg10-0301="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0301"
+alias Pg10-0302="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0302"
+alias Pg10-0303="cd  ${PATH_DRFC_Models}/T2024-10/DR-Qualifier/.config_Pg10-0303"
 
