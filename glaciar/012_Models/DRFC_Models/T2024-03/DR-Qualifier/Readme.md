@@ -24,7 +24,18 @@ TODO:
 
 
 
+_____________________________________
+Tracks:
 
+    caecer_gp-1500-8-2023-12-24-203945_action_space.json
+    caecer_gp-1500-8-2023-12-24-203945_with_speed.txt
+    caecer_gp-1500-v1.json
+    caecer_gp-1500-v2.json
+        Redondeo
+
+    caecer_gp-1500-v3.json
+        Aca estoy cambiando los valores para normalizar los angulos
+        
 .............................
 
 

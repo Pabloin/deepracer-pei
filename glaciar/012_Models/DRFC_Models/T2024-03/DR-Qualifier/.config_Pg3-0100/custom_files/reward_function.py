@@ -1,8 +1,6 @@
-# https://youtu.be/2haOZX3rsm4?si=6_a6C2zJ04RyQStN&t=2861
-
 from time import time
 
-class DeerRacer:
+class RewardContext:
 
     def __init__(self, verbose=False):
         self.previous_steps = None
@@ -32,7 +30,7 @@ class DeerRacer:
         steps = params['steps']
         abs_steering = abs(params['steering_angle'])
         
-        if DeerRacer.is_new_lap(self.previous_steps, steps):
+        if RewardContext.is_new_lap(self.previous_steps, steps):
             self.initial_time = self.get_timestamp(params)
         else:
             pass
@@ -54,7 +52,7 @@ class DeerRacer:
         return reward
 
 
-myFunction = DeerRacer()
+myFunction = RewardContext()
 
 def reward_function(params):
     return myFunction.reward_function(params)
