@@ -19,3 +19,38 @@ Experimento siguiendo a Pg3-0100
        y ajustar al action space ...  
 
 -------------------------------------------------------------
+TASA:
+
+   23:34 hs
+      2024-03-03 00:34:54.429288: W tensorflow/core/common_runtime/
+      DoorMan: installing SIGINT, SIGTERM
+      Training> Name=main_level/agent, Worker=0, Episode=1, Total reward=35.7, Steps=40, Training iteration=0   
+
+   22:00 hs
+      Training> Name=main_level/agent, Worker=0, Episode=900, Total reward=18.6, Steps=23010, Training iteration=8  
+
+
+   22:05 hs
+      Training> Name=main_level/agent, Worker=0, Episode=1000, Total reward=13.5, Steps=26032, Training iteration=9  
+
+   22:30 hs
+      Training> Name=main_level/agent, Worker=0, Episode=1123, Total reward=21.9, Steps=29606, Training iteration=11
+
+      Aca hice Ctrl +C  por impaciente ... 
+
+
+   => En 1000 episodios 
+
+        21:35
+        22:95    
+      - 30 minutos 
+      - con 24 workers
+      - 1000 episodios a 100 operaciones ...
+
+   ..............................................
+TODO:
+
+   ¿Como agrego el Log analisis fuera del docker y mantenie do a las versiones?
+
+
+
