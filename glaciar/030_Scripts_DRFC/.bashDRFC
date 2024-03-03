@@ -219,7 +219,7 @@ EOM
 
 
 
-function PRE_CONTEXT_GLACIAR()  {
+function PRE_CONTEXT_GLACIAR() {
     S3_BUCKET_TARGET=deepracer-forcloud-glaciar
     PROFILE_PEZE_EDU=glaciar    
     PROFILE_LAB_ROLE=arn:aws:iam::845305768689:role/DeepRacerRole
@@ -249,6 +249,12 @@ function mmDownGlaciar() {
     POST_CONTEXT_PEZE_EDU
 }
 
+function spImportGlaciar() {
+    PRE_CONTEXT_GLACIAR
+    spImport
+    POST_CONTEXT_PEZE_EDU
+}
+
 #---[Api sp()  ]-----------------------------------
 
 function mmUpLuz() {
@@ -260,6 +266,12 @@ function mmUpLuz() {
 function mmDownLuz() {
     PRE_CONTEXT_LUZ
     mmDown
+    POST_CONTEXT_PEZE_EDU
+}
+
+function spImportLuz() {
+    PRE_CONTEXT_LUZ
+    spImport
     POST_CONTEXT_PEZE_EDU
 }
 
@@ -425,12 +437,6 @@ function spImport() {
    
 }
 
-function spImportLuz() {
-    PRE_CONTEXT_LUZ
-    spImport
-    POST_CONTEXT_PEZE_EDU
-}
-
 function spUpLuz() {
     PRE_CONTEXT_LUZ
     spUp
@@ -539,11 +545,12 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
     - prof - setx - hello - doing - costos
 
-    - SPOT (Minio): spDown_Minio  |  spUp     |  spImport 
-                    spDown_S3     |  spUpLuz  |  spImportLuz
-                    spDown_S3Luz  |  -        |  -
-                    mmDown        |  mmUp     |  
-                    mmDownLuz     |  mmUpLuz  |  
+    - SPOT (Minio): spDown_Minio  | spUp        | spImport 
+                    spDown_S3     | spUpLuz     | spImportLuz
+                    spDown_S3Luz  | -           | -
+                    mmDown        | mmUp        | 
+                    mmDownLuz     | mmUpLuz     | spImportLuz
+                    mmDownGlaciar | mmUpGlaciar | spImportGlaciar
 
     - aws.ec2.run | aws.ec2.all 
     
