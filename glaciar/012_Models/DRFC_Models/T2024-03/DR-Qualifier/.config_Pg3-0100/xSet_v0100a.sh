@@ -21,7 +21,7 @@ ls   -la   ${MY_HOME_DRFC}/run.env
 ls   -la   ${MY_HOME_DRFC}/system.env
 
 
-#
+
 #-----------------------------
 
 export MY_HOME_DRFC=~/deepracer-pei/deepracer-for-cloud
