@@ -192,33 +192,36 @@ EOM
 
 function mmDown() {
 
-cat << EOM_DESTINO
-    DESTINO:
-    ls -la ${MM_HOME}
-EOM_DESTINO
-    ls -la ${MM_HOME}
+    echo "mmDown no tiene Sentido porque no se puede bajar a minio directo ... "
+    echo "usar solo mmUpNN y spImportMM"
 
-cat << EOM_ORIGEN
-    ORIGEN:
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
-EOM_ORIGEN
+# cat << EOM_DESTINO
+#     DESTINO:
+#     ls -la ${MM_HOME}
+# EOM_DESTINO
+#     ls -la ${MM_HOME}
 
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+# cat << EOM_ORIGEN
+#     ORIGEN:
+#     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+# EOM_ORIGEN
 
-    read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
+#     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+
+#     read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 
-cat << EOM
-    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
-                     ${MM_HOME}/${MODEL_FOLDER} 
-                     --profile ${PROFILE_PEZE_EDU}
-EOM
+# cat << EOM
+#     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
+#                      ${MM_HOME}/${MODEL_FOLDER} 
+#                      --profile ${PROFILE_PEZE_EDU}
+# EOM
 
-    read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+#     read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
-                     ${MM_HOME}/${MODEL_FOLDER}  \
-                     --profile ${PROFILE_PEZE_EDU}
+#     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+#                      ${MM_HOME}/${MODEL_FOLDER}  \
+#                      --profile ${PROFILE_PEZE_EDU}
 
 }
 
