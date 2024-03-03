@@ -21,24 +21,28 @@ ls   -la   ${MY_HOME_DRFC}/run.env
 ls   -la   ${MY_HOME_DRFC}/system.env
 
 
+#-----------------------------
 
-echo "---- [ run.env ] ---"
-echo ""
-echo "DR_WORLD_NAME=${DR_WORLD_NAME}"
-echo ""
-echo "DR_LOCAL_S3_MODEL_PREFIX=${DR_LOCAL_S3_MODEL_PREFIX}"
-echo "DR_LOCAL_S3_PRETRAINED=${DR_LOCAL_S3_PRETRAINED}"
-echo ""
-echo "DR_LOCAL_S3_PRETRAINED_PREFIX=${DR_LOCAL_S3_PRETRAINED_PREFIX}"
-echo "DR_LOCAL_S3_PRETRAINED_CHECKPOINT=${DR_LOCAL_S3_PRETRAINED_CHECKPOINT}"
-echo ""
-echo ""
+export MY_HOME_DRFC=~/deepracer-pei/deepracer-for-cloud
 
+function ee3() {
+    grep  ^DR_ ${MY_HOME_DRFC}/$1 | grep $2
+}
 
-echo "---- [ system.env ] ---"
-echo ""
-echo "DR_UPLOAD_S3_BUCKET=${DR_UPLOAD_S3_BUCKET}"
-echo "DR_UPLOAD_S3_ROLE=${DR_UPLOAD_S3_ROLE}"
-echo "DR_LOCAL_S3_BUCKET=${DR_LOCAL_S3_BUCKET}"
-echo "DR_LOCAL_S3_PROFILE=${DR_LOCAL_S3_PROFILE}"
-echo ""
+echo -e "\n---- [ run.env ] ---\n"
+
+ee3 run.env  DR_WORLD_NAME=
+ee3 run.env  DR_LOCAL_S3_MODEL_PREFIX=
+ee3 run.env  DR_LOCAL_S3_PRETRAINED=
+ee3 run.env  DR_LOCAL_S3_PRETRAINED_PREFIX=
+ee3 run.env  DR_LOCAL_S3_PRETRAINED_CHECKPOINT=
+
+echo -e "\n---- [ system.env ] ---\n"
+
+ee3 system.env DR_UPLOAD_S3_BUCKET=
+ee3 system.env DR_UPLOAD_S3_ROLE=
+ee3 system.env DR_LOCAL_S3_BUCKET=
+ee3 system.env DR_LOCAL_S3_PROFILE=
+
+ee3 system.env DR_WORKERS=
+
