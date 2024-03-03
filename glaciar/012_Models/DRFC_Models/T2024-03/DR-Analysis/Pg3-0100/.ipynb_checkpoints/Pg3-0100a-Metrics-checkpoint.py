@@ -73,12 +73,10 @@ BUCKET='bucket'       # Bucket name is default 'bucket' when training locally
 PROFILE=None          # The credentials profile in .aws - 'minio' for local training
 S3_ENDPOINT_URL=None  # Endpoint URL: None for AWS S3, 'http://minio:9000' for local training
 
-#bucket-models-2024-03/DR-Qualifier/Pg3-0100a
-
-PREFIX='DR-Qualifier/Pg3-0100a'   
+PREFIX='DR-Qualifier/Pg3-0100'   
 BUCKET='bucket-models-2024-03'
 PROFILE=None          
-S3_ENDPOINT_URL='http://minio:9000'
+S3_ENDPOINT_URL=None  
 
 # -
 
