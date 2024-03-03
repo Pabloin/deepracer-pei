@@ -45,5 +45,9 @@ ee3 system.env DR_UPLOAD_S3_ROLE=
 ee3 system.env DR_LOCAL_S3_BUCKET=
 ee3 system.env DR_LOCAL_S3_PROFILE=
 
+
+echo -e "\n---- [ TRAIN ] ---\n"
+
 ee3 system.env DR_WORKERS=
+ee3 run.env    DR_TRAIN_ROUND_ROBIN_ADVANCE_DIST=
 
