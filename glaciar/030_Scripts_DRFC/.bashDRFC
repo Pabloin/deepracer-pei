@@ -62,6 +62,11 @@ function prof() {
     fi
 }
 
+function gita() {
+    git add ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Analysis/
+    git commit -m "Update Analysis" 
+    git push
+}
 
 function setx() {
     ls -la 
