@@ -218,6 +218,12 @@ EOM
 }
 
 
+
+function PRE_CONTEXT_GLACIAR() {
+    S3_BUCKET_TARGET=deepracer-forcloud-glaciar
+    PROFILE_PEZE_EDU=glaciar    
+    PROFILE_LAB_ROLE=arn:aws:iam::845305768689:role/DeepRacerRole
+}
 function PRE_CONTEXT_LUZ() {
     S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
     PROFILE_PEZE_EDU=luz    
@@ -229,6 +235,21 @@ function POST_CONTEXT_PEZE_EDU() {
     PROFILE_LAB_ROLE=arn:aws:iam::307424703238:role/LabRole
 }
 
+
+#---[Models To Glaciar  ]-----------------------------------
+
+function mmUpGlaciar() {
+    PRE_CONTEXT_GLACIAR
+    mmUp
+    POST_CONTEXT_PEZE_EDU
+}
+function mmDownGlaciar() {
+    PRE_CONTEXT_GLACIAR
+    mmDown
+    POST_CONTEXT_PEZE_EDU
+}
+
+#---[Api sp()  ]-----------------------------------
 
 function mmUpLuz() {
     PRE_CONTEXT_LUZ
