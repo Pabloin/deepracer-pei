@@ -219,7 +219,7 @@ EOM
 
 
 
-function PRE_CONTEXT_GLACIAR() {
+function PRE_CONTEXT_GLACIAR()  {
     S3_BUCKET_TARGET=deepracer-forcloud-glaciar
     PROFILE_PEZE_EDU=glaciar    
     PROFILE_LAB_ROLE=arn:aws:iam::845305768689:role/DeepRacerRole
