@@ -97,6 +97,9 @@ function ee4() {
 
     ee3 system.env DR_WORKERS=
     ee3 run.env    DR_TRAIN_ROUND_ROBIN_ADVANCE_DIST=
+
+    grep num_episodes_between_training ~/deepracer-pei/deepracer-for-cloud/custom_files/hyperparameters.json 
+
 }
 
 export PATH=$PATH:$HOME/minio-binaries/

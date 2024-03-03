@@ -51,3 +51,4 @@ echo -e "\n---- [ TRAIN ] ---\n"
 ee3 system.env DR_WORKERS=
 ee3 run.env    DR_TRAIN_ROUND_ROBIN_ADVANCE_DIST=
 
+grep num_episodes_between_training ${MY_HOME_DRFC}/custom_files/hyperparameters.json 
