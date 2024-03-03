@@ -52,5 +52,24 @@ TODO:
 
    ¿Como agrego el Log analisis fuera del docker y mantenie do a las versiones?
 
+--------------------------------
+Hay algo malo con esta config...
 
+   Importé los modelos 0100 y 0100a 
+      tanto en glaciar como en Luz y dice que no exite el checkpoint ... 
+
+      No se que pasa ... se me ocurre algo de los workers ... 
+
+         Name
+         Error status
+         Help
+         Pg3-0100-Luz	
+         Checkpoint does not exist
+         Import model manually
+         Pg3-0100a-Luz	
+         Checkpoint does not exist
+         Import model manually
+         Pg3-0100aLuz	
+         Checkpoint does not exist
+         Import model manually
 
