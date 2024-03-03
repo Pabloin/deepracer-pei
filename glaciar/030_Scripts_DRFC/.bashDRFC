@@ -70,6 +70,35 @@ function setx() {
     git add xSet*.sh; git commit -m "setx"; git push
 }
 
+
+function ee3() {
+    grep  ^DR_ ~/deepracer-pei/deepracer-for-cloud/$1 | grep $2
+}
+
+
+function ee4() {
+    echo -e "\n---- [ run.env ] ---\n"
+
+    ee3 run.env  DR_WORLD_NAME=
+    ee3 run.env  DR_LOCAL_S3_MODEL_PREFIX=
+    ee3 run.env  DR_LOCAL_S3_PRETRAINED=
+    ee3 run.env  DR_LOCAL_S3_PRETRAINED_PREFIX=
+    ee3 run.env  DR_LOCAL_S3_PRETRAINED_CHECKPOINT=
+
+    echo -e "\n---- [ system.env ] ---\n"
+
+    ee3 system.env DR_UPLOAD_S3_BUCKET=
+    ee3 system.env DR_UPLOAD_S3_ROLE=
+    ee3 system.env DR_LOCAL_S3_BUCKET=
+    ee3 system.env DR_LOCAL_S3_PROFILE=
+
+
+    echo -e "\n---- [ TRAIN ] ---\n"
+
+    ee3 system.env DR_WORKERS=
+    ee3 run.env    DR_TRAIN_ROUND_ROBIN_ADVANCE_DIST=
+}
+
 export PATH=$PATH:$HOME/minio-binaries/
 
 
