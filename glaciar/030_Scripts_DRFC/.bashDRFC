@@ -295,14 +295,14 @@ function spImportLuz() {
 
 function spUp() {
 
-    echo "                                                          "
-    echo "  cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}           "
-    echo "                                                          "
-    echo "  aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \       "
-    echo "          s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \       "
-    echo "                 --profile ${PROFILE_PEZE_EDU}            "
-    echo "                                                          "
-    echo "                                                          "
+cat << EOM
+    cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}       
+                                                        
+    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \   
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \   
+                   --profile ${PROFILE_PEZE_EDU}   
+
+EOM
         
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
@@ -317,26 +317,29 @@ function spUp() {
 
 function spDown_S3() {
 
-    echo "                                                                 "
-    echo "  aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \            "
-    echo "               --profile  ${PROFILE_PEZE_EDU}                    "
-    echo "                                                                 "
- 
+cat << EOM
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+                 --profile  ${PROFILE_PEZE_EDU}        
+
+EOM
+
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
              --profile  ${PROFILE_PEZE_EDU} 
 
     read -p "¿Folder Model S3?  (Ejemplo:  "LUZ-101b"     ? "   MODEL_FOLDER
 
-    echo "                                                                 "
-    echo "  cd          ${S3_SMINIO_SOURCE}/${KEY_MODEL}                   "
-    echo "  ls -la      ${S3_SMINIO_SOURCE}/${KEY_MODEL}                   "        
-    echo "                                                                 "
-    echo "  aws s3 sync   \                                                "
-    echo "         s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \ "
-    echo "              ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER} \ "
-    echo "              --profile  ${PROFILE_PEZE_EDU}                     "
-    echo "                                                                 "
-    echo "                                                                 "
+cat << EOM
+
+    cd          ${S3_SMINIO_SOURCE}/${KEY_MODEL}
+    ls -la      ${S3_SMINIO_SOURCE}/${KEY_MODEL}
+                  
+    aws s3 sync   \
+           s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \
+                ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER} \
+                --profile  ${PROFILE_PEZE_EDU}
+
+EOM
+
     
     echo "Esto tenemos en destion: "
     cd      ${S3_SMINIO_SOURCE}/${KEY_MODEL} 
@@ -356,10 +359,10 @@ function spDown_Minio() {
 
     MINIO_HOME=${S3_SMINIO_SERVER}/${S3_SMINIO_BUCKET}/${KEY_MODEL}
 
-    echo "                             "
-    echo "  mc ls ${MINIO_HOME}        "    
-    echo "                             "
- 
+cat << EOM
+    mc ls ${MINIO_HOME}
+EOM
+
     mc ls ${MINIO_HOME}    
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_FOLDER
@@ -370,10 +373,12 @@ function spDown_Minio() {
     echo "  mc cp ${MINIO_HOME}/${MODEL_FOLDER}  ${KEY_MODEL}/ --recursive     "
     echo "                                                                           "
     
+    mc cp ${MINIO_HOME}/${MODEL_FOLDER} \
+          ${S3_SMINIO_SOURCE}/${KEY_MODEL}/ --recursive
 
-    cd  ${S3_SMINIO_SOURCE} 
 
-    mc cp ${MINIO_HOME}/${MODEL_FOLDER}  ${KEY_MODEL}/ --recursive
+    cd  ${S3_SMINIO_SOURCE}/${KEY_MODEL}
+
 
     # Nota:
     #   Capaz esto mismo se podía hacer sacando de los dis de

@@ -37,7 +37,12 @@ Tracks:
         Aca estoy cambiando los valores para normalizar los angulos
         
 .............................
+Modelos
 
+    - Pg3_v0100z
+
+        Este modelo / serie es el inicial entrenado en spot G5 4x porque la 8X no tenía capacidad ...
+        Sería el primero que podría importar para evaluar el tiempo el EDU 
 
 
 
