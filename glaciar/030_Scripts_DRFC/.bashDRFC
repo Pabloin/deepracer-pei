@@ -298,8 +298,8 @@ function spUp() {
 cat << EOM
     cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}       
                                                         
-    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \   
-            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \   
+    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/ 
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/    
                    --profile ${PROFILE_PEZE_EDU}   
 
 EOM
@@ -318,7 +318,7 @@ EOM
 function spDown_S3() {
 
 cat << EOM
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/ 
                  --profile  ${PROFILE_PEZE_EDU}        
 
 EOM
@@ -334,8 +334,8 @@ cat << EOM
     ls -la      ${S3_SMINIO_SOURCE}/${KEY_MODEL}
                   
     aws s3 sync   \
-           s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \
-                ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER} \
+           s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
+                ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER} 
                 --profile  ${PROFILE_PEZE_EDU}
 
 EOM
@@ -366,23 +366,21 @@ EOM
     mc ls ${MINIO_HOME}    
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_FOLDER
-
-    echo "                                                                           "
-    echo "  cd  ${S3_SMINIO_SOURCE}                                                  "    
-    echo "                                                                           "
-    echo "  mc cp ${MINIO_HOME}/${MODEL_FOLDER}  ${KEY_MODEL}/ --recursive     "
-    echo "                                                                           "
     
-    mc cp ${MINIO_HOME}/${MODEL_FOLDER} \
+cat << EOM
+    
+    mc cp ${MINIO_HOME}/${MODEL_FOLDER}
           ${S3_SMINIO_SOURCE}/${KEY_MODEL}/ --recursive
-
 
     cd  ${S3_SMINIO_SOURCE}/${KEY_MODEL}
 
+EOM
 
-    # Nota:
-    #   Capaz esto mismo se podía hacer sacando de los dis de
-    #   ~/deepracer-pei/deepracer-for-cloud/data/minio/bucket-models-2024-03/DR-Qualifier
+
+    mc cp ${MINIO_HOME}/${MODEL_FOLDER} \
+          ${S3_SMINIO_SOURCE}/${KEY_MODEL}/ --recursive
+
+    cd  ${S3_SMINIO_SOURCE}/${KEY_MODEL}
 
 }
 
