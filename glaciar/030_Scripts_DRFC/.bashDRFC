@@ -160,34 +160,40 @@ EOM_S3_HELP
 
 function mmUp() {
 
-cat << EOM_DESTINO
-    DESTINO:
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
-EOM_DESTINO
-    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+    echo "mmDown sube de minio el raw ... es decir podría servir como backup para recupera en otro minio... "
+    echo "... pero el RAW no me sirve para hacer el import ...o sea... volver a usar spUp spDown -- spImportMM"
 
-cat << EOM_ORIGEN
-    ORIGEN:
-    ls -la ${MM_HOME}
-EOM_ORIGEN
-    ls -la ${MM_HOME}
+    # NOTA: Sacar el tab si alguna vez lo descomento ... 
+
+    # cat << EOM_DESTINO
+    #     DESTINO:
+    #     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+    # EOM_DESTINO
+    #     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+
+    # cat << EOM_ORIGEN
+    #     ORIGEN:
+    #     ls -la ${MM_HOME}
+    # EOM_ORIGEN
+    #     ls -la ${MM_HOME}
 
 
-    read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
+    #     read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
-cat << EOM
-    aws s3 sync  ${MM_HOME}/${MODEL_FOLDER}   
-            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   
-                    --profile ${PROFILE_PEZE_EDU}    
-EOM
+    # cat << EOM
+    #     aws s3 sync  ${MM_HOME}/${MODEL_FOLDER}   
+    #             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}   
+    #                     --profile ${PROFILE_PEZE_EDU}    
+    # EOM
 
-    read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+    #     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    aws s3 sync  ${MM_HOME}/${MODEL_FOLDER}  \
-            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
-                    --profile ${PROFILE_PEZE_EDU}    
+    #     aws s3 sync  ${MM_HOME}/${MODEL_FOLDER}  \
+    #             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+    #                     --profile ${PROFILE_PEZE_EDU}    
 
-    cd ~/deepracer-pei/deepracer-for-cloud
+    #     cd ~/deepracer-pei/deepracer-for-cloud
+
 }
 
 function mmDown() {
@@ -195,33 +201,35 @@ function mmDown() {
     echo "mmDown no tiene Sentido porque no se puede bajar a minio directo ... "
     echo "usar solo mmUpNN y spImportMM"
 
-# cat << EOM_DESTINO
-#     DESTINO:
-#     ls -la ${MM_HOME}
-# EOM_DESTINO
-#     ls -la ${MM_HOME}
+    # NOTA: Sacar el tab si alguna vez lo descomento ... 
 
-# cat << EOM_ORIGEN
-#     ORIGEN:
-#     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
-# EOM_ORIGEN
+    # cat << EOM_DESTINO
+    #     DESTINO:
+    #     ls -la ${MM_HOME}
+    # EOM_DESTINO
+    #     ls -la ${MM_HOME}
 
-#     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+    # cat << EOM_ORIGEN
+    #     ORIGEN:
+    #     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+    # EOM_ORIGEN
 
-#     read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
+    #     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  --profile  ${PROFILE_PEZE_EDU} 
+
+    #     read -p "¿Folder Model in S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
 
 
-# cat << EOM
-#     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
-#                      ${MM_HOME}/${MODEL_FOLDER} 
-#                      --profile ${PROFILE_PEZE_EDU}
-# EOM
+    # cat << EOM
+    #     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} 
+    #                      ${MM_HOME}/${MODEL_FOLDER} 
+    #                      --profile ${PROFILE_PEZE_EDU}
+    # EOM
 
-#     read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+    #     read -p "Hacemos Down? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-#     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
-#                      ${MM_HOME}/${MODEL_FOLDER}  \
-#                      --profile ${PROFILE_PEZE_EDU}
+    #     aws s3 sync s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
+    #                      ${MM_HOME}/${MODEL_FOLDER}  \
+    #                      --profile ${PROFILE_PEZE_EDU}
 
 }
 
@@ -622,11 +630,11 @@ cat << EOM > ~/my_ubuntu_golden.sh
 
 # Echo FIXEX para que anden la instancia Golden
 
-cd ~/deepracer-pei/deepracer-for-cloud
-git pull
-
 sudo chown ubuntu  ~/hello.txt
 sudo chgrp ubuntu  ~/hello.txt
+
+cd ~/deepracer-pei/deepracer-for-cloud
+git pull
 
 # Update Hello text
 # vim ~/.aws/config     con san-pablo  (sa-east-1)
