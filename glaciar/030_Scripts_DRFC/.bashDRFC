@@ -306,16 +306,17 @@ cat << EOM
 
 EOM
         
-    read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
     cd  ${S3_SMINIO_SOURCE}/${KEY_MODEL} 
     
     ls -la
 
+    read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
     aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \
             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
                     --profile ${PROFILE_PEZE_EDU}    
-
+    
 }
 
 
