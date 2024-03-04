@@ -299,11 +299,6 @@ cat << EOM
     cd           ${S3_SMINIO_SOURCE}/${KEY_MODEL}       
 
     ls -la
-
-    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/ 
-            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/    
-                   --profile ${PROFILE_PEZE_EDU}   
-
 EOM
         
 
@@ -311,12 +306,21 @@ EOM
     
     ls -la
 
+    read -p "¿Folder Model to S3?  (Ejemplo:  "LUZ-101b" ? "   MODEL_FOLDER
+
+cat << EOM
+    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER} 
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}    
+                   --profile ${PROFILE_PEZE_EDU}   
+
+EOM
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/  \
-            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
+    aws s3 sync  ${S3_SMINIO_SOURCE}/${KEY_MODEL}/${MODEL_FOLDER}  \
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER}  \
                     --profile ${PROFILE_PEZE_EDU}    
     
+
 }
 
 
