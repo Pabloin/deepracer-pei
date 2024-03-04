@@ -360,6 +360,8 @@ function spDown_Minio() {
     MINIO_HOME=${S3_SMINIO_SERVER}/${S3_SMINIO_BUCKET}/${KEY_MODEL}
 
 cat << EOM
+
+    Hola!!
     mc ls ${MINIO_HOME}
 EOM
 
