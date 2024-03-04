@@ -12,7 +12,7 @@ cp   ./custom_files/reward_function.py            ${MY_HOME_DRFC}/custom_files/r
 cp   ./custom_files/model_metadata.json           ${MY_HOME_DRFC}/custom_files/model_metadata.json
 cp   ./custom_files/hyperparameters_v0100z.json   ${MY_HOME_DRFC}/custom_files/hyperparameters.json
 
-cp   ./run_v010za.env       ${MY_HOME_DRFC}/run.env
+cp   ./run_v0100z.env       ${MY_HOME_DRFC}/run.env
 cp   ./system_v0100z.env    ${MY_HOME_DRFC}/system.env
 
 
