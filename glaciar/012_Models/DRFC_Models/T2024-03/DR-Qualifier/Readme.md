@@ -44,5 +44,37 @@ Modelos
         Este modelo / serie es el inicial entrenado en spot G5 4x porque la 8X no tenía capacidad ...
         Sería el primero que podría importar para evaluar el tiempo el EDU 
 
+        GMT0 - Empezo
+        2024-03-04 02:58:25
+
+        Hora Bs AS
+        2024-03-04 00:00:00
+
+        EVAL LuzWIP (1 hora)
+        2024-03-04 01:00:00
+        Training> Name=main_level/agent, Worker=0, Episode=660, Total reward=27.1, Steps=20612, Training iteration=10
+
+
+        EVAL LuzWIP-2 (2 hora)
+
+
+        EVAL LuzWIP-3 (3.24 hora)
+        2024-03-04 03:25:00
+        Training> Name=main_level/agent, Worker=0, Episode=1737, Total reward=25.9, Steps=70533, Training iteration=28
+
+
+        EVAL LuzWIP-4 (12.30 horas)
+
+        Me olvidar el modelo prendio ... no se porqué no lo apagó la lambda ... 
+
+        Training> Name=main_level/agent, Worker=0, Episode=3489, Total reward=137.4, Steps=171621, Training iteration=58
+
+
+        Success, your model was submitted to the 
+                  Test Pro 2403 - Vivalas Speedway time trial race! 
+                  Your results should be available within 10 minutes.
+
+        12:40 hs - 
+
 
 

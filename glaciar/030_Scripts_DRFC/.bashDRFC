@@ -467,6 +467,13 @@ function spImport() {
    
 }
 
+
+function spUpGlaciar() {
+    PRE_CONTEXT_GLACIAR
+    spUp
+    POST_CONTEXT_PEZE_EDU
+}
+
 function spUpLuz() {
     PRE_CONTEXT_LUZ
     spUp
