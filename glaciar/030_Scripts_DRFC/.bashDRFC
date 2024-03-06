@@ -475,6 +475,11 @@ function spImport() {
    
 }
 
+function spUpRacer2() {
+    PRE_CONTEXT_RACER2
+    spUp
+    POST_CONTEXT_PEZE_EDU
+}
 
 function spUpGlaciar() {
     PRE_CONTEXT_GLACIAR
