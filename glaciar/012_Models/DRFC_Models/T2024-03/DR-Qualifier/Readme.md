@@ -78,3 +78,12 @@ Modelos
 
 
 
+.............................
+Modelos
+
+    - Pg3_v0100y
+
+        - Podría ponerlo en 0.975
+        - y cambiar el learning rate ...
+        - Ademaspenalizar un poco el stearing en las rectas ... 
+
