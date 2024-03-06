@@ -118,6 +118,10 @@ class RewardContext:
 
         reward = float(steering_factor)
         
+
+        if Track.isCurva(next_wp) and speed >= 2:
+            reward = VALUE_ZERO
+
         if self.verbose:
             print(params)
 
