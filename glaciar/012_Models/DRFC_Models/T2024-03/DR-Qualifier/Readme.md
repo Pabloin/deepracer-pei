@@ -116,5 +116,6 @@ Modelos
 
         - tiene las curvas agregadas ... 
 
+      Detuve 18:19
 
 ...............

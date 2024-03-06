@@ -18,8 +18,6 @@ cat << EOM
 
 EOM
 
-read -p "Hacemos DW? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
-
 mc cp myminio/bucket-models-2024-03/DR-Qualifier/${MODELO_NAME}  \
             /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
 
