@@ -54,11 +54,6 @@ class RewardContext:
 
     @staticmethod
     def get_timestamp(params):
-
-        # Recordar: No se retornará el tiempo antes de que la 
-        # primera vuelta se haya completado.
-        # Entonces, el tiempo por vuelta debería ser 
-        # bajado aprximadamente 0.2 seg
         ts = params.get('timestamp', None) 
         return ts or time()
     
