@@ -92,4 +92,15 @@ Modelos
         - Y tengo USD 300 ...
         - no tiene sentido (creo) evaluar en Academy ... después veo los costos en todo caso ..
 
-        
+.............................
+Modelos
+
+    - Pg3_v0100x
+
+        Arrancó 10:09 6/3
+        Tiene codigo de Learning Rate
+        - Entrena en Racer2 - Prueba en Glaciar ... 
+
+        - Idea - les puedo agregar los cron ... 
+
+...........................,

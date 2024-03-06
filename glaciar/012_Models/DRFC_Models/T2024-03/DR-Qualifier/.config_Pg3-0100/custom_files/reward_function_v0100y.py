@@ -5,18 +5,8 @@ RECTA_02           = 'RECTA_02'
 RECTA_03           = 'RECTA_03'
 RECTA_04           = 'RECTA_04'
 
-CURVA_01           = 'CURVA_01'
-CURVA_02           = 'CURVA_02'
-CURVA_03           = 'CURVA_03'
-CURVA_04           = 'CURVA_04'
-CURVA_05           = 'CURVA_05'
-CURVA_06           = 'CURVA_06'
-
 RECTA_INI          = 'RECTA_INI'
 RECTA_FIN          = 'RECTA_FIN'
-
-VALUE_ZERO = 1e-3
-
 
 MODE_DEBUG = True
 
@@ -29,16 +19,8 @@ class Track:
         [RECTA_01,  25,  35, RECTA_INI ],
         [RECTA_02,  53,  64 ],
         [RECTA_03,  91, 102 ],
-        [RECTA_04, 181, 182, RECTA_FIN],
+        [RECTA_04, 181, 182, RECTA_FIN]
 
-        [CURVA_01,  65,  85 ],
-        [CURVA_02, 102, 120 ],
-        [CURVA_03, 138, 150 ],
-        [CURVA_04, 168, 176 ],
-        [CURVA_05, 168, 176 ],
-        [CURVA_06, 200, 216 ],
-
-        []
     ]
 
     
@@ -62,12 +44,6 @@ class Track:
                            Track.isz(RECTA_03, wp) or 
                            Track.isz(RECTA_04, wp))
 
-    isCurva = lambda wp : (Track.isz(CURVA_01, wp) or 
-                           Track.isz(CURVA_02, wp) or 
-                           Track.isz(CURVA_03, wp) or 
-                           Track.isz(CURVA_04, wp) or 
-                           Track.isz(CURVA_05, wp) or 
-                           Track.isz(CURVA_06, wp))
 
 class RewardContext:
 
@@ -92,8 +68,6 @@ class RewardContext:
     def reward_function(self, params):
         
         steps = params['steps']
-        speed = params['speed']
-
         abs_steering = abs(params['steering_angle'])
         
         closest_waypoints    = params['closest_waypoints']
@@ -118,10 +92,6 @@ class RewardContext:
 
         reward = float(steering_factor)
         
-
-        if Track.isCurva(next_wp) and speed >= 2:
-            reward = VALUE_ZERO
-
         if self.verbose:
             print(params)
 
