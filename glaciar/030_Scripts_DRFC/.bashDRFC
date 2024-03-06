@@ -299,8 +299,8 @@ function spImportLuz() {
     POST_CONTEXT_PEZE_EDU
 }
 
-function spImporRacer2() {
-    PRE_CONTEXT_LUZ
+function spImportRacer2() {
+    PRE_CONTEXT_RACER2
     spImport
     POST_CONTEXT_PEZE_EDU
 }
