@@ -4,7 +4,7 @@ echo "En DRFC"
 
 # Funcion que tome del Config y PISE ... 
 
-
+alias SS="cd ~/deepracer-pei/glaciar/030_Scripts_DRFC/aws_scripts"
 alias HH="cd ~/deepracer-pei/deepracer-for-cloud"
 alias MMM="cd ~/MINIO_SYNC/DR-Qualifier"
 
@@ -615,9 +615,11 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
     # - goVirginia  | _set _getRegion  
 
 
-    alias - C | HH MM MMM | 
+    alias - C | HH SS MM MMM | 
     
                         # B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W | A01 a,b,c,d..  
+
+
 
     -------------------------------------------------------- 
     S3_SMINIO_SOURCE=${S3_SMINIO_SOURCE}

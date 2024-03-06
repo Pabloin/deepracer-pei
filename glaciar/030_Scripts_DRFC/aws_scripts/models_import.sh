@@ -27,6 +27,7 @@ aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODELO_NAME} \
 
 #----------------
 
+
 aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
     --name ${MODELO_ALIAS}  \
@@ -34,4 +35,10 @@ aws deepracer import-model \
     --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
     --profile  racer2
 
+
+        Nota parece que el import no funciona.... 
+        y tengoo que hacer el reload ...
+        Dice bucket permisos ... 
+
+        
 

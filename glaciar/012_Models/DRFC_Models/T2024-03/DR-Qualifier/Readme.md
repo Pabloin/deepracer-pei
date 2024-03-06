@@ -102,5 +102,19 @@ Modelos
         - Entrena en Racer2 - Prueba en Glaciar ... 
 
         - Idea - les puedo agregar los cron ... 
+        
+        - lu subi con Hard de scripts .. 
 
+        Termino a las 15 00
 ...........................,
+
+    - Pg3_v0100w
+
+        Arrancó 15:39 6/3
+        Tiene codigo de Learning Rate
+        - Entrena en Racer2 - Prueba en Glaciar ... 
+
+        - tiene las curvas agregadas ... 
+
+
+...............
