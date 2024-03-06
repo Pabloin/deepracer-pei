@@ -8,8 +8,8 @@
 
 # Hard 1 [spDown_minio]
 
-MODELO_NAME=Pg3-0100x
-MODELO_ALIAS=Pg3-0100x-R2-Closed
+MODELO_NAME=Pg3-0100w
+MODELO_ALIAS=Pg3-0100w-R2-Closed
 
 mc cp myminio/bucket-models-2024-03/DR-Qualifier/${MODELO_NAME} \
         /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
@@ -21,24 +21,24 @@ ls -la
 #----------------
 
 aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODELO_NAME} \
-        s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Pg3-0100x \
+        s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Pg3-0100w \
                 --profile racer2
 
 
 #----------------
 
 
-aws deepracer import-model \
-    --type REINFORCEMENT_LEARNING \
-    --name ${MODELO_ALIAS}  \
-    --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODELO_NAME} \
-    --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
-    --profile  racer2
+# aws deepracer import-model \
+#     --type REINFORCEMENT_LEARNING \
+#     --name ${MODELO_ALIAS}  \
+#     --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODELO_NAME} \
+#     --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
+#     --profile  racer2
 
 
-        Nota parece que el import no funciona.... 
-        y tengoo que hacer el reload ...
-        Dice bucket permisos ... 
+        # Nota parece que el import no funciona.... 
+        # y tengoo que hacer el reload ...
+        # Dice bucket permisos ... 
 
-        
+
 
