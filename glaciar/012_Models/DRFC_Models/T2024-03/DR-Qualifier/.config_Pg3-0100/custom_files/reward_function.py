@@ -1,5 +1,50 @@
 from time import time
 
+RECTA_01           = 'RECTA_01'
+RECTA_02           = 'RECTA_02'
+RECTA_03           = 'RECTA_03'
+RECTA_04           = 'RECTA_04'
+
+RECTA_INI          = 'RECTA_INI'
+RECTA_FIN          = 'RECTA_FIN'
+
+MODE_DEBUG = True
+
+class Track:
+
+    # vivalas speedway - caecer_gp.npy
+    # 73.78 meters	1.08 meters
+    Zones = [
+
+        [RECTA_01,  25,  35, RECTA_INI ],
+        [RECTA_02,  53,  64 ],
+        [RECTA_03,  91, 102 ],
+        [RECTA_04, 181, 182, RECTA_FIN]
+
+    ]
+
+    
+    #----------------------------------------------------------------------------------------------------
+    # Dice la zona
+    # < > 
+    @staticmethod
+    def isz(z, wp):
+        isInZone = False
+        for zone in Track.Zones:
+            if ( z in zone and wp in range(zone[1], zone[2]+1) ):
+                if MODE_DEBUG:
+                   print(f"isz({z},{wp})=True")
+                return True
+        return isInZone
+    
+    #----------------------------------------------------------------------------------------------------
+    # Dice si es una Recta - TDD
+    isRecta = lambda wp : (Track.isz(RECTA_01, wp) or 
+                           Track.isz(RECTA_02, wp) or 
+                           Track.isz(RECTA_03, wp) or 
+                           Track.isz(RECTA_04, wp))
+
+
 class RewardContext:
 
     def __init__(self, verbose=False):
@@ -30,6 +75,12 @@ class RewardContext:
         steps = params['steps']
         abs_steering = abs(params['steering_angle'])
         
+        closest_waypoints    = params['closest_waypoints']
+
+        prev_wp = closest_waypoints[0]
+        next_wp = closest_waypoints[1]
+
+
         if RewardContext.is_new_lap(self.previous_steps, steps):
             self.initial_time = self.get_timestamp(params)
         else:
@@ -40,7 +91,7 @@ class RewardContext:
         steering_factor = 1.0
         
         # Penalize reward if the car is steering too much
-        ABS_STEERING_UMBRAL = 14
+        ABS_STEERING_UMBRAL = 9 if Track.isRecta(next_wp) else 14
         if abs_steering > ABS_STEERING_UMBRAL:
             steering_factor = 0.7
 

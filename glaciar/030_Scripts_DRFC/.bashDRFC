@@ -234,12 +234,20 @@ function mmDown() {
 }
 
 
+function PRE_CONTEXT_RACER2() {
+    S3_BUCKET_TARGET=dr-models-racer2-dots-to-pabloedu-gmail
+    PROFILE_PEZE_EDU=racer2    
+    PROFILE_LAB_ROLE=arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole
+}
 
 function PRE_CONTEXT_GLACIAR() {
     S3_BUCKET_TARGET=deepracer-forcloud-glaciar
     PROFILE_PEZE_EDU=glaciar    
-    PROFILE_LAB_ROLE=arn:aws:iam::845305768689:role/DeepRacerRole
+    PROFILE_LAB_ROLE=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
 }
+
+
+
 function PRE_CONTEXT_LUZ() {
     S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
     PROFILE_PEZE_EDU=luz    
