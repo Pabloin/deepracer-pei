@@ -27,7 +27,7 @@ echo "${MY_TIME} CRONTAB - FASE WIP" >> ~/logs.crontab
 
 MODEL_FOLDER=Pg3-0200
 # MODEL_NOMBRE=Pg3-0200-R2-Inicial
-MODEL_NOMBRE=Pg3-0200-R2-Wip1
+MODEL_NOMBRE=Pg3-0200-R2-Wip2
 
 
 # 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_fase_wip1.sh
