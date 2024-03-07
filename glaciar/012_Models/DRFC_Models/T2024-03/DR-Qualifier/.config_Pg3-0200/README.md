@@ -37,3 +37,6 @@ Arrancó a las 21:10 ...
 
 
 
+10    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_fase_wip1.sh
+
+30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_test.sh
