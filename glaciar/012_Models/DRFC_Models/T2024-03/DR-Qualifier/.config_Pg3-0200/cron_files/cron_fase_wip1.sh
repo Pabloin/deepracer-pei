@@ -20,6 +20,9 @@
 MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 
 
+echo "${MY_TIME} CRONTAB - FASE WIP" >> ~/logs.crontab
+
+
 
 MODEL_FOLDER=Pg3-0200
 # MODEL_NOMBRE=Pg3-0200-R2-Inicial
