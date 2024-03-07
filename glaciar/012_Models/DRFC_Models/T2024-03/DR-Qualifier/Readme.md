@@ -119,3 +119,28 @@ Modelos
       Detuve 18:19
 
 ...............
+Crontab
+
+    Arranco 21:10   -   Thu Mar  7 00:15:32 UTC 2024
+
+    Update  
+
+
+    minute  hour  day_of_month month day_of_week command_to_run
+
+    10 *      * * *: ejecuta el comando 10 minutos después de cada hora.
+    10 2,4,6  * * *: ejecuta el comando 10 minutos en las hora (2, 4, 6).
+    10 2,4,6  7 * *: ejecuta el comando 10 minutos en las hora (2, 4, 6) - Ed día 7 del mes (arranca en cero?) 
+    10 2,4    7 3 *: ejecuta el comando 10 minutos en las hora (2, 4, 6) - Ed día 7 del mes - en marzo
+
+        Estados - Inicial  0 .. 2
+        Estados - Wip1     2 .. 4
+        Estados - Wip2
+        Estados - Close
+        
+    10 0      7 3 *  inicio                             GMT-3  22:30
+        
+    30 1      7 3 *  comando_inicial   (entrena 1.30)
+    00 3      7 3 *  comando_wip1
+    30 4      7 3 *  comando_final
+
