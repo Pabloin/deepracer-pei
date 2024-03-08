@@ -1,6 +1,7 @@
+# La funcion PEI estaba haciendo convergencia hasta aqui ...
+# sin la racing line - también creo que era similar a version CSV
 
 import math
-
 
 RECTA_01     = 'RECTA_01'
 RECTA_02     = 'RECTA_02'
@@ -17,12 +18,12 @@ CURVA_06     = 'CURVA_06'
 RECTA_INI    = 'RECTA_INI'
 RECTA_FIN    = 'RECTA_FIN'
 
-ZERO_REWARD = 1e-3
+ZERO_REWARD  = 1e-3
+MODE_DEBUG   = True
 
-
-MODE_DEBUG = True
 
 class Track:
+
 
     # vivalas speedway - caecer_gp.npy
     # 73.78 meters	1.08 meters
@@ -43,10 +44,8 @@ class Track:
         []
     ]
 
-    
     #----------------------------------------------------------------------------------------------------
-    # Dice la zona
-    # < > 
+    # Dice la zona< > 
     @staticmethod
     def isz(z, wp):
         isInZone = False
@@ -56,88 +55,134 @@ class Track:
                    print(f"isz({z},{wp})=True")
                 return True
         return isInZone
-    
+
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Recta - TDD
-    isRecta = lambda wp : (Track.isz(RECTA_01, wp) or 
-                           Track.isz(RECTA_02, wp) or 
-                           Track.isz(RECTA_03, wp) or 
-                           Track.isz(RECTA_04, wp))
+    isRecta = lambda wp : (Track.isz(RECTA_01, wp) or Track.isz(RECTA_02, wp) or 
+                           Track.isz(RECTA_03, wp) or Track.isz(RECTA_04, wp))
 
-    isCurva = lambda wp : (Track.isz(CURVA_01, wp) or 
-                           Track.isz(CURVA_02, wp) or 
-                           Track.isz(CURVA_03, wp) or 
-                           Track.isz(CURVA_04, wp) or 
-                           Track.isz(CURVA_05, wp) or 
-                           Track.isz(CURVA_06, wp))
+    isCurva = lambda wp : (Track.isz(CURVA_01, wp) or Track.isz(CURVA_02, wp) or 
+                           Track.isz(CURVA_03, wp) or Track.isz(CURVA_04, wp) or 
+                           Track.isz(CURVA_05, wp) or Track.isz(CURVA_06, wp))
+
+    #----------------------------------------------------------------------------------------------------
+    # Direction de la Pista en Grados
+    # - Calculate la direccion de la pista en grados (atan2)
+    # - the direction in radius, arctan2(dy, dx), the result is (-pi, pi) in radians
+    # ... Podría calcular los xy para la direccion de la racing line ... 
+    #                            TDD:  reward_TDD_Track.py - test_xSpeedCastigo
+    @staticmethod
+    def _direccionPista(params):
+       
+        waypoints         = params['waypoints']
+        closest_waypoints = params['closest_waypoints']
+
+        wpNext = waypoints[closest_waypoints[1]]
+        wpPrev = waypoints[closest_waypoints[0]]
+
+        dirPista = math.degrees(math.atan2(wpNext[1] - wpPrev[1], 
+                                           wpNext[0] - wpPrev[0]))
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            try:
+                print(f"Track._direccionPista(closest_waypoints={closest_waypoints}): wpNext={wpNext}, wpPrev={wpPrev}, dirPista={dirPista}")
+            except Exception as e:
+                print("Excepcion e:", e)
+
+        return dirPista
+    
 
 
-class RewardClass:
-    def __init__(self):
-        self.pre_progress = 0
-        self.pre_steps_for_lap = 0
-        self.current_steps_for_lap = 0
+class Reward:
 
-    def reward_function(self, params):
-        progress = max(0, params['progress'])
-        steps = params['steps']
-        speed = params['speed']
-        is_offtrack = params['is_offtrack']
-        x = params['x']
-        y = params['y']
+    #----------------------------------------------------------------------------------------------------
+    # Penalize reward factor if the car is steering too much
+    @staticmethod
+    def fn_abs_steering_factor(params):
 
-        abs_steering = abs(params['steering_angle'])
-        closest_waypoints    = params['closest_waypoints']
+        closest_waypoints = params['closest_waypoints']
         prev_wp = closest_waypoints[0]
         next_wp = closest_waypoints[1]
 
-        MAX_STEPS = 280
-
-        reward=ZERO_REWARD
-        if steps == 1:
-            self.pre_progress = 0
-            self.pre_steps_for_lap = self.current_steps_for_lap
-            self.current_steps_for_lap = 0
-        else:
-            self.current_steps_for_lap += 1
-
-        # Movimientos imposibles
-        if is_offtrack and progress < 100:  
-            return ZERO_REWARD
-
-        if Track.isCurva(next_wp) and speed >= 2:
-            return ZERO_REWARD
-
-
-        reward = progress - self.pre_progress
-        self.pre_progress = progress
-
-        # Hay una recompensa adicional si el vehícuo pasa 25% de los pasos, pasa más rápido que lo esperado
-        if (steps % 25) == 0 and progress > (steps / MAX_STEPS) * 100 :
-            reward += 5.0
-
-        # Recompensa si la vuelta actual se completa en menos paso que la vuelta anterior
-        if progress >= 100 and self.current_steps_for_lap < self.pre_steps_for_lap:
-            reward += 10.0
-
-
-
-
+        abs_steering = abs(params['steering_angle'])
+    
         steering_factor = 1.0
-        
+
         # Penalize reward if the car is steering too much
-        ABS_STEERING_UMBRAL = 9 if Track.isRecta(next_wp) else 14
+        ABS_STEERING_UMBRAL = 10 if Track.isRecta(next_wp) else 15        
         if abs_steering > ABS_STEERING_UMBRAL:
             steering_factor = 0.7
 
-        reward = float(reward * steering_factor)
+        return steering_factor
 
 
-        return float(max(ZERO_REWARD, reward))
+    #----------------------------------------------------------------------------------------------------
+    # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
+    @staticmethod
+    def fn_inside_track_factor(params):
 
+        # Read input parameters
+        all_wheels_on_track = params['all_wheels_on_track']
+        distance_from_center = params['distance_from_center']
+        track_width = params['track_width']
+        
+        inside_factor = 0.7
 
-rw = RewardClass()
+        if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
+            inside_factor = 1.0
+            # Podria ser  inside_factor * (0.5*track_width - distance_from_center) 
+
+        return float(inside_factor)
+    
+    #----------------------------------------------------------------------------------------------------
+    # Castigo por Heading vs DirPista (fn_diff_heading_track)  - TDD:  fn_curvas.py - fn_rectas_heading
+    @staticmethod
+    def fn_curvas_factor(params):
+       
+        heading = params['heading']
+
+        dirPista = Track._direccionPista(params) 
+
+        dirDiff = abs(dirPista - heading)
+
+        if dirDiff > 180:
+           dirDiff = 360 - dirDiff
+            
+        curvas_factor = 1.0
+
+        # Punish Reward if heading vs track is low
+        ABS_DIFF_DEGREE_THRESHOLD = 10
+        if dirDiff > ABS_DIFF_DEGREE_THRESHOLD:
+            curvas_factor = 0.6
+
+        return float(curvas_factor)
+                   
+
+        
 
 def reward_function(params):
-    return rw.reward_function(params)
+
+    reward = ZERO_REWARD
+
+    # Entre 0 y 1
+    steering_reward = 1
+    steering_factor = Reward.fn_abs_steering_factor(params)
+    steering_weigth = (steering_reward * steering_factor)
+
+    # Entre 0 y 1
+    inside_reward = 1
+    inside_factor = Reward.fn_inside_track_factor(params)
+    inside_weigth = (inside_reward * inside_factor)
+
+    # Entre 0 y 1
+    curvas_reward = 1
+    curvas_factor = Reward.fn_curvas_factor(params)
+    curvas_weigth = (curvas_reward * curvas_factor)
+
+
+    reward = reward + steering_weigth + inside_weigth + curvas_weigth
+
+    return float(reward)
+
 
