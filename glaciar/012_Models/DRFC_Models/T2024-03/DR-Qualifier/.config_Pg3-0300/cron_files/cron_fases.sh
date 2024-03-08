@@ -29,7 +29,6 @@ MODEL_NOMBRE=Pg3-0300-R2-${1}
 # 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip2
 # 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Final
 
-
 cat << EOM >> ~/logs.crontab
 
     CRONTAB_DE: ${MY_TIME}
