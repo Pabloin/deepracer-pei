@@ -29,13 +29,14 @@ cat << EOM
 
 Start: ${MY_DATE_RUN}
 
-${MY_DATE_INIT} * command_to_run
-${MY_DATE_WIP1} * command_to_run
-${MY_DATE_WIP2} * command_to_run
-${MY_DATE_CLOSE} * command_to_run
+${MY_DATE_INIT} *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Inicial
+${MY_DATE_WIP1} *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip1
+${MY_DATE_WIP2} *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip2
+${MY_DATE_CLOSE} *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Close
+
+
 
 EOM
-
 
 
 
