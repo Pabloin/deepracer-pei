@@ -71,8 +71,10 @@ function gita() {
 function setx() {
     ls -la 
     chmod +x xSet*.sh
+    chmod +x cron*.sh
     ls -la 
     git add xSet*.sh; git commit -m "setx"; git push
+    git add cron*.sh; git commit -m "cron"; git push
 }
 
 
