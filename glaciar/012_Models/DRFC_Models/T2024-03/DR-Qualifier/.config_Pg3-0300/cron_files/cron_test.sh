@@ -22,8 +22,9 @@ MY_DATE_CLOSE=$(date  +%M\ %H\ %d\ %m  --date='+6 hour +0  minutes')
 
 # 1 hora
 MY_DESDE=$(date +%Y-%m-%dT%H:%M:%S --date='-1 hour')
-MY_HASTA=$(date +%Y); echo $MY_HASTA
 
+MY_TIME_GMT0=$(date +%Y-%m-%dT%H:%M:%S)
+MY_TIME_GMT3_MENOS=$(date +%Y-%m-%dT%H:%M:%S --date='-3 hour')
 
 cat << EOM
 
@@ -37,7 +38,8 @@ ${MY_DATE_WIP2} *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qu
 ${MY_DATE_CLOSE} *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Close
 
 
-
+MY_TIME_GMT  0=${MY_TIME_GMT0}
+MY_TIME_GMT -3=${MY_TIME_GMT3_MENOS}
 EOM
 
 
