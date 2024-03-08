@@ -14,15 +14,15 @@ echo "${MY_TIME} Hola Pablo" >> ~/logs.crontab
 # 10 2 8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_test.sh
 
 # 1 hora
-MY_DATE_RUN=$(date    +%M %H %m %d)
-MY_DATE_INIT=$(date   +%M %H %m %d  --date='+1 hour +30 minutes')
-MY_DATE_WIP1=$(date   +%M %H %m %d  --date='+3 hour +0  minutes')
-MY_DATE_WIP2=$(date   +%M %H %m %d  --date='+4 hour +30 minutes')
-MY_DATE_CLOSE=$(date  +%M %H %m %d  --date='+6 hour +0  minutes')
+MY_DATE_RUN=$(date    +%M\ %H\ %d\ %m)
+MY_DATE_INIT=$(date   +%M\ %H\ %d\ %m  --date='+1 hour +30 minutes')
+MY_DATE_WIP1=$(date   +%M\ %H\ %d\ %m  --date='+3 hour +0  minutes')
+MY_DATE_WIP2=$(date   +%M\ %H\ %d\ %m  --date='+4 hour +30 minutes')
+MY_DATE_CLOSE=$(date  +%M\ %H\ %d\ %m  --date='+6 hour +0  minutes')
 
 # 1 hora
 MY_DESDE=$(date +%Y-%m-%dT%H:%M:%S --date='-1 hour')
-MY_HASTA=$(date +%Y-%m-%dT%H:%M:%S)
+MY_HASTA=$(date +%Y); echo $MY_HASTA
 
 
 cat << EOM
