@@ -46,6 +46,9 @@ cat << EOM >> ~/logs.crontab
 
 EOM
 
+
+read -p "Avanzamos 1? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
 mc cp myminio/bucket-models-2024-03/DR-Qualifier/${MODEL_FOLDER}  \
             /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
 
@@ -53,6 +56,8 @@ cd  /home/ubuntu/MINIO_SYNC/DR-Qualifier
 
 ls -la
 
+
+read -p "Seguimos con S3 sync 2? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
 #----------------
 
@@ -75,6 +80,9 @@ cat << EOM >> ~/logs.crontab
         --profile  racer2
 
 EOM
+
+read -p "Va el import 3? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
 
 aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
