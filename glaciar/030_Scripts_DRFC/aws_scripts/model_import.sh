@@ -15,6 +15,7 @@ cat << EOM
         --name ${MODELO_ALIAS}  
         --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODELO_NAME} 
         --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole 
+        --region   us-east-1 
         --profile  racer2
 
 EOM
@@ -26,6 +27,7 @@ aws deepracer import-model \
     --name ${MODELO_ALIAS}  \
     --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODELO_NAME} \
     --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
+    --region   us-east-1 \
     --profile  racer2
 
 

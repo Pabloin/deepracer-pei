@@ -78,6 +78,7 @@ cat << EOM >> ~/logs.crontab
                 --name ${MODEL_NOMBRE}  
                 --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER} 
                 --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole 
+                --region   us-east-1
                 --profile  racer2
 
 EOM
@@ -87,4 +88,5 @@ aws deepracer import-model \
     --name ${MODEL_NOMBRE}  \
     --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER} \
     --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
+    --region   us-east-1 \
     --profile  racer2

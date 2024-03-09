@@ -353,6 +353,7 @@ function spImport() {
     echo "      --name ${MODEL_NAME_ALIAS}  \                 "
     echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \ "
     echo "      --role-arn ${PROFILE_LAB_ROLE} \      "
+    echo "      --region   us-east-1 \                    "
     echo "      --profile  ${PROFILE_PEZE_EDU}               "
     echo "   "
 
@@ -363,6 +364,7 @@ function spImport() {
         --name ${MODEL_NAME_ALIAS}  \
         --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \
         --role-arn ${PROFILE_LAB_ROLE} \
+        --region   us-east-1 \
         --profile  ${PROFILE_PEZE_EDU}               
    
 }
