@@ -423,7 +423,7 @@ function spUp_Minio() {
     echo " "
     echo " DESTINO:  mc ls ${MINIO_HOME} "
 
-    mc ls -la ${MINIO_HOME}
+    mc ls ${MINIO_HOME}
 
     echo " ORIGEN:  ls -a ~/MINIO_SYNC/DR-Qualifier "
 
