@@ -24,33 +24,54 @@ Experimento siguiendo a Pg3-0300
          Incrementing model from DR-Qualifier/Pg3-0300 to DR-Qualifier/Pg3-301
          Are you sure? [y/N]
 
+            dr-increment-training  
+            dr-increment-upload-model  
+
             dr-download-custom-files   
-            dr-local-aws               
+            dr-local-aws           
+
             dr-start-tournament        
-            dr-update-env
-            dr-download-model          
-            dr-logs-loganalysis        
-            dr-start-training          
-            dr-update-viewer
-            dr-find-robomaker          
-            dr-logs-robomaker          
-            dr-start-viewer            
-            dr-upload-car-zip
-            dr-find-sagemaker          
-            dr-logs-sagemaker          
             dr-stop-evaluation         
-            dr-upload-custom-files
+         
+            dr-download-model          
             dr-get-robomaker-stats     
-            dr-reload                  
-            dr-stop-loganalysis        
-            dr-upload-model
-            dr-increment-training      
-            dr-set-upload-model        
-            dr-stop-training           
-            dr-url-loganalysis
-            dr-increment-upload-model  dr-start-evaluation        
-            dr-stop-viewer             
-            dr-view-stream
+            
+            dr-start-evaluation        
+            
             dr-list-aws-models         
-            dr-start-loganalysis       
-            dr-update
+            
+            dr-update-viewer
+            dr-view-stream
+
+----------------
+Pg3-0300k
+
+   En este voy a ver el param de GPU plano ... 
+
+
+   basado en:
+   https://blog.gofynd.com/how-we-broke-into-the-top-1-of-the-aws-deepracer-virtual-circuit-c39a241979f5
+
+   En como utilizar GPU también en Robomaker
+   En especial con:
+
+   Sugiere
+   DR_CLOUD=aws
+   DR_AWS_APP_REGION=us-east-1
+   DR_UPLOAD_S3_BUCKET=my-transit-bucket
+   DR_LOCAL_S3_PROFILE=default
+
+   DR_SAGEMAKER_IMAGE=gpu
+   DR_ROBOMAKER_IMAGE=2.0.11-gpu
+
+   Tengo
+   DR_SAGEMAKER_IMAGE=5.1.1-gpu
+   DR_ROBOMAKER_IMAGE=5.1.2-cpu-avx2
+   DR_ANALYSIS_IMAGE=cpu
+   DR_COACH_IMAGE=5.1.2
+
+
+   Dejo a:
+   DR_ROBOMAKER_IMAGE=5.1.2-gpu
+
+   docker pull awsdeepracercommunity/deepracer-robomaker:5.1.2-gpu
