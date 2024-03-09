@@ -514,6 +514,12 @@ function spDown_S3Glaciar() {
     POST_CONTEXT_PEZE_EDU
 }
 
+function spDown_S3Racer2() {
+    PRE_CONTEXT_RACER2
+    spDown_S3
+    POST_CONTEXT_PEZE_EDU
+}
+
 function drActivate() {
 
     source ~/deepracer-pei/deepracer-for-cloud/bin/activate.sh
