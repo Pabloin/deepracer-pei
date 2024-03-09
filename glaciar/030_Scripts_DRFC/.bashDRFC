@@ -508,6 +508,11 @@ function spDown_S3Luz() {
     POST_CONTEXT_PEZE_EDU
 }
 
+function spDown_S3Glaciar() {
+    PRE_CONTEXT_GLACIAR
+    spDown_S3
+    POST_CONTEXT_PEZE_EDU
+}
 
 function drActivate() {
 
