@@ -549,7 +549,7 @@ function crontab_racer() {
     #CRON_TOTAL=420
     #CRON_TOTAL=480
     CRON_HORAS=$((${CRON_TOTAL} / 60))
-    CANT_STEPS=$((${CRON_TOTAL} / ${CRON_STEPS})-1)
+    CANT_STEPS=$((${CRON_TOTAL} / ${CRON_STEPS}))
 
     MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 
