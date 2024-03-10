@@ -24,8 +24,6 @@ modelVersion=$1
 shift
 
 
-
-
 MODEL_FOLDER=Pg3-0300m
 MODEL_NOMBRE=Pg3-0300m-R2-${modelVersion}
 
