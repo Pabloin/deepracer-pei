@@ -561,7 +561,7 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 
         echo "${MY_DATE_INIT} *  source ${MY_CRON_CMD}/cron_files/cron_fases.sh Fase_${T}"
 
-        if [[ $T == $last ]]
+        if [[ $T == $CRON_TOTAL ]]
         then
             echo "$T is the last" 
         fi 
