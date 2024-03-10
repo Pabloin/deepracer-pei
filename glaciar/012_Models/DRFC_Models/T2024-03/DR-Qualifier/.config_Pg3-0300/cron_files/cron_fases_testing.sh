@@ -20,8 +20,21 @@ echo "${MY_TIME} CRONTAB - FASE WIP" >> ~/logs.crontab
 echo "${MY_TIME} FASES ${1}        " >> ~/logs.crontab
 
 
-MODEL_FOLDER=Pg3-0300k
-MODEL_NOMBRE=Pg3-0300k-R2-${1}
+modelVersion=$1
+shift
+
+emailAddress=$1
+shift
+
+
+if [[ "${modelVersion}" == "Close" ]];
+then
+    dr-stop-training
+fi
+
+MODEL_FOLDER=Pg3-0300m
+MODEL_NOMBRE=Pg3-0300m-R2-${modelVersion}
+
 
 
 # 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Inicial
