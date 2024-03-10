@@ -99,7 +99,7 @@ aws deepracer import-model \
     --profile  racer2
 
 
-if [[ "${modelVersion}" == "Close" ]];
+if [[ "${modelVersion}" == "Close"* ]];
 then
     echo "Es la versión close y ejecotamos  dr-stop-training " >> ~/logs.crontab
     dr-stop-training
