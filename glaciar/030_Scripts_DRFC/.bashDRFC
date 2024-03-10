@@ -564,13 +564,16 @@ function crontab_racer() {
         MODEL_NAME=Fase
 
         INDICE=$(( INDICE + 1 ))
-        if [ ${INDICE} == 1             ]; then MODEL_NAME=Initial;  fi
+        if [ ${INDICE} == 1 ]; then 
+            MODEL_NAME=Initial;  
+        fi
+        
         if [ ${INDICE} == ${CANT_STEPS} ]; then 
             MODEL_NAME=Close;
             T=${CRON_TOTAL}
         fi
 
-        echo "${MY_DATE_INIT} *  source ${MY_CRON_DIR}/cron_files/cron_fases.sh ${MODEL_NAME}_${T}"
+        echo "${MY_DATE_INIT} *  source ${MY_CRON_DIR}/cron_files/cron_fases.sh ${MODEL_NAME}-${T}"
 
     done
   
