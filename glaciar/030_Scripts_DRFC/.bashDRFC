@@ -544,7 +544,7 @@ function crontab_racer() {
     
 MY_CRON_DIR=~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300
 
-CRON_STEPS=90
+CRON_STEPS=80
 CRON_TOTAL=360
 #CRON_TOTAL=420
 #CRON_TOTAL=480
