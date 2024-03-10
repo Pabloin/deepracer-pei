@@ -25,18 +25,10 @@ echo "${MY_TIME} FASES ${1}        " >> ~/logs.crontab
 modelVersion=$1
 shift
 
-emailAddress=$1
-shift
-
-
 MODEL_FOLDER=Pg3-0300m
 MODEL_NOMBRE=Pg3-0300m-R2-${modelVersion}
 
 
-if [[ "${modelVersion}" == "Close" ]];
-then
-    dr-stop-training
-fi
 
 # 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Inicial
 # 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip1
@@ -102,5 +94,11 @@ aws deepracer import-model \
     --profile  racer2
 
 
+
+if [[ "${modelVersion}" == "Close" ]];
+then
+    echo "Es la versión close y ejecotamos  dr-stop-training " >> ~/logs.crontab
+    dr-stop-training
+fi
 
 

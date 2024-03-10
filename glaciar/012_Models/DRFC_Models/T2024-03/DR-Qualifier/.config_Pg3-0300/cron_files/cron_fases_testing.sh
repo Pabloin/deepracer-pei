@@ -23,25 +23,18 @@ echo "${MY_TIME} FASES ${1}        " >> ~/logs.crontab
 modelVersion=$1
 shift
 
-emailAddress=$1
-shift
 
 
-if [[ "${modelVersion}" == "Close" ]];
-then
-    echo "hola"
-    dr-start-viewer
-fi
 
 MODEL_FOLDER=Pg3-0300m
 MODEL_NOMBRE=Pg3-0300m-R2-${modelVersion}
 
 
 
-# 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Inicial
-# 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip1
-# 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip2
-# 10 3   8 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Final
+# 10 3   8 3 *  source ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Inicial
+# 10 3   8 3 *  source ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip1
+# 10 3   8 3 *  source ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Wip2
+# 10 3   8 3 *  source ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0300/cron_files/cron_fases.sh Final
 
 cat << EOM >> ~/logs.crontab
 
@@ -106,3 +99,12 @@ aws deepracer import-model \
     --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
     --region   us-east-1 \
     --profile  racer2
+
+
+if [[ "${modelVersion}" == "Close" ]];
+then
+    echo "Es la versión close y ejecotamos  dr-stop-training " >> ~/logs.crontab
+    dr-stop-training
+fi
+
+
