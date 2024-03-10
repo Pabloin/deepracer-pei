@@ -29,7 +29,8 @@ shift
 
 if [[ "${modelVersion}" == "Close" ]];
 then
-    dr-stop-training
+    echo "hola"
+    dr-start-viewer
 fi
 
 MODEL_FOLDER=Pg3-0300m
