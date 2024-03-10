@@ -265,6 +265,9 @@ sudo apt install -y gazebo
 docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-gpu-gl
 docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-cpu-gl-avx2
 
+docker pull awsdeepracercommunity/deepracer-robomaker:5.1.2-gpu
+
+
 #------------- 
 
 # MINIO CLIENT
@@ -281,6 +284,14 @@ sudo nvidia-settings
 
 # INSTALL: C - DOTS Prepare
 cd ~/deepracer-pei/deepracer-for-cloud && ./bin/prepare.sh
+
+
+
+# TODO - Add NFS 
+
+sudo apt install nfs-common -y && \
+sudo systemctl status nfs-utils
+
 
 
 # TODO - Extender el SSH desde el SERVER ... 

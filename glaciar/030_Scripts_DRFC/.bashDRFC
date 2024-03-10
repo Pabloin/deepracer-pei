@@ -625,6 +625,17 @@ function aws.ec2.run.luz() {
 }
 
 
+function help_linux() {
+
+cat << EOM
+    du -hs */
+    du -cksh *
+    du -h -d 1
+EOM
+
+}
+
+
 ##----------------------------
 
 function menu() {
