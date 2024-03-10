@@ -13,6 +13,7 @@ CURVA_02     = 'CURVA_02'
 CURVA_03     = 'CURVA_03'
 CURVA_04     = 'CURVA_04'
 CURVA_05     = 'CURVA_05'
+CURVA_06     = 'CURVA_06'
 
 RECTA_INI    = 'RECTA_INI'
 RECTA_FIN    = 'RECTA_FIN'
@@ -33,11 +34,12 @@ class Track:
         [RECTA_03,  91, 102 ],
         [RECTA_04, 181, 182, RECTA_FIN],
 
-#       [CURVA_01,  65,  85 ],
+        [CURVA_01,  65,  85 ],
         [CURVA_02, 102, 120 ],
         [CURVA_03, 138, 150 ],
         [CURVA_04, 168, 176 ],
-#       [CURVA_05, 200, 216 ],
+        [CURVA_05, 168, 176 ],
+        [CURVA_06, 200, 216 ],
 
         []
     ]
@@ -61,7 +63,7 @@ class Track:
 
     isCurva = lambda wp : (Track.isz(CURVA_01, wp) or Track.isz(CURVA_02, wp) or 
                            Track.isz(CURVA_03, wp) or Track.isz(CURVA_04, wp) or 
-                           Track.isz(CURVA_05, wp))
+                           Track.isz(CURVA_05, wp) or Track.isz(CURVA_06, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Direction de la Pista en Grados
@@ -134,9 +136,9 @@ class Reward:
         return float(inside_factor)
     
     #----------------------------------------------------------------------------------------------------
-    # Castigo por Heading vs DirPista (fn_diff_heading_track)  - TDD:  fn_curvaturas.py - fn_rectas_heading
+    # Castigo por Heading vs DirPista (fn_diff_heading_track)  - TDD:  fn_curvas.py - fn_rectas_heading
     @staticmethod
-    def fn_curvaturas_factor(params):
+    def fn_curvas_factor(params):
        
         heading = params['heading']
 
@@ -157,21 +159,7 @@ class Reward:
         return float(curvas_factor)
                    
 
-    @staticmethod
-    def fn_curva_factor(params):
         
-        speed = params['speed']
-        closest_waypoints = params['closest_waypoints']
-        prev_wp = closest_waypoints[0]
-        next_wp = closest_waypoints[1]
-
-        curva_factor = 1.0
-        
-        if Track.isCurva(next_wp) and speed >= 1.5:
-            reward = ZERO_REWARD
-
-        return float(curva_factor)
-
 
 def reward_function(params):
 
@@ -180,25 +168,20 @@ def reward_function(params):
     # Entre 0 y 1
     steering_reward = 1
     steering_factor = Reward.fn_abs_steering_factor(params)
-    steering_weigth = float(steering_reward * steering_factor)
+    steering_weigth = (steering_reward * steering_factor)
 
     # Entre 0 y 1
     inside_reward = 1
     inside_factor = Reward.fn_inside_track_factor(params)
-    inside_weigth = float(inside_reward * inside_factor)
+    inside_weigth = (inside_reward * inside_factor)
 
     # Entre 0 y 1
-    curvatura_reward = 1
-    curvatura_factor = Reward.fn_curvaturas_factor(params)
-    curvatura_weigth = float(curvatura_reward * curvatura_factor)
+    curvas_reward = 1
+    curvas_factor = Reward.fn_curvas_factor(params)
+    curvas_weigth = (curvas_reward * curvas_factor)
 
-    # Entre 0 y 1
-    curva_reward = 1
-    curva_factor = Reward.fn_curva_factor(params)
-    curva_weigth = float(curva_reward * curva_factor)
 
-    reward = reward + (steering_weigth  + inside_weigth + 
-                       curvatura_weigth + curva_weigth)
+    reward = reward + steering_weigth + inside_weigth + curvas_weigth
 
     return float(reward)
 
