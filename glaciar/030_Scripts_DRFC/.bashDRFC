@@ -552,8 +552,8 @@ CRON_HORAS=$((${CRON_TOTAL} / 60))
 
 MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 
-    echo "CRONTAB Sugerido para: ${MY_TIME} "
-    echo "    --- Crontab de ${CRON_TOTAL} Minutos = ${CRON_HORAS} horas "
+    echo -e "CRONTAB Sugerido para: ${MY_TIME} "
+    echo -e "    --- Crontab de ${CRON_TOTAL} Minutos = ${CRON_HORAS} horas \n"
 
     for T in `seq -w ${CRON_STEPS} ${CRON_STEPS} ${CRON_TOTAL}`; 
     do
