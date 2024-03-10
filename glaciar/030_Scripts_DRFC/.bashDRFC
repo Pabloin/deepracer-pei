@@ -555,7 +555,7 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
     echo "CRONTAB Sugerido para: ${MY_TIME} "
     echo "    --- Crontab de ${CRON_TOTAL} Minutos = ${CRON_HORAS} horas "
 
-    for T in `seq 0 ${CRON_STEPS} ${CRON_TOTAL}`;  do
+    for T in `seq 0 ${CRON_STEPS} ${CRON_TOTAL}`; 
     do
         MY_DATE_INIT=$(date   +%M\ %H\ %d\ %m  --date="  +${T} minutes")
 
