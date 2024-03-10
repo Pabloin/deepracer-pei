@@ -563,8 +563,8 @@ function crontab_racer() {
 
         MODEL_NAME=Fase
 
-        if [[ ${INDICE} == 0             ]]; then MODEL_VERSION=Inicial;  fi
-        if [[ ${INDICE} == ${CANT_STEPS} ]]; then MODEL_VERSION=Final;  fi
+        if [[ "${INDICE}" == "0"             ]]; then MODEL_VERSION=Inicial;  fi
+        if [[ "${INDICE}" == "${CANT_STEPS}" ]]; then MODEL_VERSION=Final;  fi
 
         echo "${MY_DATE_INIT} *  source ${MY_CRON_DIR}/cron_files/cron_fases.sh MM${MODEL_NAME}_${T}"
 
