@@ -564,6 +564,11 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
   
     echo "Last ${T} "
 
+    MY_DATE_INIT=$(date   +%M\ %H\ %d\ %m  --date="  +${T} minutes")
+
+    echo "${MY_DATE_INIT} *  source ${MY_CRON_CMD}/cron_files/cron_fases.sh Close"
+
+
 # for d in  {90..360..90 };   do date +"+%M\ %H\ %d\ %m " --date="  +${d} minutes "; done
 # for d in `seq 90 ${T} 360`; do date +"+%M\ %H\ %d\ %m " --date="  +${d} minutes "; done
 # for d in `seq -w ${CRON_STEPS} ${CRON_STEPS} ${CRON_TOTAL}`;  do date +"+%M\ %H\ %d\ %m " --date="  +${d} minutes "; done
