@@ -561,15 +561,20 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 
         echo "${MY_DATE_INIT} *  source ${MY_CRON_CMD}/cron_files/cron_fases.sh Fase_${T}"
 
-        if [[ $T == $CRON_TOTAL ]]
+        NEXT_T=$((${T} + ${CRON_STEPS}))
+    
+        if [[ $NEXT_T >= $CRON_TOTAL ]]
         then
             echo "$T is the last" 
+        else 
+            echo "$T is normal"
         fi 
     done
   
 
 # for d in  {90..360..90 };   do date +"+%M\ %H\ %d\ %m " --date="  +${d} minutes "; done
 # for d in `seq 90 ${T} 360`; do date +"+%M\ %H\ %d\ %m " --date="  +${d} minutes "; done
+# for d in `seq -w ${CRON_STEPS} ${CRON_STEPS} ${CRON_TOTAL}`;  do date +"+%M\ %H\ %d\ %m " --date="  +${d} minutes "; done
 
 }
 
