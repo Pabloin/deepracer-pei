@@ -560,6 +560,11 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
         MY_DATE_INIT=$(date   +%M\ %H\ %d\ %m  --date="  +${T} minutes")
 
         echo "${MY_DATE_INIT} *  source ${MY_CRON_CMD}/cron_files/cron_fases.sh Fase_${T}"
+
+        if [[ $T == $last ]]
+        then
+            echo "$T is the last" 
+        fi 
     done
   
 
