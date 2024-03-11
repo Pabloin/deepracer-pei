@@ -229,5 +229,66 @@ tmpfs             14G   33k   14G
 
 
 
+#---------------------------------
+Checkpoints ...
+
+
+"66_Step-175974.ckpt
+66_Step-175974.ckpt.data-00000-of-00001
+
+64_Step-170203.ckpt.data-00000-of-00001
+65_Step-172301.ckpt.data-00000-of-00001
+
+
+ubuntu@ip-172-31-19-94:~/deepracer-pei/deepracer-for-cloud$ mc ls myminio/bucket-models-2024-03/DR-Qualifier/Pg3-0300q/model
+[2024-03-11 01:42:39 UTC]    19B STANDARD .coach_checkpoint
+[2024-03-11 01:40:54 UTC]     0B STANDARD .ready
+[2024-03-11 01:41:04 UTC]  45MiB STANDARD 39_Step-84882.ckpt.data-00000-of-00001
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 39_Step-84882.ckpt.index
+[2024-03-11 01:40:54 UTC] 1.0MiB STANDARD 39_Step-84882.ckpt.meta
+[2024-03-11 01:41:04 UTC]  45MiB STANDARD 43_Step-97782.ckpt.data-00000-of-00001
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 43_Step-97782.ckpt.index
+[2024-03-11 01:40:54 UTC] 1.0MiB STANDARD 43_Step-97782.ckpt.meta
+[2024-03-11 01:41:04 UTC]  45MiB STANDARD 44_Step-101084.ckpt.data-00000-of-00001
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 44_Step-101084.ckpt.index
+[2024-03-11 01:40:55 UTC] 1.0MiB STANDARD 44_Step-101084.ckpt.meta
+[2024-03-11 01:41:04 UTC]  45MiB STANDARD 45_Step-103379.ckpt.data-00000-of-00001
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 45_Step-103379.ckpt.index
+[2024-03-11 01:40:56 UTC] 1.0MiB STANDARD 45_Step-103379.ckpt.meta
+[2024-03-11 01:41:04 UTC]  45MiB STANDARD 64_Step-170203.ckpt.data-00000-of-00001
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 64_Step-170203.ckpt.index
+[2024-03-11 01:40:56 UTC] 1.0MiB STANDARD 64_Step-170203.ckpt.meta
+[2024-03-11 01:41:04 UTC]  45MiB STANDARD 65_Step-172301.ckpt.data-00000-of-00001
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 65_Step-172301.ckpt.index
+[2024-03-11 01:40:56 UTC] 1.0MiB STANDARD 65_Step-172301.ckpt.meta
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 66_Step-175974.ckpt.index
+[2024-03-11 01:40:57 UTC] 1.0MiB STANDARD 66_Step-175974.ckpt.meta
+[2024-03-11 01:40:54 UTC] 1.1KiB STANDARD 67_Step-179964.ckpt.index
+[2024-03-11 01:40:57 UTC] 1.0MiB STANDARD 67_Step-179964.ckpt.meta
+[2024-03-11 01:40:54 UTC]   228B STANDARD deepracer_checkpoints.json
+[2024-03-11 01:41:04 UTC]  22MiB STANDARD model_39.pb
+[2024-03-11 01:41:04 UTC]  22MiB STANDARD model_43.pb
+[2024-03-11 01:41:04 UTC]  22MiB STANDARD model_44.pb
+[2024-03-11 01:41:04 UTC]  22MiB STANDARD model_45.pb
+[2024-03-11 01:41:04 UTC]  22MiB STANDARD model_64.pb
+[2024-03-11 01:41:04 UTC]  22MiB STANDARD model_65.pb
+[2024-03-11 01:40:54 UTC] 1.6KiB STANDARD model_metadata.json
+
+
+         .data-00000-of-00001
+         .data-00000-of-00001
+
+         64_Step-170203.ckpt
+         65_Step-172301.ckpt
+
+
+         {"best_checkpoint": {"name": "64_Step-170203.ckpt", "avg_eval_metric": 58.877565467224805, "time_stamp": 5502.2}, "last_checkpoint": {"name": "65_Step-172301.ckpt", "avg_eval_metric": 18.923731951573835, "time_stamp": 5734.297}}
+
+
+
+
+
+
+
 
 

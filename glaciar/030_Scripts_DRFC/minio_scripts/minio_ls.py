@@ -17,6 +17,10 @@ client_prod = Minio("http://http://34.207.199.63/:9000",
 mc admin info local
 mc ls local
 
+
+mc ls myminio/bucket-models-2024-03/DR-Qualifier/Pg3-0300q/
+
+
 # Simil a DrDwon ... 
 # spDown
 mc cp local/bucket/rl-deepracer-sagemaker  RACER_PEZE/ --recursive
@@ -38,7 +42,10 @@ s3://aws-deepracer-logs-varios/Hola Pablo Eze gmail.txt
 mc alias set local/     http://127.0.0.1:9000  Minio_USER  Minio_PASS
 mc alias set myminio/   http://127.0.0.1:9000  Minio_USER  Minio_PASS
 
-    
+
+mc alias set myminio/   http://127.0.0.1:9000  AKIA2UC3AXJ2JHGDORKI  4O9r1Ler87M/Y6a4xysXvRE4f+mmZbAL7XQfXUGg
+
+
     Nota: Parece que tienen que ser reales las claves para el profile de Minio
            al menos para el config ... quiza despues de pueda rotar y no 
            perder el acceso ... 
@@ -68,6 +75,7 @@ mc mb myminio/bucket-models-2024-10
 
 
 mc mb local/bucketaaaa
+
 
 mc rm -r local/bucketaaaa  --force --dangerous
 
