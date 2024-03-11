@@ -647,6 +647,14 @@ cat << EOM
     du -hs */
     du -cksh *
     du -h -d 1
+    du -a /home | sort -n -r | head -n 10
+
+    df -H
+    df -H --output=source,size,used,avail
+
+    fdisk -l (da la info de la particion también)
+    
+    ncdu (se instala - esta bueno)
 EOM
 
 }
@@ -672,7 +680,7 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
                     mmDownGlaciar | mmUpGlaciar | spImportGlaciar
 
     - aws.ec2.run | aws.ec2.all 
-    - crontab_racer
+    - crontab_racer | gita (analisis)
     
     
     # - drSync      |  drDown     | drUp  | TBD - logs | model 

@@ -167,7 +167,7 @@ class Reward:
 
         curva_factor = 1.0
         
-        if Track.isCurva(next_wp) and speed >= 1.6:
+        if Track.isCurva(next_wp) and speed >= 1.5:
             curva_factor = ZERO_REWARD
 
         return float(curva_factor)

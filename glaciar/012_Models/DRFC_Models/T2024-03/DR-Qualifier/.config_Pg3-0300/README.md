@@ -128,5 +128,106 @@ Pg3-0300q
       
       -start-training 
       21:M 10 Mar 2024 20:01:32.684 
-      
-      
+
+      24 22 10 03 *  source /..../.config_Pg3-0300/cron_files/cron_fases.sh Initial_150
+      46 23 10 03 *  source /..../.config_Pg3-0300/cron_files/cron_fases.sh Fase_230
+      06 01 11 03 *  source /..../.config_Pg3-0300/cron_files/cron_fases.sh Fase_320
+      46 02 11 03 *  source /..../.config_Pg3-0300/cron_files/cron_fases.sh Close_420
+
+
+      Objetivo 1:
+
+         Que el modelo base vuelva a llegar a los 0.57 segundos que había logrado antes ...
+         Con dos entrenamientos ...
+            - El de 5 horas 
+            - El de otras 5 horas .. en una instancia de 16x pero que después no la pude continuar ... 
+            Entonces estoy empezando de nuevo .. 
+
+      Duda.. ¿Cómo podría evaluar los checkpoints ... ? Con una juiper me dice cual checkpoint es el mejor ... ?
+      Podría hacer el training también ?
+
+         dr-start-evaluation que hace ?? 
+
+_____________________________________________________________________
+
+Nota:
+
+   ¿Podría evaluar ... ?
+
+   De acuerdo a:
+      https://github.com/aws-deepracer-community/deepracer-for-cloud/blob/master/docs/video.md
+      Saving Evaluation to File
+During evaluation (dr-start-evaluation), if DR_EVAL_SAVE_MP4=True then three MP4 files are created in the S3 bucket's MP4 folder. They contain the in-car camera, top-camera and the camera following the car.
+
+   En el siguiente:
+      https://awstip.com/deepracer-for-cloud-drfc-configuration-4a785494423c
+
+      Usan al mismo valor ... 
+
+      DR_EVAL_OPP_S3_MODEL_PREFIX=rl-deepracer-sagemaker
+         DR_LOCAL_S3_MODEL_PREFIX=rl-deepracer-sagemaker
+
+_____________________________________________________________________
+Nota:
+
+   En, dice:
+   https://awstip.com/deepracer-for-cloud-drfc-configuration-4a785494423c
+
+   DR_TRAIN_MIN_EVAL_TRIALS : Minimum number of evaluations to perform after every iteration. Setting it to a minimum number (1 or 2) during initial training should reduce the training time to some extent. Best checkpoint is determined based on the performance of the model during evaluation between iterations. So, if you plan to use best checkpoint for racing instead of last checkpoint, once the model starts exploiting the environment, its better to increase this value to 5 atleast.
+
+      Y yo lo tengo en 5 ... 
+
+      ubuntu@ip-172-31-16-150:~/deepracer-pei/deepracer-for-cloud$ env | grep DR_TRAIN_MIN_EVAL_TRIALS
+      DR_TRAIN_MIN_EVAL_TRIALS=5
+
+      Igual ... podría mandarlo a 7 ... no se si impacta porque no esta mas .. 
+
+
+   sample run.env
+
+      DR_TRAIN_MIN_EVAL_TRIALS=5
+      DR_TRAIN_MIN_EVAL_TRIALS=7
+
+
+
+mc: <ERROR> Failed to copy `http://127.0.0.1:9000/bucket-models-2024-03/DR-Qualifier/Pg3-0300q/model/67_Step-179964.ckpt.data-00000-of-00001`. write /home/ubuntu/MINIO_SYNC/DR-Qualifier/Pg3-0300q/model/67_Step-179964.ckpt.data-00000-of-00001.part.minio: no space left on device                                   mc: <ERROR> Failed to copy `http://127.0.0.1:9000/bucket-models-2024-03/DR-Qualifier/Pg3-0300q/model/model_66.pb`. write /home/ubuntu/MINIO_SYNC/DR-Qualifier/Pg3-0300q/model/model_66.pb.part.minio: no space left on device
+mc: <ERROR> Failed to copy `http://127.0.0.1:9000/bucket-models-2024-03/DR-Qualifier/Pg3-0300q/model/model_67.pb`. write /home/ubuntu/MINIO_SYNC/DR-Qualifier/Pg3-0300q/model/model_67.pb.part.minio: no space left on device
+
+
+mc: <ERROR> Failed to copy `http://127.0.0.1:9000/bucket-models-2024-03/DR-Qualifier/Pg3-0300q/model/66_Step-175974.ckpt.data-00000-of-00001`. write /home/ubuntu/MINIO_SYNC/DR-Qualifier/Pg3-0300q/model/66_Step-175974.ckpt.data-00000-of-00001.part.minio: no space left on device         
+
+
+
+https://github.com/minio/minio/issues/12872
+
+
+   ext4
+
+   Yeah, you have run out of the number of directories per prefix - ext4 has 64k limitation - 
+   you should re-format the drives to use XFS.
+
+ubuntu@ip-172-31-16-150:~/MINIO_SYNC/DR-Qualifier$ df -H
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root         63G   63G   51M 100% /
+tmpfs             67G   91k   67G   1% /dev/shm
+tmpfs             27G  2.6M   27G   1% /run
+tmpfs            5.3M     0  5.3M   0% /run/lock
+/dev/nvme0n1p15  110M  6.4M  104M   6% /boot/efi
+tmpfs             14G   33k   14G   1% /run/user/1000
+
+
+Cuando seteo al disco por primera vez: (tiene solo 12 gb ... )
+
+ubuntu@ip-172-31-19-30:~$  df -H --output=source,size,used,avail
+Filesystem       Size  Used Avail
+/dev/root         63G   51G   12G
+tmpfs             67G     0   67G
+tmpfs             27G  1.3M   27G
+tmpfs            5.3M     0  5.3M
+/dev/nvme0n1p15  110M  6.4M  104M
+tmpfs             14G   33k   14G
+
+
+
+
+
