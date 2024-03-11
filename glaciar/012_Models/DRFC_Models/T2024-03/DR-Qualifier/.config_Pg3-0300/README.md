@@ -285,7 +285,25 @@ ubuntu@ip-172-31-19-94:~/deepracer-pei/deepracer-for-cloud$ mc ls myminio/bucket
          {"best_checkpoint": {"name": "64_Step-170203.ckpt", "avg_eval_metric": 58.877565467224805, "time_stamp": 5502.2}, "last_checkpoint": {"name": "65_Step-172301.ckpt", "avg_eval_metric": 18.923731951573835, "time_stamp": 5734.297}}
 
 
+------------------
+El modelo r:
 
+   Pg3-0300r
+
+         20:C 11 Mar 2024 02:23:40.368 
+                          23:23   en GMt-3
+
+-----------------------
+
+SOBRE COMO ENTENDER Y ANALIZAR LOS LOGS ... 
+
+Esto es también del modelo Pg3-0100
+
+https://steemit.com/programming/@codelikeamother/analyzing-the-aws-deepracer-logs-my-way
+
+
+
+-----------------------
 
 
 
