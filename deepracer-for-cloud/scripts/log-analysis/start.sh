@@ -5,11 +5,8 @@ docker run --rm -d -p "8888:8888" \
 -v $DR_DIR/docker/volumes/.aws:/root/.aws \
 -v $DR_DIR/data/analysis:/workspace/analysis \
 -v $DR_DIR/data/minio:/workspace/minio \
--v $DR_DIR/../glaciar/012_Models/DRFC_Models/T2024-03/DR-Analysis:/workspace/analysis-glaciar \
 --name deepracer-analysis \
 --network sagemaker-local \
  awsdeepracercommunity/deepracer-analysis:$DR_ANALYSIS_IMAGE
 
 docker logs -f deepracer-analysis
-
-
