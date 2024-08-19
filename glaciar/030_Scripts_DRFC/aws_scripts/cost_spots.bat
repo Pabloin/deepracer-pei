@@ -18,11 +18,11 @@ REM MY_SPOT=g4dn.2xlarge
 REM set "MY_SPOT=g5.2xlarge"
 
 REM ----x=4------16vCPU
-set "MY_SPOT=g4dn.4xlarge"
+REM set "MY_SPOT=g4dn.4xlarge"
 REM set "MY_SPOT=g5.4xlarge"
 
 REM ----x=4-----32vCPU
-REM set "MY_SPOT=g5.8xlarge"
+set "MY_SPOT=g5.8xlarge"
 
 
 REM us-east-1  - Virginia

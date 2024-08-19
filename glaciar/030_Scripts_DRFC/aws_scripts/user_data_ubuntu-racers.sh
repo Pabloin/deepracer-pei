@@ -8,10 +8,11 @@ apt install -y net-tools
 
 HOME_ROOT=/root
 HOME_USER=/home/ubuntu
-HOME_PROFILE_S3=dr-racers-config
+
+# HOME_PROFILE_S3=dr-racers-config
 # HOME_PROFILE_S3=dr-racer1-stoc-config
 # HOME_PROFILE_S3=dr-racer1-config
-# HOME_PROFILE_S3=dr-racer2-config
+HOME_PROFILE_S3=dr-racer2-config
 # HOME_PROFILE_S3=dr-racers-config-peze
 
 # INTALL: 0- Set Home
