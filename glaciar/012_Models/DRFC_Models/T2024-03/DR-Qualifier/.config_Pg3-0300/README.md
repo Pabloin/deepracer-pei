@@ -301,6 +301,11 @@ Esto es también del modelo Pg3-0100
 
 https://steemit.com/programming/@codelikeamother/analyzing-the-aws-deepracer-logs-my-way
 
+y luego este continuando ... 
+
+https://codelikeamother.uk/improving-aws-deepracer-log-analysis-even-further
+
+
 
 
 -----------------------

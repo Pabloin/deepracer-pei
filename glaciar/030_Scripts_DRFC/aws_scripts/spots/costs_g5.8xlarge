@@ -13,6 +13,12 @@ BEST    eu-north-1b   g5.8xlarge    Linux/UNIX    0.444200    2024-02-29T20:46:3
 BEST    sa-east-1b    g5.8xlarge    Linux/UNIX    0.416100    2024-02-29T11:54:22+00:00  
 BEST    sa-east-1a    g5.8xlarge    Linux/UNIX    0.416100    2024-02-29T11:54:22+00:00   
 
+BEST    sa-east-1a    g5.8xlarge    Linux/UNIX    0.416100    2024-08-18T22:17:05+00:00   *** la 8x esta mas barata que la 4x ... 
+CARA    sa-east-1a    g5.4xlarge    Linux/UNIX    0.655400    2024-08-18T19:31:00+00:00
+CARA    sa-east-1b    g5.2xlarge    Linux/UNIX    0.401300    2024-08-18T22:01:18+00:00
+BEST    sa-east-1b      g4dn.4xlarge    Linux/UNIX      0.204600        2024-08-18T06:01:44+00:00
+
+BEST    sa-east-1b    g5.8xlarge    Linux/UNIX    0.554800    2024-08-18T19:16:04+00:00
 
 
 
@@ -37,3 +43,33 @@ SPOTPRICEHISTORY        eu-north-1b     g5.8xlarge      Linux/UNIX      0.444200
 
 SPOTPRICEHISTORY        sa-east-1b      g5.8xlarge      Linux/UNIX      0.416100        2024-02-29T11:54:22+00:00    
 SPOTPRICEHISTORY        sa-east-1a      g5.8xlarge      Linux/UNIX      0.416100        2024-02-29T11:54:22+00:00     
+
+
+
+-
+
+
+C:\Users\pablo\AWS DeepRacer\deepracer-pei\glaciar\030_Scripts_DRFC\aws_scripts>cost_spots.bat
+
+
+ ....[ REGION: us-east-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        us-east-1b      g5.8xlarge      Linux/UNIX      1.036500        2024-08-18T22:02:20+00:00
+SPOTPRICEHISTORY        us-east-1f      g5.8xlarge      Linux/UNIX      1.033800        2024-08-18T21:02:45+00:00
+SPOTPRICEHISTORY        us-east-1d      g5.8xlarge      Linux/UNIX      1.007000        2024-08-18T20:32:13+00:00
+SPOTPRICEHISTORY        us-east-1c      g5.8xlarge      Linux/UNIX      0.981600        2024-08-18T19:32:40+00:00
+SPOTPRICEHISTORY        us-east-1a      g5.8xlarge      Linux/UNIX      0.991600        2024-08-18T19:02:28+00:00
+
+
+
+ ....[ REGION: eu-north-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        eu-north-1c     g5.8xlarge      Linux/UNIX      0.868000        2024-08-18T21:17:23+00:00
+SPOTPRICEHISTORY        eu-north-1b     g5.8xlarge      Linux/UNIX      0.765300        2024-08-18T19:47:23+00:00
+
+
+
+ ....[ REGION: sa-east-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        sa-east-1a      g5.8xlarge      Linux/UNIX      0.416100        2024-08-18T22:17:05+00:00
+SPOTPRICEHISTORY        sa-east-1b      g5.8xlarge      Linux/UNIX      0.554800        2024-08-18T19:16:04+00:00

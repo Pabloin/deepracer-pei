@@ -15,14 +15,14 @@ For /f %%A in ('powershell -NoP -C "get-date                         -f \"yyyy-M
 
 REM ----x=4------8vCPU
 REM MY_SPOT=g4dn.2xlarge
-REM MY_SPOT=g5.2xlarge
+REM set "MY_SPOT=g5.2xlarge"
 
 REM ----x=4------16vCPU
-REM MY_SPOT=g4dn.4xlarge
+set "MY_SPOT=g4dn.4xlarge"
 REM set "MY_SPOT=g5.4xlarge"
 
 REM ----x=4-----32vCPU
-set "MY_SPOT=g5.8xlarge"
+REM set "MY_SPOT=g5.8xlarge"
 
 
 REM us-east-1  - Virginia

@@ -7,6 +7,18 @@ BEST	sa-east-1a	g5.4xlarge	Linux/UNIX	0.484400	2024-02-10T15:01:39+00:00
 BEST	sa-east-1b	g5.4xlarge	Linux/UNIX	0.276000	2024-02-09T22:47:19+00:00
 
 
+cara ... 
+BEST    eu-north-1b     g5.4xlarge      Linux/UNIX      0.549400        2024-08-18T22:01:52+00:00
+BEST    eu-north-1c     g5.4xlarge      Linux/UNIX      0.497400        2024-08-18T20:16:51+00:00
+
+muy cara la 4x
+BEST    sa-east-1b      g5.4xlarge      Linux/UNIX      0.789500        2024-08-18T21:04:01+00:00
+BEST    sa-east-1a      g5.4xlarge      Linux/UNIX      0.655400        2024-08-18T19:31:00+00:00
+
+
+
+
+
 REGIONS CON GPU ENUSO
 eu-north-1 us-east-1
 ---[Region eu-north-1 ] ----------
@@ -84,3 +96,38 @@ PS C:\Users\pablo\AWS DeepRacer\deepracer-pei\glaciar\030_Scripts_DRFC\aws_scrip
 ||  sa-east-1a      |  g5.4xlarge   |  Linux/UNIX         |  0.424200  |  2024-02-22T11:16:09+00:00   ||
 |+------------------+---------------+---------------------+------------+------------------------------+|
 }
+
+
+
+
+
+
+
+
+
+
+C:\Users\pablo\AWS DeepRacer\deepracer-pei\glaciar\030_Scripts_DRFC\aws_scripts>cost_spots.bat
+
+
+ ....[ REGION: us-east-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        us-east-1c      g5.4xlarge      Linux/UNIX      0.595000        2024-08-18T23:47:46+00:00
+SPOTPRICEHISTORY        us-east-1f      g5.4xlarge      Linux/UNIX      0.621800        2024-08-18T21:02:36+00:00
+SPOTPRICEHISTORY        us-east-1a      g5.4xlarge      Linux/UNIX      0.549500        2024-08-18T20:32:55+00:00
+SPOTPRICEHISTORY        us-east-1b      g5.4xlarge      Linux/UNIX      0.515500        2024-08-18T17:47:48+00:00
+SPOTPRICEHISTORY        us-east-1c      g5.4xlarge      Linux/UNIX      0.595100        2024-08-18T17:47:48+00:00
+SPOTPRICEHISTORY        us-east-1d      g5.4xlarge      Linux/UNIX      0.564100        2024-08-18T17:17:40+00:00
+
+
+
+ ....[ REGION: eu-north-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        eu-north-1b     g5.4xlarge      Linux/UNIX      0.549400        2024-08-18T22:01:52+00:00
+SPOTPRICEHISTORY        eu-north-1c     g5.4xlarge      Linux/UNIX      0.497400        2024-08-18T20:16:51+00:00
+
+
+
+ ....[ REGION: sa-east-1 - SPOT: MY_SPOT ]...........................
+
+SPOTPRICEHISTORY        sa-east-1b      g5.4xlarge      Linux/UNIX      0.789500        2024-08-18T21:04:01+00:00
+SPOTPRICEHISTORY        sa-east-1a      g5.4xlarge      Linux/UNIX      0.655400        2024-08-18T19:31:00+00:00

@@ -11,6 +11,10 @@ BEST	sa-east-1a	g5.2xlarge	Linux/UNIX	0.206000	2024-02-09T17:46:22+00:00
 SPOTPRICEHISTORY        sa-east-1b      g5.2xlarge      Linux/UNIX      0.206000        2024-02-18T23:16:31+00:00
 SPOTPRICEHISTORY        sa-east-1a      g5.2xlarge      Linux/UNIX      0.206000        2024-02-18T23:01:31+00:00
 
+SPOTPRICEHISTORY        sa-east-1b      g5.2xlarge      Linux/UNIX      0.401300        2024-08-18T22:01:18+00:00
+SPOTPRICEHISTORY        sa-east-1a      g5.2xlarge      Linux/UNIX      0.544300        2024-08-18T20:31:18+00:00
+
+
 
 REGIONS CON GPU ENUSO
 eu-north-1 us-east-1
