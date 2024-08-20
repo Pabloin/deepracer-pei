@@ -269,6 +269,15 @@ docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-cpu-gl-avx2
 docker pull awsdeepracercommunity/deepracer-robomaker:5.1.2-gpu
 
 
+#-------------
+# https://blog.deepracing.io/2024/05/03/deepracer-for-cloud-v5-2-2-now-available-with-new-real-time-training-metrics/
+
+docker pull awsdeepracercommunity/deepracer-robomaker:5.2.2-gpu
+docker pull awsdeepracercommunity/deepracer-robomaker:5.2.2-cpu
+
+docker pull awsdeepracercommunity/deepracer-sagemaker:5.2.1-gpu
+docker pull awsdeepracercommunity/deepracer-sagemaker:5.2.1-cpu
+
 #------------- 
 
 # MINIO CLIENT
