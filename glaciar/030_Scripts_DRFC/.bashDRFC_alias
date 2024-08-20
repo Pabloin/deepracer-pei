@@ -107,15 +107,15 @@ alias Pg3-0303="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0303"
 
 # # Qualifier 2024-08 Pg8
 
-# alias LuniCar-01="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-01"
-# alias LuniCar-02="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-02"
-# alias LuniCar-03="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-03"
-# alias LuniCar-04="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-04"
+alias LuniCar-01="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-01"
+alias LuniCar-02="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-02"
+alias LuniCar-03="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-03"
+alias LuniCar-04="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-04"
 
-# alias LuniCar-05="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-05"
-# alias LuniCar-06="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-06"
-# alias LuniCar-07="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-07"
-# alias LuniCar-08="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-08"
+alias LuniCar-05="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-05"
+alias LuniCar-06="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-06"
+alias LuniCar-07="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-07"
+alias LuniCar-08="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-08"
 
 
 
