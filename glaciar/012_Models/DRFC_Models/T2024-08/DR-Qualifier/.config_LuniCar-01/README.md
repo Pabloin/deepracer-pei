@@ -10,6 +10,10 @@ LuniCar-01
    - Objetivo ... 
       - Dejarlo entrenando ...
 -------------
+Minio:
+
+   - http://54.94.27.120:9001/login
+   - 
 
 Arrancó a las 21:10 ...
 
