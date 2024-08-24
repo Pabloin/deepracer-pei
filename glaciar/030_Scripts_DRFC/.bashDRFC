@@ -132,7 +132,8 @@ alias costos="cd ~/deepracer-pei/glaciar/030_Scripts_DRFC/aws_scripts/"
 S3_SMINIO_SOURCE=~/MINIO_SYNC
 # S3_SMINIO_SERVER=local
 S3_SMINIO_SERVER=myminio
-S3_SMINIO_BUCKET=bucket-models-2024-03
+# S3_SMINIO_BUCKET=bucket-models-2024-03
+S3_SMINIO_BUCKET=bucket-models-2024-08
 
 
 S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail

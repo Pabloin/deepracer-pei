@@ -287,6 +287,19 @@ mc alias set local/     http://127.0.0.1:9000  Minio_USER  Minio_PASS
 pip install minio
 
 
+# MIMIO MC CLI
+curl https://dl.min.io/client/mc/release/linux-amd64/mc \
+  --create-dirs \
+  -o $HOME/minio-binaries/mc
+
+chmod +x $HOME/minio-binaries/mc
+export PATH=$PATH:$HOME/minio-binaries/
+
+
+
+cd $HOME
+mkdir -p MINIO_SYNC/DR-Qualifier
+
 
 # Desktop Nvidia Control Pane
 sudo nvidia-settings

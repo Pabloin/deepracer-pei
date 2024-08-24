@@ -13,7 +13,12 @@ LuniCar-01
 Minio:
 
    - http://54.94.27.120:9001/login
-   - 
+   - http://15.228.89.75:8888/lab
+   - http://127.0.0.1:8888/lab?token=d006ae7f02995151450407fa68fd5f865149473335d1c5aa
+   - http://15.228.89.75:8080/
+   - http://15.228.89.75:8100/?robo=all&camera=kvs_stream&quality=75&width=480
+
+
 
 Arrancó a las 21:10 ...
 
