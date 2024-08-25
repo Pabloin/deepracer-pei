@@ -250,7 +250,11 @@ function PRE_CONTEXT_GLACIAR() {
     PROFILE_LAB_ROLE=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
 }
 
-
+function PRE_CONTEXT_ESEPROFE() {
+    S3_BUCKET_TARGET=deepracer-eseprofe
+    PROFILE_PEZE_EDU=EseProfe
+    PROFILE_LAB_ROLE=arn:aws:iam::424966012016:role/LabRole
+}
 
 function PRE_CONTEXT_LUZ() {
     S3_BUCKET_TARGET=dr-models-luz-to-peze-edu
@@ -308,6 +312,14 @@ function spImportRacer2() {
     spImport
     POST_CONTEXT_PEZE_EDU
 }
+
+function spImportEseProfe() {
+    PRE_CONTEXT_ESEPROFE
+    spImport
+    POST_CONTEXT_PEZE_EDU
+}
+
+
 #---[Api sp()  ]-----------------------------------
 
 function spUp() {
@@ -674,9 +686,9 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
 
     - prof - setx - hello - doing - costos
 
-    - SPOT (Minio): spDown_Minio  | spUp        | spImport 
-                    spDown_S3     | spUpLuz     | spImportLuz
-                    spDown_S3Luz  | -           | -
+    - SPOT (Minio): spDown_Minio  | spUp        | spImport     
+                    spDown_S3     | spUpLuz     | spImportLuz  | spImportRacer2 | spImportEseProfe
+                    spDown_S3Luz  | -           | 
                     mmDown        | mmUp        | 
                     mmDownLuz     | mmUpLuz     | spImportLuz
                     mmDownGlaciar | mmUpGlaciar | spImportGlaciar

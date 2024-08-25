@@ -18,8 +18,15 @@ Minio:
    - http://15.228.89.75:8080/
    - http://15.228.89.75:8100/?robo=all&camera=kvs_stream&quality=75&width=480
 
+-----------------------
+SANDBOX ...
 
+   - Para estados intermedios voy a utilizar
+      - Sandbox de AWS ACADEMY UCEMA - EDUCADOR ... 
+      - Perfil UCEMA
+         EseProfe
 
+-----------------------------
 Arrancó a las 21:10 ...
 
    ¿Le puedo poner un cron?
