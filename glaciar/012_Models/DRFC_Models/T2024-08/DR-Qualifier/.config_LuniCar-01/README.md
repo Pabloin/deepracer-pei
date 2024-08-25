@@ -56,9 +56,9 @@ Arrancó a las 21:10 ...
 
 
 
-10    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_fase_wip1.sh
+10    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LuniCar-01/cron_files/cron_fase_wip1.sh
 
-30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_test.sh
+30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LuniCar-01/cron_files/cron_test.sh
 
 
 
@@ -72,10 +72,10 @@ Arrancó a las 21:10 ...
 -----------------------------
 crontab -e 
 
-15    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_fase_wip1.sh
-45    4  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_fase_wip2.sh
-15    6  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_fase_cierre.sh
+15    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LuniCar-01/cron_files/cron_fase_wip1.sh
+45    4  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LuniCar-01/cron_files/cron_fase_wip2.sh
+15    6  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LuniCar-01/cron_files/cron_fase_cierre.sh
 
-30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_Pg3-0200/cron_files/cron_test.sh
+30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LuniCar-01/cron_files/cron_test.sh
 
 

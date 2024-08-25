@@ -494,7 +494,12 @@ function spImport() {
         --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_FOLDER} \
         --role-arn ${PROFILE_LAB_ROLE} \
         --region   us-east-1 \
-        --profile  ${PROFILE_PEZE_EDU}               
+        --profile  ${PROFILE_PEZE_EDU}   
+
+
+    # Nota: https://aws-deepracer-community.github.io/deepracer-for-cloud/upload.html
+    #       dice que dr-upload-model  tiene un switch 
+    #        b - uploads best checkpoint instead of default which is last checkpoint            
    
 }
 
