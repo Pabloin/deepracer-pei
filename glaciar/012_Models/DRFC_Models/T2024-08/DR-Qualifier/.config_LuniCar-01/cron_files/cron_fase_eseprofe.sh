@@ -43,8 +43,8 @@ cat << EOM >> ~/logs.crontab
         ls -la
 
         aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER}
-                s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER}
-                --profile EseProfe
+                     s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER}
+                     --profile EseProfe
 
 EOM
 
@@ -59,8 +59,8 @@ ls -la
 #----------------
 
 aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER} \
-        s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER} \
-        --profile EseProfe
+             s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER} \
+             --profile EseProfe
 
 
 #----------------
