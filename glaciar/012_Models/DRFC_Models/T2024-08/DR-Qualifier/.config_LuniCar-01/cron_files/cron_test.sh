@@ -2,10 +2,12 @@
 
 # 23:33 (GMT -3) 
 # 02:33 (GMT  0)
+# d25h0249
 
 MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
+MY_NAME=$(date +d%dh%H%M)
 
-MODEL_NOMBRE=LuniCar-01-N1-Wip1
+MODEL_NOMBRE=LuniCar-01-N1-${MY_NAME}
 
 echo "${MY_TIME} Hola Pablo ${MODEL_NOMBRE}" >> ~/logs.crontab
 
