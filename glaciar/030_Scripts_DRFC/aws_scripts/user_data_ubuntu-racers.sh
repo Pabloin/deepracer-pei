@@ -263,10 +263,11 @@ sudo apt-get install -y  xutils-dev
 
 sudo apt install -y gazebo
 
-docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-gpu-gl
-docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-cpu-gl-avx2
+# Lo depreco 27/8/2024 - tres imagebes menos
+# docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-gpu-gl
+# docker pull awsdeepracercommunity/deepracer-robomaker:5.0.10-cpu-gl-avx2
 
-docker pull awsdeepracercommunity/deepracer-robomaker:5.1.2-gpu
+# docker pull awsdeepracercommunity/deepracer-robomaker:5.1.2-gpu
 
 
 #-------------

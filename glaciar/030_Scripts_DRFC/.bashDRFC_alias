@@ -109,6 +109,7 @@ alias Pg3-0303="cd  ${PATH_DRFC_Models}/T2024-03/DR-Qualifier/.config_Pg3-0303"
 
 alias LuniCar-01="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-01"
 alias LuniCar-01-racer1="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LunaCar-06-racer1"
+alias LuniCar-01-racer2="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LunaCar-06-racer2"
 
 alias LuniCar-02="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-02"
 alias LuniCar-03="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-03"
