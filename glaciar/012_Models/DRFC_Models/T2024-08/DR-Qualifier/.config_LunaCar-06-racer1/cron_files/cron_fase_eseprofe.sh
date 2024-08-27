@@ -28,7 +28,7 @@ echo "${MY_TIME} CRONTAB - EseProfe" >> ~/logs.crontab
 MODEL_FOLDER=LuniCar-01
 MODEL_NOMBRE=LuniCar-01-ese-${MY_NAME}
 
-# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LuniCar-01-racer1/cron_files/cron_fase_eseprofe.sh
+# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-06-racer1/cron_files/cron_fase_eseprofe.sh
 
 
 cat << EOM >> ~/logs.crontab

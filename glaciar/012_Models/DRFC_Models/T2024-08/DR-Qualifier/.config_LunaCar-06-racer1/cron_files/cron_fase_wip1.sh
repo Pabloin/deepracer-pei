@@ -8,31 +8,33 @@
 # 30 1      7 3 *  comando_inicial   (entrena 1.30)
 # 10 3      7 3 *  comando_wip1
 
+# */45 * 24,25 8 *    Cada 45 minutos del 24 y 25 de agosto ..
+
 
 #--------------------
 # INITIAL - Training de 1.30 horas - ( 90 minutos) - 21:10 a 22:40      en GMT -3 -- 00:10
 # WIP_1   - Training de 3.00 horas - (180 minutos) - 21:10 a 00:10 (+1) en GMT -3 -- 03:10 7/3
 # WIP_2   - Training de 4.50 horas - (270 minutos) - 21:10 a 01:40 (+1) en GMT -3 -- 04:40 7/3
-# CIERRE  - Training de 6.00 horas - (360 minutos) - 21:10 a 03:10 (+1) en GMT -3 -- 06:10 7/3
 
 
 # 23:33 (GMT -3) 
 # 02:33 (GMT  0)
 
 MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
+MY_NAME=$(date +d%dh%H%M)
 
 
-echo "${MY_TIME} CRONTAB - FASE WIP" >> ~/logs.crontab
+
+echo "${MY_TIME} CRONTAB - FASE WIP 1" >> ~/logs.crontab
 
 
 
 MODEL_FOLDER=LuniCar-01
-# MODEL_NOMBRE=LuniCar-01-R2-Inicial
-MODEL_NOMBRE=LuniCar-01-R2-Cierre
+# MODEL_NOMBRE=LuniCar-01-N1-Inicial
+# MODEL_NOMBRE=LuniCar-01-N1-Wip1
+MODEL_NOMBRE=LuniCar-01-${MY_NAME}
 
-
-# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-04/DR-Qualifier/.config_LuniCar-01-racer1/cron_files/cron_fase_wip1.sh
-# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-04/DR-Qualifier/.config_LuniCar-01-racer1/cron_files/cron_fase_wip1.sh
+# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-06-racer1/cron_files/cron_fase_wip1.sh
 
 
 cat << EOM >> ~/logs.crontab

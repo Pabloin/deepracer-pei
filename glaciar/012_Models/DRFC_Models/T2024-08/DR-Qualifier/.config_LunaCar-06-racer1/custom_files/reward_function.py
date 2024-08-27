@@ -1,6 +1,7 @@
 import math
 
-class LuniCar:
+# LunaCar-06
+class LunaCar:
 
     def __init__(self):
         self.proge_prev = 0
@@ -38,12 +39,12 @@ class LuniCar:
         recompensa = progre - self.proge_prev
         self.proge_prev = progre
 
-        # Recompensa por completa en menos pasos que la vuelta anterior
         if progre >= 100 and (self.steps_now < self.steps_prev):
             recompensa = recompensa + 10.0
 
-        # Recompensa si pasa 25% de los pasos más rápido que lo esperado
-        recompensa += self.progress_level_eval(stp, progre)
+        rrkkoo = self.progress_level_eval(stp, progre)
+
+        recompensa = recompensa + rrkkoo
 
         g_diff = abs(math.degrees(math.atan2(pp1[1] - pp0[1], pp1[0] - pp0[0])) - hd)
 
@@ -71,64 +72,59 @@ class LuniCar:
    
     def progress_level_eval(self, stp, progre):
 
-        SETPS_MAX_L01 = 290  # 1   +1
-        SETPS_MAX_L02 = 280  # 2   +1
-
-        SETPS_MAX_L03 = 270  # 4   +1
-        SETPS_MAX_L04 = 265  # 6   +2
-        SETPS_MAX_L05 = 260  # 8   +2
-        SETPS_MAX_L06 = 256  # 10  +2
-
-        SETPS_MAX_L07 = 253  # 12  +4
-        SETPS_MAX_L08 = 250  # 16  +4
-        SETPS_MAX_L09 = 247  # 20  +4
-        SETPS_MAX_L10 = 244  # 24  +4
-
-        SETPS_MAX_L11 = 242  # 28  +4
-        SETPS_MAX_L12 = 240  # 32  +4
-
+        SETPS_MAX_L01 = 320
+        SETPS_MAX_L02 = 310
+        SETPS_MAX_L03 = 300
+        SETPS_MAX_L04 = 290
+        SETPS_MAX_L05 = 280
+        SETPS_MAX_L06 = 270
+        SETPS_MAX_L07 = 260
+        SETPS_MAX_L08 = 250
+        SETPS_MAX_L09 = 240
+        SETPS_MAX_L10 = 230
+        SETPS_MAX_L11 = 220
+        SETPS_MAX_L12 = 210
 
         if self.progress_level(stp, progre, SETPS_MAX_L12):
-            return 32.0
+            return 15.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L11):
-            return 28.0
+            return 12.0
                 
         if self.progress_level(stp, progre, SETPS_MAX_L10):
-            return 24.0
+            return 10.0
         
         if self.progress_level(stp, progre, SETPS_MAX_L09):
-            return 20.0
+            return  9.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L08):
-            return 16.0
+            return  8.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L07):
-            return 12.0
+            return  7.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L06):
-            return 10.0
+            return  6.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L05):
-            return 8.0
+            return  5.0
         
         if self.progress_level(stp, progre, SETPS_MAX_L04):
-            return 6.0
+            return  4.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L03):
-            return 4.0
+            return  3.0
         
         if self.progress_level(stp, progre, SETPS_MAX_L02):
-            return 2.0
+            return  2.0
 
         if self.progress_level(stp, progre, SETPS_MAX_L01):
-            return 1.0
+            return  1.0
         
-        return 0.0
+        return  0.0
 
-dr = LuniCar()
+dr = LunaCar()
 
 def reward_function(params):
     return dr.reko_fun(params)
-
 

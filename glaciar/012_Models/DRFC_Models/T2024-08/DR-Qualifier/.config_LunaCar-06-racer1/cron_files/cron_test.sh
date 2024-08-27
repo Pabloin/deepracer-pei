@@ -11,6 +11,6 @@ MODEL_NOMBRE=LuniCar-01-${MY_NAME}
 
 echo "${MY_TIME} Hola Pablo ${MODEL_NOMBRE}" >> ~/logs.crontab
 
-# 40,50 2 7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-04/DR-Qualifier/.config_LuniCar-01-racer1/cron_files/cron_test.sh
+# 40,50 2 7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-04/DR-Qualifier/.config_LunaCar-06-racer1/cron_files/cron_test.sh
 
 
