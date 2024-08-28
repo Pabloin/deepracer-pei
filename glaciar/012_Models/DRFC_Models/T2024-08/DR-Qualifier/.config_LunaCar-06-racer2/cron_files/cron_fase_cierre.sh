@@ -26,9 +26,9 @@ echo "${MY_TIME} CRONTAB - FASE WIP" >> ~/logs.crontab
 
 
 
-MODEL_FOLDER=LuniCar-01
-# MODEL_NOMBRE=LuniCar-01-R2-Inicial
-MODEL_NOMBRE=LuniCar-01-R2-Cierre
+MODEL_FOLDER=LunaCar-06-racer2
+# MODEL_NOMBRE=LunaCar-06-racer2-R2-Inicial
+MODEL_NOMBRE=LunaCar-06-racer2-R2-Cierre
 
 
 # 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-04/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_wip1.sh
