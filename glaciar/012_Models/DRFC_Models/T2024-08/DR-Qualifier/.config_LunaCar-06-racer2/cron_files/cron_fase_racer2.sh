@@ -42,7 +42,7 @@ cat << EOM >> ~/logs.crontab
 
         CRONTAB_DE: ${MY_TIME}
 
-        mc cp myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER}
+        mc cp myminio/${BUCKET_MINIO}/DR-Qualifier/${MODEL_FOLDER}
                         /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
 
         cd  /home/ubuntu/MINIO_SYNC/DR-Qualifier
