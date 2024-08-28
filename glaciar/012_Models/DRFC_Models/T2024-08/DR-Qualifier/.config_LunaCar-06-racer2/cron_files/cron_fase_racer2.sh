@@ -24,37 +24,38 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
 
-
-echo "${MY_TIME} CRONTAB - FASE WIP 1" >> ~/logs.crontab
-
-
-
 MODEL_FOLDER=LunaCar-06-racer2
-# MODEL_NOMBRE=LunaCar-06-racer2-N1-Inicial
-# MODEL_NOMBRE=LunaCar-06-racer2-N1-Wip1
 MODEL_NOMBRE=LunaCar-06-racer2-${MY_NAME}
 
+PROFILE=racer2
+ROLE_ARN=arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole
+BUCKET_AWS=dr-models-racer2-dots-to-pabloedu-gmail
+BUCKET_MINIO=dr-models-racer2-dots-to-pabloedu-gmail
+
+echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
+
 # 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_wip1.sh
+# */45 * 27,28 8 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_wip1.sh
 
 
 cat << EOM >> ~/logs.crontab
 
         CRONTAB_DE: ${MY_TIME}
 
-        mc cp myminio/bucket-models-2024-03/DR-Qualifier/${MODEL_FOLDER}
+        mc cp myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER}
                         /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
 
         cd  /home/ubuntu/MINIO_SYNC/DR-Qualifier
 
         ls -la
 
-        aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER} 
-                        s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER}
-                        --profile racer2
+        aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER}
+                          s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER}
+                          --profile ${PROFILE}
 
 EOM
 
-mc cp myminio/bucket-models-2024-03/DR-Qualifier/${MODEL_FOLDER}  \
+mc cp myminio/${BUCKET_MINIO}/DR-Qualifier/${MODEL_FOLDER}  \
             /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
 
 cd  /home/ubuntu/MINIO_SYNC/DR-Qualifier
@@ -65,8 +66,8 @@ ls -la
 #----------------
 
 aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER} \
-        s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER} \
-                --profile racer2
+             s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER} \
+             --profile ${PROFILE}
 
 
 #----------------
@@ -75,20 +76,24 @@ cat << EOM >> ~/logs.crontab
 
         CRONTAB_DE: ${MY_TIME}
 
-        aws deepracer import-model 
-                --type REINFORCEMENT_LEARNING 
-                --name ${MODEL_NOMBRE}  
-                --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER} 
-                --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole 
+        aws deepracer import-model
+                --type REINFORCEMENT_LEARNING
+                --name ${MODEL_NOMBRE} 
+                --model-artifacts-s3-path s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER}
+                --role-arn ${ROLE_ARN}
                 --region   us-east-1
-                --profile  racer2
+                --profile ${PROFILE}
 
 EOM
+
 
 aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
     --name ${MODEL_NOMBRE}  \
-    --model-artifacts-s3-path s3://dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER} \
-    --role-arn arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole \
+    --model-artifacts-s3-path s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER} \
+    --role-arn ${ROLE_ARN} \
     --region   us-east-1 \
-    --profile  racer2
+    --profile ${PROFILE}
+
+
+

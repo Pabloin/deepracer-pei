@@ -23,10 +23,16 @@
 MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
-echo "${MY_TIME} CRONTAB - EseProfe" >> ~/logs.crontab
 
 MODEL_FOLDER=LunaCar-06-racer2
 MODEL_NOMBRE=LunaCar-06-racer2-ese-${MY_NAME}
+
+PROFILE=EseProfe
+ROLE_ARN=arn:aws:iam::424966012016:role/LabRole
+BUCKET_AWS=deepracer-eseprofe
+BUCKET_MINIO=dr-models-racer2-dots-to-pabloedu-gmail
+
+echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
 
 # 10 3      7 3 *             ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_eseprofe.sh
 # 10 3      7 3 *   /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_eseprofe.sh
@@ -46,12 +52,12 @@ cat << EOM >> ~/logs.crontab
         ls -la
 
         aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER}
-                     s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER}
-                     --profile EseProfe
+                          s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER}
+                          --profile ${PROFILE}
 
 EOM
 
-mc cp myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/${MODEL_FOLDER}  \
+mc cp myminio/${BUCKET_MINIO}/DR-Qualifier/${MODEL_FOLDER}  \
             /home/ubuntu/MINIO_SYNC/DR-Qualifier/ --recursive
 
 cd  /home/ubuntu/MINIO_SYNC/DR-Qualifier
@@ -62,8 +68,8 @@ ls -la
 #----------------
 
 aws s3 sync  /home/ubuntu/MINIO_SYNC/DR-Qualifier/${MODEL_FOLDER} \
-             s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER} \
-             --profile EseProfe
+             s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER} \
+             --profile ${PROFILE}
 
 
 #----------------
@@ -75,10 +81,10 @@ cat << EOM >> ~/logs.crontab
         aws deepracer import-model
                 --type REINFORCEMENT_LEARNING
                 --name ${MODEL_NOMBRE} 
-                --model-artifacts-s3-path s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER}
-                --role-arn arn:aws:iam::424966012016:role/LabRole
+                --model-artifacts-s3-path s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER}
+                --role-arn ${ROLE_ARN}
                 --region   us-east-1
-                --profile  EseProfe
+                --profile ${PROFILE}
 
 EOM
 
@@ -86,10 +92,10 @@ EOM
 aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
     --name ${MODEL_NOMBRE}  \
-    --model-artifacts-s3-path s3://deepracer-eseprofe/DR-Qualifier/${MODEL_FOLDER} \
-    --role-arn arn:aws:iam::424966012016:role/LabRole \
+    --model-artifacts-s3-path s3://${BUCKET_AWS}/DR-Qualifier/${MODEL_FOLDER} \
+    --role-arn ${ROLE_ARN} \
     --region   us-east-1 \
-    --profile  EseProfe
+    --profile ${PROFILE}
 
 
 
