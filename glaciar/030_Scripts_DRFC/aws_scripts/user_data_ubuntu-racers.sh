@@ -296,10 +296,7 @@ curl https://dl.min.io/client/mc/release/linux-amd64/mc \
 chmod +x $HOME/minio-binaries/mc
 export PATH=$PATH:$HOME/minio-binaries/
 
-
-
-cd $HOME
-mkdir -p MINIO_SYNC/DR-Qualifier
+mkdir -p $HOME/MINIO_SYNC/DR-Qualifier
 
 
 # Desktop Nvidia Control Pane
