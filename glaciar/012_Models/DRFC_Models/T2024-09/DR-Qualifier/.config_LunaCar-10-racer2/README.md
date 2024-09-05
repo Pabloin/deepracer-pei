@@ -1,8 +1,30 @@
 # deepracer-pei
 
 ------------------------------------------------------
-LunaCar-06-racer2
+LunaCar-10-racer2
 
+      TODO:
+     "beta_entropy": 0.01,
+      https://medium.com/@abhishekgupta97023/part-1-aws-deepracer-2023-racing-towards-new-insights-d383f815633e
+      Decreasing entropy after cloning based on model performance is the way to go.
+
+These episodes collectively constitute an iteration, 
+   and after each iteration, 
+   a policy update occurs.
+
+To determine the frequency of policy updates, 
+   it’s essential to specify the total number of episodes that constitute an iteration. 
+   
+   Increasing the number of episodes between policy updates will result in slower updates, which, in turn, slows down the overall model training process.
+
+
+
+
+
+
+
+***************
+----------------
    - Objetvio ... replicar en DRFC la misma configuración de LunaCar-06 que es con el que competi ...
 
 Del log de la consola:
@@ -86,7 +108,7 @@ S3_ENDPOINT_URL=None  # Endpoint URL: None for AWS S3, 'http://minio:9000' for l
 
 
 
-PREFIX='T2024-08/DR-Qualifier/LunaCar-06-racer2'
+PREFIX='T2024-08/DR-Qualifier/LunaCar-10-racer2'
 BUCKET='dr-models-racer2-dots-to-pabloedu-gmail'
 S3_ENDPOINT_URL='http://minio:9000'
 
@@ -177,9 +199,9 @@ Arrancó a las 21:10 ...
 
 
 
-10    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_wip1.sh
+10    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_fase_wip1.sh
 
-30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_test.sh
+30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_test.sh
 
 
 
@@ -193,10 +215,10 @@ Arrancó a las 21:10 ...
 -----------------------------
 crontab -e 
 
-15    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_wip1.sh
-45    4  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_wip2.sh
-15    6  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_fase_cierre.sh
+15    3  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_fase_wip1.sh
+45    4  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_fase_wip2.sh
+15    6  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_fase_cierre.sh
 
-30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-06-racer2/cron_files/cron_test.sh
+30,33 2  7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-03/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_test.sh
 
 
