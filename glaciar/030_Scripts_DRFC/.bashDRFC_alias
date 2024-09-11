@@ -121,6 +121,14 @@ alias LuniCar-07="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-
 alias LuniCar-08="cd  ${PATH_DRFC_Models}/T2024-08/DR-Qualifier/.config_LuniCar-08"
 
 
+alias LuniCar-10-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_LunaCar-10-racer1"
+alias LuniCar-11-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_LunaCar-11-racer1"
+alias LuniCar-12-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_LunaCar-12-racer1"
+
+alias LuniCar-10-racer2="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_LunaCar-10-racer2"
+alias LuniCar-11-racer2="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_LunaCar-11-racer2"
+alias LuniCar-12-racer2="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_LunaCar-12-racer2"
+
 
 # # Qualifier 2024-09 Pg9
 
