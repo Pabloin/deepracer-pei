@@ -24,8 +24,8 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
 
-MODEL_FOLDER=LunaCar-10-glaciar
-MODEL_NOMBRE=LunaCar-10-glaciar-${MY_NAME}
+MODEL_FOLDER=LunaCar-10-racer2
+MODEL_NOMBRE=LunaCar-10-racer2-${MY_NAME}
 
 PROFILE=glaciar
 ROLE_ARN=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
@@ -36,6 +36,8 @@ echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
 
 # 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-10-glaciar/cron_files/cron_fase_wip1.sh
 # */45 * 27,28 8 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-10-glaciar/cron_files/cron_fase_wip1.sh
+
+0 * 11,12 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_LunaCar-10-racer2/cron_files/cron_fase_glaciar.sh
 
 
 cat << EOM >> ~/logs.crontab
