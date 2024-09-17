@@ -35,7 +35,7 @@ S3_ENDPOINT_URL=None  # Endpoint URL: None for AWS S3, 'http://minio:9000' for l
 
 
 
-PREFIX='T2024-09/DR-Qualifier/LunaCar-11-racer2'
+PREFIX='T2024-09/DR-Qualifier/LunaCar-12-racer2'
 BUCKET='dr-models-racer2-dots-to-pabloedu-gmail'
 S3_ENDPOINT_URL='http://minio:9000'
 

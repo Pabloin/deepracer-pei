@@ -7,7 +7,7 @@
 MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
-MODEL_NOMBRE=LunaCar-11-racer2-${MY_NAME}
+MODEL_NOMBRE=LunaCar-12-racer2-${MY_NAME}
 
 echo "${MY_TIME} Hola Pablo ${MODEL_NOMBRE}" >> ~/logs.crontab
 

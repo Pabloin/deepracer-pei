@@ -10,12 +10,7 @@
 
 # */45 * 24,25 8 *    Cada 45 minutos del 24 y 25 de agosto ..
 
-
-#--------------------
-# INITIAL - Training de 1.30 horas - ( 90 minutos) - 21:10 a 22:40      en GMT -3 -- 00:10
-# WIP_1   - Training de 3.00 horas - (180 minutos) - 21:10 a 00:10 (+1) en GMT -3 -- 03:10 7/3
-# WIP_2   - Training de 4.50 horas - (270 minutos) - 21:10 a 01:40 (+1) en GMT -3 -- 04:40 7/3
-
+# 0 * 11,12 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_LunaCar-12-racer2/cron_files/cron_racer2.sh
 
 # 23:33 (GMT -3) 
 # 02:33 (GMT  0)
@@ -24,8 +19,8 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
 
-MODEL_FOLDER=LunaCar-11-racer2
-MODEL_NOMBRE=LunaCar-11-racer2-${MY_NAME}
+MODEL_FOLDER=LunaCar-12-racer2
+MODEL_NOMBRE=LunaCar-12-racer2-${MY_NAME}
 
 PROFILE=racer2
 ROLE_ARN=arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole

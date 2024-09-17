@@ -24,8 +24,8 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
 
-MODEL_FOLDER=LunaCar-11-racer2
-MODEL_NOMBRE=LunaCar-11-racer2-${MY_NAME}
+MODEL_FOLDER=LunaCar-12-racer2
+MODEL_NOMBRE=LunaCar-12-racer2-${MY_NAME}
 
 PROFILE=glaciar
 ROLE_ARN=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
@@ -33,9 +33,6 @@ BUCKET_AWS=deepracer-forcloud-glaciar
 BUCKET_MINIO=dr-models-glaciar-dots-to-pabloedu-gmail
 
 echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
-
-# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-11-glaciar/cron_files/cron_wip1.sh
-# */45 * 27,28 8 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_LunaCar-11-glaciar/cron_files/cron_wip1.sh
 
 # 0 * 11,12 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_LunaCar-12-racer2/cron_files/cron_glaciar.sh
 
