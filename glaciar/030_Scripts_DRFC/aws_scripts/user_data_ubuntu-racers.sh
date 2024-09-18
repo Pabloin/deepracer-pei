@@ -297,6 +297,7 @@ chmod +x $HOME/minio-binaries/mc
 export PATH=$PATH:$HOME/minio-binaries/
 
 mkdir -p $HOME/MINIO_SYNC/DR-Qualifier
+mkdir -p $HOME/MISS3_SYNC/DR-Qualifier
 
 
 # Desktop Nvidia Control Pane
