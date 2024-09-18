@@ -353,6 +353,18 @@ cat << EOM
 
 EOM
 
+
+    echo "Esto tenemos en destion: "
+    cd      ${S3_SMISS3_SOURCE}/T2024-09/DR-Qualifier 
+    ls -la  ${S3_SMISS3_SOURCE}/T2024-09/DR-Qualifier 
+    echo " "
+
+    read -p "Hacemos DOWN S3 ? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
+    aws s3 sync s3://${S3_BUCKET_TARGET}/T2024-09/DR-Qualifier/${MODEL_FOLDER}  \
+                     ${S3_SMISS3_SOURCE}/T2024-09/DR-Qualifier/${MODEL_FOLDER}  \
+                     --profile ${PROFILE_PEZE_EDU}
+
 }
 
 
