@@ -42,9 +42,9 @@ class LunaCar:
         if progre >= 100 and (self.steps_now < self.steps_prev):
             recompensa = recompensa + 10.0
 
-        # rrkkoo = self.progress_level_eval(stp, progre)
+        rrkkoo = self.progress_level_eval(stp, progre)
 
-        # recompensa = recompensa + rrkkoo
+        recompensa = recompensa + rrkkoo
 
         g_diff = abs(math.degrees(math.atan2(pp1[1] - pp0[1], pp1[0] - pp0[0])) - hd)
 
