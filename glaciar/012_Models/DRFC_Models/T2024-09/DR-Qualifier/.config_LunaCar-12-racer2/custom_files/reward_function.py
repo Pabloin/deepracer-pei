@@ -42,9 +42,9 @@ class LunaCar:
         if progre >= 100 and (self.steps_now < self.steps_prev):
             recompensa = recompensa + 10.0
 
-        # rrkkoo = self.progress_level_eval(stp, progre)
+        rrkkoo = self.progress_level_eval(stp, progre)
 
-        # recompensa = recompensa + rrkkoo
+        recompensa = recompensa + rrkkoo
 
         g_diff = abs(math.degrees(math.atan2(pp1[1] - pp0[1], pp1[0] - pp0[0])) - hd)
 
@@ -70,21 +70,20 @@ class LunaCar:
         return False
 
 
-    # Con todo esto se queda en el infinito .. tiempos de 5 minutos
-    # def progress_level_eval(self, stp, progre):
+    def progress_level_eval(self, stp, progre):
 
-    #     CONST_SUPERIOR  = 340
-    #     CONST_INFERIOR  = 270   
-    #     CONST_DISTANCIA = CONST_SUPERIOR - CONST_INFERIOR
+        CONST_SUPERIOR  = 340
+        CONST_INFERIOR  = 270   
+        CONST_DISTANCIA = CONST_SUPERIOR - CONST_INFERIOR
 
-    #     for i in range(CONST_DISTANCIA, 0, -1):
-    #         VAR_PIVOTE = CONST_SUPERIOR - i
-    #         VAR_REWARD = i
+        for i in range(CONST_DISTANCIA, 0, -1):
+            VAR_PIVOTE = CONST_SUPERIOR - i
+            VAR_REWARD = i
 
-    #         if self.progress_level(stp, progre, VAR_PIVOTE):
-    #             return VAR_REWARD
+            if self.progress_level(stp, progre, VAR_PIVOTE):
+                return VAR_REWARD
         
-    #     return  0.0
+        return  0.0
 
 dr = LunaCar()
 
