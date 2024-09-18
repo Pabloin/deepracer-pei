@@ -40,6 +40,7 @@ ee3 run.env  DR_LOCAL_S3_PRETRAINED_CHECKPOINT=
 
 echo -e "\n---- [ system.env ] ---\n"
 
+ee3 system.env DR_UPLOAD_S3_PROFILE=
 ee3 system.env DR_UPLOAD_S3_BUCKET=
 ee3 system.env DR_UPLOAD_S3_ROLE=
 ee3 system.env DR_LOCAL_S3_BUCKET=
