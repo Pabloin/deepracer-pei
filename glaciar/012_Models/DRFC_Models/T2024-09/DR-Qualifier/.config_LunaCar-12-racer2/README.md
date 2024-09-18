@@ -4,6 +4,19 @@
 american hills speedway	American Hills Speedway	2020-11-10T00:00:00Z	Austin.npy	
 
 
+
+------------------------------------------------------
+LunaCar-12-racer2
+
+   Los steps son 15 por segundo
+   Tenemos entre 
+   - 325  - 
+   - 326
+   - 328
+   - 330
+   - 334
+   - 334
+
 ------------------------------------------------------
 LunaCar-10-racer2
 

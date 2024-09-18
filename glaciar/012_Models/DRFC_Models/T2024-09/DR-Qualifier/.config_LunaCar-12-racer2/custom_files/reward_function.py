@@ -69,57 +69,18 @@ class LunaCar:
             return True
         return False
 
-   
     def progress_level_eval(self, stp, progre):
 
-        SETPS_MAX_L01 = 320
-        SETPS_MAX_L02 = 310
-        SETPS_MAX_L03 = 300
-        SETPS_MAX_L04 = 290
-        SETPS_MAX_L05 = 280
-        SETPS_MAX_L06 = 270
-        SETPS_MAX_L07 = 260
-        SETPS_MAX_L08 = 250
-        SETPS_MAX_L09 = 240
-        SETPS_MAX_L10 = 230
-        SETPS_MAX_L11 = 220
-        SETPS_MAX_L12 = 210
+        CONST_SUPERIOR  = 340
+        CONST_INFERIOR  = 270   
+        CONST_DISTANCIA = CONST_SUPERIOR - CONST_INFERIOR
 
-        if self.progress_level(stp, progre, SETPS_MAX_L12):
-            return 15.0
+        for i in range(CONST_DISTANCIA, 0, -1):
+            VAR_PIVOTE = CONST_SUPERIOR - i
+            VAR_REWARD = i
 
-        if self.progress_level(stp, progre, SETPS_MAX_L11):
-            return 12.0
-                
-        if self.progress_level(stp, progre, SETPS_MAX_L10):
-            return 10.0
-        
-        if self.progress_level(stp, progre, SETPS_MAX_L09):
-            return  9.0
-
-        if self.progress_level(stp, progre, SETPS_MAX_L08):
-            return  8.0
-
-        if self.progress_level(stp, progre, SETPS_MAX_L07):
-            return  7.0
-
-        if self.progress_level(stp, progre, SETPS_MAX_L06):
-            return  6.0
-
-        if self.progress_level(stp, progre, SETPS_MAX_L05):
-            return  5.0
-        
-        if self.progress_level(stp, progre, SETPS_MAX_L04):
-            return  4.0
-
-        if self.progress_level(stp, progre, SETPS_MAX_L03):
-            return  3.0
-        
-        if self.progress_level(stp, progre, SETPS_MAX_L02):
-            return  2.0
-
-        if self.progress_level(stp, progre, SETPS_MAX_L01):
-            return  1.0
+            if self.progress_level(stp, progre, VAR_PIVOTE):
+                return VAR_REWARD
         
         return  0.0
 
