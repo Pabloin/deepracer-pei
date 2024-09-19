@@ -30,7 +30,7 @@ MODEL_NOMBRE=LunaCar-12-racer2-${MY_NAME}
 PROFILE=glaciar
 ROLE_ARN=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
 BUCKET_AWS=deepracer-forcloud-glaciar
-BUCKET_MINIO=dr-models-glaciar-dots-to-pabloedu-gmail
+BUCKET_MINIO=dr-models-racer2-dots-to-pabloedu-gmail
 
 echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
 
