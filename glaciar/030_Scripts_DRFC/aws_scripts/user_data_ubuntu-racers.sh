@@ -24,6 +24,10 @@ HOME_PROFILE_S3=dr-racer2-config
 # INTALL: 0- Set Home
 cd ${HOME_ROOT}
 
+# INTALL: 0- Time Zone
+timedatectl set-timezone America/Argentina/Buenos_Aires
+
+
 # INTALL: 1- AWS CLI
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
