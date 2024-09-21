@@ -47,12 +47,16 @@ PROFILE=None          # The credentials profile in .aws - 'minio' for local trai
 S3_ENDPOINT_URL=None  # Endpoint URL: None for AWS S3, 'http://minio:9000' for local training
 
 
+dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Rufus-01-racer2
+: No files found in s3://
+dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Rufus-01-racer2/ using filter DR-Qualifier/Rufus-01-racer2/evaluation-([0-9]{14})/evaluation-simtrace/(.*)-iteration\.csv
 
-PREFIX='T2024-09/DR-Qualifier/LunaCar-12-racer2'
+
+
+PREFIX='DR-Qualifier/Rufus-01-racer2'
 BUCKET='dr-models-racer2-dots-to-pabloedu-gmail'
 S3_ENDPOINT_URL='http://minio:9000'
-
-
+PROFILE=None
 
 
 
