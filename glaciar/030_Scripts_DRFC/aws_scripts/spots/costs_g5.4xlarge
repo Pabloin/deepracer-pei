@@ -1,5 +1,27 @@
 SPOT g5.4xlarge
 
+
+
+-----------------------
+
+
+    PS C:\Users\pablo\AWS DeepRacer\deepracer-pei\glaciar\030_Scripts_DRFC\aws_scripts> .\cost_spots.bat
+
+    ....[ REGION: sa-east-1 - SPOT: g5.4xlarge  ] ....Profile:  glaciar  .............
+
+    SPOTPRICEHISTORY        sa-east-1a      g5.4xlarge      Linux/UNIX      0.368400        2024-09-22T08:31:28+00:00
+    SPOTPRICEHISTORY        sa-east-1b      g5.4xlarge      Linux/UNIX      0.276000        2024-09-22T04:16:17+00:00
+
+    PS C:\Users\pablo\AWS DeepRacer\deepracer-pei\glaciar\030_Scripts_DRFC\aws_scripts> .\cost_spots.bat
+
+
+    ....[ REGION: sa-east-1 - SPOT: g5.4xlarge  ] ....Profile:  racer1  .............
+
+    SPOTPRICEHISTORY        sa-east-1a      g5.4xlarge      Linux/UNIX      0.368400        2024-09-22T08:31:28+00:00
+    SPOTPRICEHISTORY        sa-east-1b      g5.4xlarge      Linux/UNIX      0.276000        2024-09-22T04:16:17+00:00
+
+-------------------
+
 BEST	eu-north-1c	g5.4xlarge	Linux/UNIX	0.337300	2024-02-10T20:46:34+00:00
 BEST	eu-north-1b	g5.4xlarge	Linux/UNIX	0.374100	2024-02-10T19:16:34+00:00
 

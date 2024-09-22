@@ -19,10 +19,10 @@ REM set "MY_SPOT=g5.2xlarge"
 
 REM ----x=4------16vCPU
 REM set "MY_SPOT=g4dn.4xlarge"
-REM set "MY_SPOT=g5.4xlarge"
+set "MY_SPOT=g5.4xlarge"
 
 REM ----x=4-----32vCPU
-set "MY_SPOT=g5.8xlarge"
+REM set "MY_SPOT=g5.8xlarge"
 
 
 REM us-east-1  - Virginia
@@ -33,17 +33,22 @@ REM sa-east-1  - San Pablo
 REM TBD - ap-northeast-3
 REM TBD - me-south-1
 
+REM set "MY_PROFILE=glaciar"
+set "MY_PROFILE=racer1"
+
+
 
 
 REM             virginia   africa        stock      SAO
 REM for %%x in (us-east-1  eu-south-1 eu-north-1 sa-east-1 ap-northeast-3 me-south-1) do (
-    for %%x in (us-east-1             eu-north-1 sa-east-1                          ) do (
+REM for %%x in (us-east-1             eu-north-1 sa-east-1                          ) do (
+    for %%x in (                                 sa-east-1                          ) do (
 
         @echo on
 
         echo:
         echo:
-        echo: ....[ REGION: %%x - SPOT: %MY_SPOT ]...........................
+        echo: ....[ REGION: %%x - SPOT: %MY_SPOT%  ] ....Profile:  %MY_PROFILE%  .............
         echo:    
 
         aws ec2 describe-spot-price-history ^
@@ -53,7 +58,7 @@ REM for %%x in (us-east-1  eu-south-1 eu-north-1 sa-east-1 ap-northeast-3 me-sou
             --end-time   %MY_HASTA%   ^
             --output text ^
             --region %%x  ^
-            --profile glaciar
+            --profile %MY_PROFILE%  
 
         @echo off
 

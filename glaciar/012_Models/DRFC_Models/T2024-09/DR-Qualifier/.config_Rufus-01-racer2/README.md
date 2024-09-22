@@ -19,6 +19,14 @@ Rufus-01-racer2-1-ckp334-best2  00:39.733   00:33.200
 
 
 ---------------------
+Analisis .. 
+
+    Me gusta mas un Aaction Space de 0.99  
+
+
+        0,9900		100,00	 pasos para adelante ... 	6,666666667  mira los próximos 7 segundos ... 
+
+---------------------
 
 american hills speedway	American Hills Speedway	2020-11-10T00:00:00Z	Austin.npy	
 
