@@ -128,7 +128,7 @@ alias   C="vim ~/.aws/credentials"
 
 alias costos="cd ~/deepracer-pei/glaciar/030_Scripts_DRFC/aws_scripts/"
 
-alias drInfoModelss="mc ls myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Rufus-01-racer2/model"
+alias drInfoModels="mc ls myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Rufus-01-racer2/model"
 
 
 S3_SMISS3_SOURCE=~/MISS3_SYNC
@@ -809,8 +809,7 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
     
     
     # - drSync      |  drDown     | drUp  | TBD - logs | model 
-    # - drImport    | drImportGlaciar     | drInfoModels
-    # - goVirginia  | _set _getRegion  
+    # - drImport    | drImportGlaciar     | drInfoModels    # - goVirginia  | _set _getRegion  
 
 
     alias - C | HH SS MM MMM | 
