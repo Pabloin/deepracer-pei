@@ -128,6 +128,8 @@ alias   C="vim ~/.aws/credentials"
 
 alias costos="cd ~/deepracer-pei/glaciar/030_Scripts_DRFC/aws_scripts/"
 
+alias drInfoModelss="mc ls myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Rufus-01-racer2/model"
+
 
 S3_SMISS3_SOURCE=~/MISS3_SYNC
 S3_SMINIO_SOURCE=~/MINIO_SYNC
@@ -803,11 +805,11 @@ Estoy en  ~/deepracer-pei/glaciar/030_Scripts_DRFC/.bashDRFC
                       ss3Up_dr_models_*
 
     - aws.ec2.run | aws.ec2.all 
-    - crontab_racer | gita (analisis)
+    - crontab_racer | gita (analisis) 
     
     
     # - drSync      |  drDown     | drUp  | TBD - logs | model 
-    # - drImport    | drImportGlaciar 
+    # - drImport    | drImportGlaciar     | drInfoModels
     # - goVirginia  | _set _getRegion  
 
 
