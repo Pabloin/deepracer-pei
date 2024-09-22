@@ -241,6 +241,13 @@ function mmDown() {
 }
 
 
+
+function PRE_CONTEXT_RACER1() {
+    S3_BUCKET_TARGET=dr-models-racer1
+    PROFILE_PEZE_EDU=racer1  
+    PROFILE_LAB_ROLE=arn:aws:iam::730335328884:role/AWSDeepRacerAccessRole
+}
+
 function PRE_CONTEXT_RACER2() {
     S3_BUCKET_TARGET=dr-models-racer2-dots-to-pabloedu-gmail
     PROFILE_PEZE_EDU=racer2    
@@ -306,6 +313,12 @@ function mmDownLuz() {
 
 function spImportLuz() {
     PRE_CONTEXT_LUZ
+    spImport
+    POST_CONTEXT_PEZE_EDU
+}
+
+function spImportRacer1() {
+    PRE_CONTEXT_RACER1
     spImport
     POST_CONTEXT_PEZE_EDU
 }
@@ -399,6 +412,12 @@ EOM
     
 }
 
+
+function ss3Down_dr_models_racer1() {
+    PRE_CONTEXT_RACER1
+    ss3Down_dr_models
+    POST_CONTEXT_PEZE_EDU
+}
 
 function ss3Down_dr_models_racer2() {
     PRE_CONTEXT_RACER2
@@ -600,6 +619,12 @@ function spImport() {
    
 }
 
+function spUpRacer1() {
+    PRE_CONTEXT_RACER1
+    spUp
+    POST_CONTEXT_PEZE_EDU
+}
+
 function spUpRacer2() {
     PRE_CONTEXT_RACER2
     spUp
@@ -632,6 +657,12 @@ function spDown_S3Luz() {
 
 function spDown_S3Glaciar() {
     PRE_CONTEXT_GLACIAR
+    spDown_S3
+    POST_CONTEXT_PEZE_EDU
+}
+
+function spDown_S3Racer1() {
+    PRE_CONTEXT_RACER1
     spDown_S3
     POST_CONTEXT_PEZE_EDU
 }

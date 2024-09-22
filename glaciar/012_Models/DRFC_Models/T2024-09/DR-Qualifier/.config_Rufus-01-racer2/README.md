@@ -8,6 +8,9 @@ Duda Rufus2
 
 Rufus-01-racer2-1-ckp533-last   00:35.870
 Rufus-01-racer2-1-ckp334-best2  00:39.733   00:33.200
+    Y en eval están en 27 (2 off tracks - 4 segundos - 23 segundos .. )
+
+    Observar que se la pone a 12.36 ms por segundo ..
 
     - Tiene problemas en la Zona de las curvas
         a) Waypoints 130 a 180
