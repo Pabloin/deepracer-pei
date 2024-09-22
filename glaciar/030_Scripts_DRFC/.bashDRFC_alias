@@ -106,11 +106,11 @@ alias Rufus-04-racer2="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Ruf
 alias Rufus-05-racer2="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-05-racer2"
 
 
-alias Rufus-01-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-01-racer1"
-alias Rufus-02-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-02-racer1"
-alias Rufus-03-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-03-racer1"
-alias Rufus-04-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-04-racer1"
-alias Rufus-05-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-05-racer1"
+alias Rufus-91-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-91-racer1"
+alias Rufus-92-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-92-racer1"
+alias Rufus-93-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-93-racer1"
+alias Rufus-94-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-94-racer1"
+alias Rufus-95-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-95-racer1"
 
 
 # # Qualifier 2024-09 Pg9
