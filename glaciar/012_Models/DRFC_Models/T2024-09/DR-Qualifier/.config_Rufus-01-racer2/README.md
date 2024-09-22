@@ -1,6 +1,22 @@
 # deepracer-pei
 
 
+
+---------------------
+Duda Rufus2
+
+
+Rufus-01-racer2-1-ckp533-last   00:35.870
+Rufus-01-racer2-1-ckp334-best2  00:39.733   00:33.200
+
+    - Tiene problemas en la Zona de las curvas
+        a) Waypoints 130 a 180
+        b) a qué velocidad va en esos waypoints ?
+            De acuerdo al video .. 
+
+
+---------------------
+
 american hills speedway	American Hills Speedway	2020-11-10T00:00:00Z	Austin.npy	
 
 Rufus-01-racer2
