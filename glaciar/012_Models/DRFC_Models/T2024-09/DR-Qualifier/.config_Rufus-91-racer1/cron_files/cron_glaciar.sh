@@ -24,20 +24,17 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
 
-MODEL_FOLDER=Rufus-01-racer1
-MODEL_NOMBRE=Rufus-01-racer1-ese-${MY_NAME}
+MODEL_FOLDER=Rufus-91-racer1
+MODEL_NOMBRE=Rufus-91-racer1-${MY_NAME}
 
-PROFILE=EseProfe
-ROLE_ARN=arn:aws:iam::424966012016:role/LabRole
-BUCKET_AWS=deepracer-eseprofe
-BUCKET_MINIO=dr-models-racer2-dots-to-pabloedu-gmail
+PROFILE=glaciar
+ROLE_ARN=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
+BUCKET_AWS=deepracer-forcloud-glaciar
+BUCKET_MINIO=dr-models-racer1
 
 echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
 
-
-
-# 0 * 11,12 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_Rufus-01-racer1/cron_files/cron_eseprofe.sh
-
+# 0 * 18,18,20 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_Rufus-91-racer1/cron_files/cron_glaciar.sh
 
 
 cat << EOM >> ~/logs.crontab

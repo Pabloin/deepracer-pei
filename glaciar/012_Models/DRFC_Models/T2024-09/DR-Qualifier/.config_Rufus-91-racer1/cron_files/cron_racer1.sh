@@ -10,12 +10,7 @@
 
 # */45 * 24,25 8 *    Cada 45 minutos del 24 y 25 de agosto ..
 
-
-#--------------------
-# INITIAL - Training de 1.30 horas - ( 90 minutos) - 21:10 a 22:40      en GMT -3 -- 00:10
-# WIP_1   - Training de 3.00 horas - (180 minutos) - 21:10 a 00:10 (+1) en GMT -3 -- 03:10 7/3
-# WIP_2   - Training de 4.50 horas - (270 minutos) - 21:10 a 01:40 (+1) en GMT -3 -- 04:40 7/3
-
+# 0 * 11,12 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_Rufus-91-racer1/cron_files/cron_racer2.sh
 
 # 23:33 (GMT -3) 
 # 02:33 (GMT  0)
@@ -24,17 +19,20 @@ MY_TIME=$(date +%Y-%m-%dT%H:%M:%S)
 MY_NAME=$(date +d%dh%H%M)
 
 
-MODEL_FOLDER=Rufus-01-racer1
-MODEL_NOMBRE=Rufus-01-racer1-${MY_NAME}
+MODEL_FOLDER=Rufus-91-racer1
+MODEL_NOMBRE=Rufus-91-racer1-${MY_NAME}
 
-PROFILE=glaciar
-ROLE_ARN=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerAccessRole
-BUCKET_AWS=deepracer-forcloud-glaciar
+PROFILE=racer2
+ROLE_ARN=arn:aws:iam::590184033458:role/AWSDeepRacerAccessRole
+BUCKET_AWS=dr-models-racer2-dots-to-pabloedu-gmail
 BUCKET_MINIO=dr-models-racer1
 
 echo "${MY_TIME} CRONTAB - ${PROFILE}" >> ~/logs.crontab
 
-# 0 * 18,18,20 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_Rufus-01-racer1/cron_files/cron_glaciar.sh
+# 10 3      7 3 *  ~/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_Rufus-91-racer1/cron_files/cron_fase_wip1.sh
+# */45 * 27,28 8 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-08/DR-Qualifier/.config_Rufus-91-racer1/cron_files/cron_fase_wip1.sh
+
+0 * 11,12 9 *  /home/ubuntu/deepracer-pei/glaciar/012_Models/DRFC_Models/T2024-09/DR-Qualifier/.config_Rufus-91-racer1/cron_files/cron_fase_racer1.sh
 
 
 cat << EOM >> ~/logs.crontab
