@@ -75,7 +75,11 @@ Resources:
           CidrIp: 0.0.0.0/0
           ToPort: 9001
           Description: Minio Web
-
+        - FromPort: 8092
+          IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          ToPort: 8092
+          Description: telegraf
 
 Outputs:
  
