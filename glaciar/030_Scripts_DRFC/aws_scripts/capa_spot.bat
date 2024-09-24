@@ -19,10 +19,10 @@ REM set "MY_SPOT=g5.2xlarge"
 
 REM ----x=4------16vCPU
 REM set "MY_SPOT=g4dn.4xlarge"
-REM set "MY_SPOT=g5.4xlarge"
+set "MY_SPOT=g5.4xlarge"
 
 REM ----x=4-----32vCPU
-set "MY_SPOT=g5.8xlarge"
+REM set "MY_SPOT=g5.8xlarge"
 
 
 REM us-east-1  - Virginia
@@ -41,8 +41,8 @@ set "MY_PROFILE=racer2"
 
 REM             virginia   africa        stock      SAO
 REM for %%x in (us-east-1  eu-south-1 eu-north-1 sa-east-1 ap-northeast-3 me-south-1) do (
-REM for %%x in (us-east-1             eu-north-1 sa-east-1                          ) do (
-    for %%x in (                                 sa-east-1                          ) do (
+for %%x in (us-east-1             eu-north-1 sa-east-1                          ) do (
+REM     for %%x in (                                 sa-east-1                          ) do (
 
         @echo on
 
@@ -50,6 +50,14 @@ REM for %%x in (us-east-1             eu-north-1 sa-east-1                      
         echo:
         echo: ....[ REGION: %%x - SPOT: %MY_SPOT%  ] ....Profile:  %MY_PROFILE%  .............
         echo:    
+
+        aws ec2 describe-instance-type-offerings  ^
+            --location-type availability-zone   ^
+            --filters Name=instance-type,Values=%MY_SPOT% ^
+            --output text ^
+            --region %%x  ^
+            --profile %MY_PROFILE%  
+
 
         aws ec2 describe-spot-price-history ^
             --instance-types %MY_SPOT%       ^
