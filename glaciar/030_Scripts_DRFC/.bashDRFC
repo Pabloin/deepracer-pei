@@ -130,6 +130,10 @@ alias costos="cd ~/deepracer-pei/glaciar/030_Scripts_DRFC/aws_scripts/"
 
 alias drInfoModels="mc ls myminio/dr-models-racer2-dots-to-pabloedu-gmail/DR-Qualifier/Rufus-01-racer2/model"
 alias drInfoRufus91="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-91-racer1/model"
+alias drInfoRufus92="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-92-racer1/model"
+alias drInfoRufus93="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-93-racer1/model"
+alias drInfoRufus94="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-94-racer1/model"
+alias drInfoRufus95="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-95-racer1/model"
 
 
 S3_SMISS3_SOURCE=~/MISS3_SYNC
