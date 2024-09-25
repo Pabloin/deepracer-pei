@@ -138,8 +138,8 @@ S3_SMINIO_SOURCE=~/MINIO_SYNC
 S3_SMINIO_SERVER=myminio
 # S3_SMINIO_BUCKET=bucket-models-2024-03
 # S3_SMINIO_BUCKET=bucket-models-2024-08
-S3_SMINIO_BUCKET=dr-models-racer2-dots-to-pabloedu-gmail
-
+# S3_SMINIO_BUCKET=dr-models-racer2-dots-to-pabloedu-gmail
+S3_SMINIO_BUCKET=dr-models-racer1
 
 S3_BUCKET_TARGET=dr-models-glaciar-dots-to-pabloedu-gmail
 PROFILE_PEZE_EDU=bastion_PEZE_DRFC_CPU
