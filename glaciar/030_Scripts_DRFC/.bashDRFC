@@ -135,6 +135,13 @@ alias drInfoRufus93="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-93-racer1
 alias drInfoRufus94="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-94-racer1/model"
 alias drInfoRufus95="mc ls myminio/dr-models-racer1/DR-Qualifier/Rufus-95-racer1/model"
 
+alias drInfoLuna50="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-50-racer1/model"
+alias drInfoLuna51="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-51-racer1/model"
+alias drInfoLuna52="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-52-racer1/model"
+alias drInfoLuna53="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-53-racer1/model"
+alias drInfoLuna54="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-54-racer1/model"
+alias drInfoLuna55="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-55-racer1/model"
+
 
 S3_SMISS3_SOURCE=~/MISS3_SYNC
 S3_SMINIO_SOURCE=~/MINIO_SYNC
