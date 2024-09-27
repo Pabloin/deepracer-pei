@@ -42,21 +42,21 @@ class LunaCar:
         if progre >= 100 and (self.steps_now < self.steps_prev):
             recompensa = recompensa + 10.0
 
-        rrkkoo = self.progress_level_eval(stp, progre)
+        # rrkkoo = self.progress_level_eval(stp, progre)
 
-        recompensa = recompensa + rrkkoo
+        # recompensa = recompensa + rrkkoo
 
-        g_diff = abs(math.degrees(math.atan2(pp1[1] - pp0[1], pp1[0] - pp0[0])) - hd)
+        # g_diff = abs(math.degrees(math.atan2(pp1[1] - pp0[1], pp1[0] - pp0[0])) - hd)
 
-        if g_diff > 180:
-            g_diff = 360 - g_diff
+        # if g_diff > 180:
+        #     g_diff = 360 - g_diff
 
 
-        ANGULO_MAX = 25
-        CABEZA_MAX = 15
+        # ANGULO_MAX = 25
+        # CABEZA_MAX = 15
 
-        if g_diff > ANGULO_MAX or angle_car > CABEZA_MAX:
-            recompensa = recompensa * 0.8
+        # if g_diff > ANGULO_MAX or angle_car > CABEZA_MAX:
+        #     recompensa = recompensa * 0.8
 
         return self.recompensar(recompensa)
 
@@ -64,26 +64,26 @@ class LunaCar:
         return float(max(1e-4, reko))
     
 
-    def progress_level(self, stp, progre, MAX_STEPS):
-        if (stp % 25) == 0 and progre > (stp / MAX_STEPS) * 100 :
-            return True
-        return False
+    # def progress_level(self, stp, progre, MAX_STEPS):
+    #     if (stp % 25) == 0 and progre > (stp / MAX_STEPS) * 100 :
+    #         return True
+    #     return False
 
 
-    def progress_level_eval(self, stp, progre):
+    # def progress_level_eval(self, stp, progre):
 
-        CONST_SUPERIOR  = 340
-        CONST_INFERIOR  = 270   
-        CONST_DISTANCIA = CONST_SUPERIOR - CONST_INFERIOR
+    #     CONST_SUPERIOR  = 340
+    #     CONST_INFERIOR  = 270   
+    #     CONST_DISTANCIA = CONST_SUPERIOR - CONST_INFERIOR
 
-        for i in range(CONST_DISTANCIA, 0, -1):
-            VAR_PIVOTE = CONST_SUPERIOR - i
-            VAR_REWARD = i
+    #     for i in range(CONST_DISTANCIA, 0, -1):
+    #         VAR_PIVOTE = CONST_SUPERIOR - i
+    #         VAR_REWARD = i
 
-            if self.progress_level(stp, progre, VAR_PIVOTE):
-                return VAR_REWARD
+    #         if self.progress_level(stp, progre, VAR_PIVOTE):
+    #             return VAR_REWARD
         
-        return  0.0
+    #     return  0.0
 
 dr = LunaCar()
 
