@@ -113,6 +113,16 @@ alias Rufus-94-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Ruf
 alias Rufus-95-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Rufus-95-racer1"
 
 
+alias Luna-50-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Luna-50-racer1"
+alias Luna-51-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Luna-51-racer1"
+alias Luna-52-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Luna-52-racer1"
+alias Luna-53-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Luna-53-racer1"
+alias Luna-54-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Luna-54-racer1"
+alias Luna-55-racer1="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Luna-55-racer1"
+
+
+
+
 # # Qualifier 2024-09 Pg9
 
 # alias Pg9-0100="cd  ${PATH_DRFC_Models}/T2024-09/DR-Qualifier/.config_Pg9-0100"
