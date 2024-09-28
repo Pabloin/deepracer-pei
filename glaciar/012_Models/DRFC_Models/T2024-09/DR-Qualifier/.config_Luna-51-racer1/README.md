@@ -9,8 +9,17 @@ dr-start-training -q -w
 EOF
 
 ---------------------
-Duda Rufus2
+Duda Luna51
 
+IP 51.228.85.141 
+http://a795554ef77e:8888/lab?token=e61bf1befaebfbda88aee31814c90763e1e3745c34cef807
+
+http://51.228.85.141:8888/lab?token=e61bf1befaebfbda88aee31814c90763e1e3745c34cef807
+
+
+
+
+---------------------
 
 Luna-51-racer1-1-ckp533-last   00:35.870
 Luna-51-racer1-1-ckp334-best2  00:39.733   00:33.200
