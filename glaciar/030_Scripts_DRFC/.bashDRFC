@@ -143,6 +143,10 @@ alias drInfoLuna54="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-54-racer1/m
 alias drInfoLuna55="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-55-racer1/model"
 
 
+alias drInfoLuna51Bis="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-51-racer1-bis/model"
+
+
+
 S3_SMISS3_SOURCE=~/MISS3_SYNC
 S3_SMINIO_SOURCE=~/MINIO_SYNC
 # S3_SMINIO_SERVER=local
