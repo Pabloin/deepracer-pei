@@ -11,12 +11,15 @@ EOF
 ---------------------
 Duda Luna51
 
-IP 51.228.85.141 
+IP 15.228.85.141 
+15.228.87.123
 http://a795554ef77e:8888/lab?token=e61bf1befaebfbda88aee31814c90763e1e3745c34cef807
 
-http://51.228.85.141:8888/lab?token=e61bf1befaebfbda88aee31814c90763e1e3745c34cef807
+http://15.228.85.141:8888/lab?token=e61bf1befaebfbda88aee31814c90763e1e3745c34cef807
 
 
+REM 15.228.87.123
+ssh -i "racer1-sanpablo.pem" -o ServerAliveInterval=60 -o ServerAliveCountMax=10 ubuntu@ec2-15-228-87-123.sa-east-1.compute.amazonaws.com
 
 
 ---------------------
