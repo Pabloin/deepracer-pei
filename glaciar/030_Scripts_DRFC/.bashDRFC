@@ -144,6 +144,8 @@ alias drInfoLuna55="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-55-racer1/m
 
 
 alias drInfoLuna51Bis="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-51-racer1-bis/model"
+alias drInfoLuna51Co="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-51-racer1-co/model"
+alias drInfoLuna51Cho="mc ls myminio/dr-models-racer1/DR-Qualifier/Luna-51-racer1-cho/model"
 
 
 

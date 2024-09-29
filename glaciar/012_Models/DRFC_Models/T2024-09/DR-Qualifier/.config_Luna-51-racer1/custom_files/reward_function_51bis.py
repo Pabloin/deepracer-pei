@@ -17,7 +17,6 @@ class LunaCar:
         hd = params['heading']
         wc = params['closest_waypoints']
         wp = params['waypoints']
-        speed = params['speed']
     
         pp0 = wp[wc[0]]
         pp1 = wp[wc[1]]
@@ -58,22 +57,6 @@ class LunaCar:
 
         # if g_diff > ANGULO_MAX or angle_car > CABEZA_MAX:
         #     recompensa = recompensa * 0.8
-
-
-        # WAYPOINT IF RECTA 1
-
-        # RECTA1 - 100 - 115
-        # RECTA2 - 215 - 223
-        # RECTA2 -  25 -  40
-
-        if pp1 in range(100, 115+1) and speed >= 3.0:
-            recompensa *= 1.2
-
-        if pp1 in range(215, 223+1) and speed >= 3.2:
-            recompensa *= 1.2
-
-        if pp1 in range( 25, 40+1)  and speed >= 3.0:
-            recompensa *= 1.2
 
         return self.recompensar(recompensa)
 
