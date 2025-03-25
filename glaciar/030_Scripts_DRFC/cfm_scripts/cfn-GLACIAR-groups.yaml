@@ -1,0 +1,49 @@
+Description:  Un Cloud Formation que crea 
+  Un Grupo Glaciar org Admin
+  Un Usuario Glaciar Admin
+  Name glaciar-org-gropus-stack
+
+
+Parameters:
+    
+  MyLabName:
+    Description: Lab Name
+    Type: String
+    Default: Glaciar.org Lab
+
+Resources:
+  
+  GlaciarGroup:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: Glaciar-org-Admin
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+        - arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess
+        - arn:aws:iam::aws:policy/AWSBudgetsActionsWithAWSResourceControlAccess
+
+
+  GlaciarUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: Glaciar
+      LoginProfile: 
+        Password: CambiameLaPas!!
+        PasswordResetRequired: true
+      Groups: 
+        - !Ref GlaciarGroup
+      Path: /glaciar-org/
+
+
+Outputs:
+
+  GlaciarGroup:
+    Description: Grupo GlaciarGroup
+    Value: !Ref GlaciarGroup
+
+  GlaciarUser:
+    Description: User GlaciarUser
+    Value: !Ref GlaciarUser
+
+
+
